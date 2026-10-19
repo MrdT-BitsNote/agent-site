@@ -409,7 +409,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 28px;background:#fff}
         {"@type": "Question", "name": "摩托车能不能上高速？这个技能怎么判断？",
          "acceptedAnswer": {"@type": "Answer", "text": "内置 31 省高速准入名单（13 允许 / 17 禁止 / 1 有条件）与 45 城禁摩限摩名单，逐省逐城带证据等级。禁高速省不拦你——只提醒改走国道（耗时 +40–80%）；只有你明确要走高速才判红灯。未查证的城市一律灰灯加需自行核实，绝不默认绿灯。"}},
         {"@type": "Question", "name": "Skill 和 Agent 应用，我该选哪个？",
-         "acceptedAnswer": {"@type": "Answer", "text": "能力本体是同一个包，差别在入口与归属：Skill 装进你已有的 Agent（千问 / WorkBuddy / 扣子 / Qoder / 百度搭子 / Marvel / MiniMax / 任意 Agent），一分钟装好但入口在别人的 App 里；Agent 应用是你自托管在自己的服务器，自有域名、数据不出境、能力零裁剪。详见「05 两种用法」。"}}
+         "acceptedAnswer": {"@type": "Answer", "text": "能力本体是同一个包，差别在入口与归属：Skill 装进你已有的 Agent（千问 / WorkBuddy / 扣子 / Qoder / 百度搭子 / Marvel / MiniMax / 任意 Agent），一分钟装好但入口在别人的 App 里；Agent 应用是你自托管在自己的服务器，自有域名、数据不出境、能力零裁剪。详见「05 装进你的 Agent（两种形态）」。"}}
       ]
     }
   ]
@@ -429,7 +429,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 28px;background:#fff}
 </nav>
 
 <div class="chips" id="chips">
-  <a href="#what">它做什么</a><a href="#samples">真实范本</a><a href="#gates">行前体检</a><a href="#use">两种用法</a><a href="#install">安装下载</a><a href="#faq">常见问题</a>
+  <a href="#what">它做什么</a><a href="#samples">真实范本</a><a href="#gates">行前体检</a><a href="#install">装进你的 Agent</a><a href="#faq">常见问题</a>
 </div>
 
 <div class="page" id="top">
@@ -440,9 +440,8 @@ footer{border-top:1px solid var(--line);padding:24px 0 28px;background:#fff}
     <a href="#samples"><i>02</i>真实范本</a>
     <a href="#gates"><i>03</i>行前体检</a>
     <a href="#trust"><i>04</i>数据底座</a>
-    <a href="#use"><i>05</i>两种用法</a>
-    <a href="#install"><i>06</i>安装下载</a>
-    <a href="#faq"><i>07</i>常见问题</a>
+    <a href="#install"><i>05</i>装进你的 Agent</a>
+    <a href="#faq"><i>06</i>常见问题</a>
     <a class="rail-cta" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener"><b>★ 千问 Hub 主页</b>一分钟装好</a>
   </aside>
 
@@ -595,33 +594,12 @@ footer{border-top:1px solid var(--line);padding:24px 0 28px;background:#fff}
       </div>
     </section>
 
-    <!-- 05 两种用法 -->
-    <section id="use">
-      <div class="sec-head reveal"><div class="sec-no">05 · 两种用法</div>
-        <h2>一个包，两种形态</h2>
-        <p class="sec-desc">能力本体是同一个包，差别只在入口与归属：</p>
-      </div>
-      <div class="use">
-        <div class="u reveal"><span class="u-tag">形态 A · SKILL</span>
-          <h3>装进你已有的 Agent</h3>
-          <p>把技能包装进千问 / WorkBuddy / Coze / MiniMax / Marvis——<b>寄生式</b>，由宿主 Agent 加载并代跑。</p>
-          <ul><li>触发词唤起：「帮我规划 XX 天行程」</li><li>适合：已有常用 Agent 的个人用户</li><li>能力完整，但入口在别人的 App 里</li></ul>
-          <a class="btn btn-ghost" href="#install">看安装方式 →</a>
-        </div>
-        <div class="u dark reveal"><span class="u-tag">形态 B · AGENT</span>
-          <h3>自托管为独立 Agent 应用</h3>
-          <p>下载整包<b>自托管为独立 Agent 应用</b>：表单进、小册子出，<b>能力零裁剪</b>，39 个确定性脚本纯标准库、零第三方依赖，Python 3.8+ 就跑。</p>
-          <ul><li>自有域名入口，数据不出你的服务器</li><li>约 2 秒出册，支持摩旅 / 房车全参数</li><li>地名歧义先查后问，不能走就出拦停页</li></ul>
-          <a class="btn btn-primary" href="downloads/worldstip-travel-planner-v0.1.25.zip">下载整包自行部署 →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06 安装下载 -->
+    <!-- 05 装进你的 Agent（合并原 05 两种用法 + 06 安装下载，浓缩为一节） -->
     <section id="install">
-      <div class="sec-head reveal"><div class="sec-no">06 · 安装下载</div>
-        <h2>装进你的 Agent，或部署你自己的</h2>
-        <p class="sec-desc">各平台暂无网页一键安装深链，以下是<b>真实可执行</b>的方式。</p>
+      <div class="sec-head reveal"><div class="sec-no">05 · 装进你的 Agent</div>
+        <h2>两种形态，各平台怎么装</h2>
+        <p class="sec-desc">能力本体是同一个包，<b>两种用法</b>：<b>形态 A</b> 装进你已有的 Agent（千问 / WorkBuddy / 扣子 / Qoder / 百度搭子 / Marvel / MiniMax——寄生式，入口在别人的 App 里）；<b>形态 B</b> 下载整包<b>自托管为独立应用</b>（自有域名、数据不出境、能力零裁剪，39 个脚本纯标准库、Python 3.8+ 即跑）。下面给各平台真实可执行的安装方式。</p>
+        <a class="btn btn-primary" href="downloads/worldstip-travel-planner-v0.1.25.zip" style="margin-top:10px">下载整包（自托管 / 通用）→</a>
       </div>
             <div class="plats">
         <div class="plat plat-hot reveal"><div class="p-top"><span class="p-emoji">🧠</span><h3>千问 AI</h3><span class="p-st">官方已上架 v0.1.25</span></div>
@@ -661,7 +639,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 28px;background:#fff}
       </div>
 <div class="note reveal"><b>为什么没有「一键安装」按钮？</b>各平台均未开放网页侧技能安装深链，安装只能发生在 App 内或对话里。整包 39 个脚本纯 Python 标准库、零第三方依赖，Python 3.8+ 即可运行。</div>
 
-      <div class="sec-head reveal" style="margin-top:34px"><div class="sec-no">06-B · 下载矩阵</div>
+      <div class="sec-head reveal" style="margin-top:34px"><div class="sec-no">05-B · 下载矩阵</div>
         <h2>技能包下载（最新 v0.1.25 · 各平台包格式不同）</h2>
         <p class="sec-desc">同一个能力本体，<b>按平台打包格式分发</b>——格式错了平台不认，别混用。每个平台都提供 <b>技能包（Skill）</b> 与 <b>智能体包（Agent）</b> 两种形态（千问走 Hub 除外），包内均附 <code>INSTALL.md</code> 安装指引。</p>
       </div>
@@ -741,7 +719,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 28px;background:#fff}
 
     <!-- 07 常见问题 -->
     <section id="faq">
-      <div class="sec-head reveal"><div class="sec-no">07 · 常见问题</div>
+      <div class="sec-head reveal"><div class="sec-no">06 · 常见问题</div>
         <h2>常见问题</h2>
       </div>
       <div class="faq">
@@ -749,7 +727,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 28px;background:#fff}
         <details class="reveal"><summary><span class="q">Q</span>票价、门票、天气信息准吗？<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">两条硬规则：<b>查不到的绝不编造</b>，只给查询路径与购票时机；<b>已可用的才标注</b>——天气走 Open-Meteo 并打核验日期，车站码已缓存。完整口径见「04 数据底座」。</div></details>
         <details class="reveal"><summary><span class="q">Q</span>能帮我订票订酒店吗？能打印 PDF 吗？<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">订票订酒店<b>不能，也不假装能</b>——代订需要交易权限与实时库存。PDF <b>能</b>：单文件 HTML，Ctrl+P 直接另存，导航自动隐藏、页边距自动压缩。改需求也不用重说：只改你提到的维度（天数 / 出发地 / 排量 / 照类 / 高速偏好）重跑即可。</div></details>
         <details class="reveal"><summary><span class="q">Q</span>摩托车能不能上高速？它怎么判断？<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">内置 31 省高速准入名单（13 允许 / 17 禁止 / 1 有条件）与 45 城禁摩限摩名单，逐省逐城带证据等级（法规明文 / 执法口径 / 第三方汇总）。<b>禁高速省不拦你</b>——只提醒改走国道（耗时 +40–80%）；只有你明确要走高速才判红灯。未查证的城市一律灰灯 + 需自行核实，绝不默认绿灯。</div></details>
-        <details class="reveal"><summary><span class="q">Q</span>Skill 和 Agent 应用，我该选哪个？<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">能力本体同一个包，差别在入口与归属：<b>Skill</b> 装进已有 Agent，一分钟装好但入口在别人 App 里；<b>Agent 应用</b>跑在你自己的服务器上，自有域名、数据不出境、能力零裁剪。详见「06 两种用法」。</div></details>
+        <details class="reveal"><summary><span class="q">Q</span>Skill 和 Agent 应用，我该选哪个？<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">能力本体同一个包，差别在入口与归属：<b>Skill</b> 装进已有 Agent，一分钟装好但入口在别人 App 里；<b>Agent 应用</b>跑在你自己的服务器上，自有域名、数据不出境、能力零裁剪。详见「05 装进你的 Agent（两种形态）」。</div></details>
       </div>
     </section>
 
