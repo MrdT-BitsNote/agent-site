@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WorldsTip 旅行规划大师 · AI 行程小册子技能 v0.1.25｜千问 AI 技能 Hub 官方主页</title>
+<meta name="description" content="WorldsTip 旅行规划大师（worldstip-travel-planner v0.1.25）：国内+出境双模式 AI 行程规划技能，已上架千问 AI 技能 Hub。五大能力支柱——国内全交通、摩旅五项门禁（31 省高速准入/45 城禁摩）、房车后勤、出境四灯（32 国/区基线数据）、散心模式；956 项回归断言，查不到即灰灯不编造，产出 A5 紧凑卡册单文件 HTML 小册子。">
+<meta name="keywords" content="旅行规划,AI行程规划,AI旅行攻略,行程小册子,摩旅,摩托车能不能上高速,禁摩城市,房车自驾,房车营地,出境游,免签,千问AI技能,千问技能Hub,AI Skill,worldstip,旅行规划大师,agent,自托管">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="WorldsTip by MrdT">
+<meta name="theme-color" content="#0F4C3A">
+<meta name="application-name" content="WorldsTip 旅行规划大师">
+<link rel="canonical" href="https://agent.worldstip.com/">
+<link rel="alternate" hreflang="zh-CN" href="https://agent.worldstip.com/">
+<link rel="alternate" hreflang="en" href="https://agent.worldstip.com/index-en.html">
+<link rel="alternate" hreflang="x-default" href="https://agent.worldstip.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WorldsTip 旅行规划大师">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://agent.worldstip.com/">
+<meta property="og:title" content="WorldsTip 旅行规划大师 v0.1.25｜一句话 → 一本能照着走的行程小册子">
+<meta property="og:description" content="国内+出境双模式。出发前替你查摩托能不能上高速、房车限高过不过得去、出境签证来不来得及；查不到的不编造。956 项回归断言，已在千问 AI 技能 Hub 上架。">
+<meta property="og:image" content="https://agent.worldstip.com/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WorldsTip 旅行规划大师 · A5 紧凑卡册行程小册子">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@worldstip">
+<meta name="twitter:title" content="WorldsTip 旅行规划大师 v0.1.25｜一句话 → 一本能照着走的行程小册子">
+<meta name="twitter:description" content="摩旅五项门禁 · 房车后勤 · 出境四灯 · 散心模式；查不到即灰灯，绝不编造。已上架千问 AI 技能 Hub。">
+<meta name="twitter:image" content="https://agent.worldstip.com/og-cover.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23FF9F0A'/%3E%3Cstop offset='1' stop-color='%23FF6482'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Ccircle cx='16' cy='15' r='8' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M16 7l3 8-8 0z' fill='white'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#FAF8F4;--bg2:#F4F1EB;--card:#FFFFFF;--ink:#1D1D1F;--sub:#6E6E73;--line:rgba(0,0,0,.08);
+  --amber:#FF9F0A;--coral:#FF6482;--rose:#FF2D55;--blue:#0071E3;--sky:#5AC8FA;
+  --ok:#34C759;--warn:#FF3B30;--caution:#FF9500;--grey:#8E8E93;
+  --grad-warm:linear-gradient(120deg,#FF9F0A 0%,#FF6482 55%,#FF2D55 100%);
+  --r:16px;--shadow:0 1px 2px rgba(0,0,0,.03),0 6px 20px rgba(0,0,0,.05);
+  --shadow-lg:0 2px 6px rgba(0,0,0,.04),0 16px 44px rgba(0,0,0,.10);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Helvetica Neue","Segoe UI",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+::selection{background:rgba(255,100,130,.22)}
+
+/* ── 顶栏 ── */
+.nav{position:sticky;top:0;z-index:100;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);background:rgba(250,248,244,.78);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1080px;margin:0 auto;padding:0 22px;height:58px;display:flex;align-items:center;gap:18px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15.5px;color:var(--ink)}
+.logo svg{width:26px;height:26px}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;font-size:12px;font-weight:600}
+.lang a{padding:4px 12px;color:var(--sub);background:#fff}
+.lang a.on{color:#fff;background:var(--ink)}
+.nav .sp{margin-left:auto;display:flex;gap:10px;align-items:center}
+.nav-cta{font-size:13px;font-weight:600;color:#fff;background:var(--ink);padding:7px 15px;border-radius:99px;transition:transform .18s,box-shadow .18s}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(0,0,0,.18)}
+.nav-cta.warm{background:var(--grad-warm);box-shadow:0 5px 16px rgba(255,100,130,.3)}
+
+/* ── 骨架 ── */
+.page{max-width:1080px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:190px minmax(0,1fr);gap:42px;align-items:start}
+.rail{position:sticky;top:74px;padding:24px 0 40px;max-height:calc(100vh - 90px);overflow:auto}
+.rail .rail-t{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--grey);text-transform:uppercase;margin-bottom:10px}
+.rail a{display:flex;gap:9px;align-items:baseline;font-size:13px;color:var(--sub);padding:6px 9px;border-radius:8px;transition:all .15s;line-height:1.45}
+.rail a i{font-style:normal;font-size:10.5px;font-weight:700;color:var(--grey);font-variant-numeric:tabular-nums}
+.rail a:hover{color:var(--ink);background:#fff}
+.rail a.on{color:var(--ink);background:#fff;font-weight:600;box-shadow:var(--shadow)}
+.rail a.on i{color:var(--coral)}
+.rail .rail-cta{margin-top:12px;padding:10px 13px;background:var(--ink);border-radius:12px;color:#fff;font-size:12.5px;font-weight:600;display:block;line-height:1.5}
+.rail .rail-cta b{display:block;font-size:13.5px}
+.main{min-width:0;padding:28px 0 10px}
+.chips{display:none;gap:8px;overflow-x:auto;padding:10px 0 14px;position:sticky;top:58px;background:var(--bg);z-index:90}
+.chips a{flex:none;font-size:12.5px;font-weight:600;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 13px}
+.chips a.on{color:#fff;background:var(--ink);border-color:var(--ink)}
+@media(max-width:960px){.page{grid-template-columns:1fr;gap:0}.rail{display:none}.chips{display:flex}}
+
+/* ── Hero ── */
+.hero{padding:30px 0 24px}
+.badges{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;background:#fff;border:1px solid var(--line);color:var(--sub)}
+.badge b{color:var(--ink)}
+.badge .dot{width:6px;height:6px;border-radius:50%;background:var(--grad-warm);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+h1.h1-skill{font-size:13px;font-weight:700;letter-spacing:.14em;margin-bottom:9px}
+h1.h1-skill a{background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h1.h1-site{font-size:clamp(30px,4vw,46px);font-weight:800;line-height:1.16;letter-spacing:-.026em;margin-bottom:15px}
+h1.h1-site a{color:var(--ink);transition:color .2s}
+h1.h1-site a .hl{position:relative;white-space:nowrap}
+h1.h1-site a .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:3px;height:11px;background:linear-gradient(90deg,rgba(255,159,10,.4),rgba(255,100,130,.4));z-index:-1;border-radius:3px;transform:skewX(-8deg)}
+h1.h1-site a:hover{color:var(--coral)}
+.hero-sub{font-size:16px;color:var(--sub);max-width:600px;margin-bottom:20px}
+.hero-sub b{color:var(--ink)}
+.cta-row{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:14.5px;padding:11px 21px;border-radius:99px;transition:transform .18s,box-shadow .18s;border:none;cursor:pointer;font-family:inherit}
+.btn-primary{color:#fff;background:var(--grad-warm);box-shadow:0 7px 20px rgba(255,100,130,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 11px 26px rgba(255,100,130,.42)}
+.btn-ghost{color:var(--ink);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.btn-ghost:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:12.5px;font-weight:600;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 12px}
+.chip b{color:var(--ink)}
+.hero-frame{margin-top:20px;background:#fff;border-radius:var(--r);border:1px solid var(--line);box-shadow:var(--shadow-lg);overflow:hidden}
+.hero-frame .bar{display:flex;align-items:center;gap:6px;padding:9px 13px;border-bottom:1px solid var(--line);background:#FBFBFD}
+.hero-frame .bar i{width:9px;height:9px;border-radius:50%}
+.hero-frame .bar i:nth-child(1){background:#FF5F57}.hero-frame .bar i:nth-child(2){background:#FEBC2E}.hero-frame .bar i:nth-child(3){background:#28C840}
+.hero-frame .bar span{margin-left:8px;font-size:11px;color:var(--grey);background:#F0F0F3;border-radius:6px;padding:2px 10px}
+.hero-frame iframe{width:100%;height:290px;border:0;display:block;background:#F5F5F7}
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;overflow:hidden;padding:11px 0;margin-top:22px}
+.marquee-track{display:flex;gap:30px;width:max-content;animation:scroll 32s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.marquee span{font-size:12.5px;font-weight:600;color:var(--sub);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.marquee span::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--grad-warm)}
+
+/* ── 分区 ── */
+section{padding:36px 0;border-top:1px solid var(--line)}
+.sec-head{margin-bottom:20px}
+.sec-no{font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--coral);margin-bottom:6px}
+h2{font-size:clamp(22px,2.6vw,29px);font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:8px}
+.sec-desc{font-size:14px;color:var(--sub);max-width:640px}
+.sec-desc b{color:var(--ink)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.22,.61,.36,1),transform .55s cubic-bezier(.22,.61,.36,1)}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+/* ── 输入输出 ── */
+.io{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;align-items:stretch;margin-bottom:16px}
+.io .io-box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow)}
+.io .io-arrow{display:grid;place-items:center;font-size:18px;color:var(--coral);font-weight:700}
+.io h3{font-size:14px;font-weight:700;margin-bottom:8px}
+.io .q{font-size:13px;color:var(--ink);background:var(--bg2);border-radius:10px;padding:9px 12px;margin-bottom:9px;line-height:1.6}
+.io ul{list-style:none;display:grid;gap:5px}
+.io li{font-size:12.5px;color:var(--sub);padding-left:16px;position:relative;line-height:1.55}
+.io li::before{content:"";position:absolute;left:2px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--grad-warm)}
+.io li b{color:var(--ink)}
+.io .io-box{display:flex;flex-direction:column}
+.io .io-box:first-child ul{margin-top:auto;padding-top:4px}
+@media(max-width:720px){.io{grid-template-columns:1fr}.io .io-arrow{transform:rotate(90deg);padding:5px 0}}
+
+/* ── 卡片 ── */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+@media(max-width:820px){.cards{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.card .c-ico{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;font-size:17px;margin-bottom:10px}
+.ico-warm{background:rgba(255,159,10,.13)}.ico-rose{background:rgba(255,100,130,.13)}
+.ico-sky{background:rgba(0,113,227,.1)}.ico-green{background:rgba(52,199,89,.12)}
+.ico-caution{background:rgba(255,149,0,.14)}.ico-grey{background:rgba(142,142,147,.13)}
+.card h3{font-size:15px;font-weight:700;margin-bottom:5px}
+.card p{font-size:12.5px;color:var(--sub);line-height:1.65;margin-bottom:9px}
+.card p b{color:var(--ink)}
+.lamp-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.lamp{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px}
+.lamp::before{content:"";width:7px;height:7px;border-radius:50%}
+.lamp-red{background:rgba(255,59,48,.1);color:#B3241C}.lamp-red::before{background:#FF3B30}
+.lamp-yellow{background:rgba(255,149,0,.12);color:#A05E00}.lamp-yellow::before{background:#FF9500}
+.lamp-green{background:rgba(52,199,89,.12);color:#1E8E3E}.lamp-green::before{background:#34C759}
+.lamp-grey{background:rgba(142,142,147,.12);color:#5A5A5F}.lamp-grey::before{background:#8E8E93}
+.mini-stats{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.mini-stat{font-size:11.5px;font-weight:700;background:var(--bg2);border-radius:7px;padding:4px 9px}
+.mini-stat i{font-style:normal;color:var(--coral)}
+
+/* ── 工作流 strip（七步等高，箭头居中） ── */
+.flow{display:grid;grid-template-columns:repeat(7,1fr);grid-auto-rows:1fr;gap:10px;margin-top:14px}
+.flow .st{background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px 10px;position:relative;display:flex;flex-direction:column}
+.flow .st .no{width:20px;height:20px;border-radius:6px;background:var(--ink);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;margin-bottom:7px}
+.flow .st h4{font-size:12px;font-weight:700;margin-bottom:3px;line-height:1.35}
+.flow .st p{font-size:10.5px;color:var(--sub);line-height:1.45}
+.flow .st::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--grey)}
+.flow .st:last-child::after{display:none}
+@media(max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}.flow .st::after{display:none}}
+@media(max-width:560px){.flow{grid-template-columns:1fr}}
+
+/* ── 表格 ── */
+.tbl-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;margin-bottom:12px}
+table.d{width:100%;border-collapse:collapse;font-size:12.5px}
+table.d th{background:#FBFBFD;font-size:11.5px;font-weight:700;color:var(--sub);text-align:left;padding:8px 13px;border-bottom:1px solid var(--line);white-space:nowrap}
+table.d td{padding:8px 13px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6;color:var(--sub)}
+table.d tr:last-child td{border-bottom:none}
+table.d td b{color:var(--ink)}
+table.d td.k{font-weight:600;color:var(--ink);white-space:nowrap}
+table.d .yes{color:#1E8E3E;font-weight:700}
+table.d .no{color:#B3241C;font-weight:700}
+
+/* ── 演示 ── */
+
+/* ── 数据底座 ── */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{background:#fff;border:1px solid var(--line);border-radius:11px;padding:13px 15px;box-shadow:var(--shadow)}
+.stat .num{font-size:24px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(120deg,#FF9F0A,#FF6482);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-variant-numeric:tabular-nums}
+.stat .lbl{font-size:11px;color:var(--sub);margin-top:2px;line-height:1.5}
+@media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ── 范本 ── */
+.samples{display:grid;grid-template-columns:1fr;gap:13px;max-width:620px;margin:0 auto}
+.sample{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;display:block}
+.sample:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.sample .cover{position:relative;overflow:hidden;height:300px}
+.sample .cover iframe{position:absolute;top:0;left:0;width:127%;height:127%;border:0;transform:scale(.787);transform-origin:top left;pointer-events:none;background:#F7F4EE}
+.sample .body{padding-top:15px}
+.sc1{background:linear-gradient(135deg,#5AC8FA,#0071E3)}.sc2{background:linear-gradient(135deg,#34C759,#30B350)}
+.sc3{background:linear-gradient(135deg,#FF9F0A,#FF6482)}.sc4{background:linear-gradient(135deg,#AF52DE,#5856D6)}
+.sample .cover .tag{position:absolute;top:10px;left:10px;font-size:10.5px;font-weight:700;color:#fff;background:rgba(0,0,0,.26);backdrop-filter:blur(8px);padding:4px 10px;border-radius:99px;z-index:2}
+.sample .cover .emoji{position:absolute;right:12px;bottom:8px;font-size:28px;z-index:2;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
+.sample .body{padding:18px 20px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.sample h3{font-size:14.5px;font-weight:700;margin-bottom:4px}
+.sample p{font-size:12px;color:var(--sub);flex:1;margin-bottom:10px;line-height:1.6}
+.sample .links{display:flex;gap:13px;font-size:12.5px;font-weight:600}
+
+/* ── 两种用法 ── */
+.use{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+@media(max-width:820px){.use{grid-template-columns:1fr}}
+.use .u{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow)}
+.use .u.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.use .u .u-tag{display:inline-flex;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:99px;background:rgba(255,159,10,.15);color:#A05E00;margin-bottom:10px}
+.use .u.dark .u-tag{background:rgba(255,159,10,.22);color:#FFB340}
+.use .u h3{font-size:16px;font-weight:700;margin-bottom:7px}
+.use .u p{font-size:12.5px;color:var(--sub);line-height:1.7;margin-bottom:10px}
+.use .u.dark p{color:rgba(255,255,255,.75)}
+.use .u p b{color:var(--ink)}
+.use .u.dark p b{color:#fff}
+.use .u ul{list-style:none;display:grid;gap:6px;margin-bottom:12px}
+.use .u li{font-size:12.5px;color:var(--sub);padding-left:17px;position:relative;line-height:1.6}
+.use .u li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700;font-size:11px}
+.use .u.dark li{color:rgba(255,255,255,.8)}
+.cmd{display:flex;flex-direction:column;gap:7px;background:#1D1D1F;border-radius:9px;padding:9px 11px;font-size:11px;color:#E5E5EA;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.cmd code{display:block;white-space:normal;word-break:break-all;line-height:1.5}
+.cmd button{align-self:flex-end;font-size:11px;font-weight:700;color:#1D1D1F;background:#FFD9A0;border:none;border-radius:6px;padding:4px 12px;cursor:pointer;font-family:inherit}
+
+/* ── 安装平台 ── */
+.plats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;align-items:start}
+@media(max-width:960px){.plats{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.plats{grid-template-columns:1fr}}
+.plat{background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px 16px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;min-width:0}
+.plat .cmd code,.plat code{word-break:break-all}
+.plat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.plat-hot{border:1.5px solid rgba(255,100,130,.55);box-shadow:0 6px 22px rgba(255,100,130,.16);background:linear-gradient(180deg,#FFF9F6 0%,#fff 46%)}
+.plat-hot .p-st{color:#C2294A;background:rgba(255,45,85,.12)}
+.plat .p-top{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.plat .p-emoji{font-size:19px}
+.plat h3{font-size:14px;font-weight:700}
+.plat .p-st{margin-left:auto;font-size:10.5px;font-weight:700;color:#1E8E3E;background:rgba(52,199,89,.12);padding:2px 8px;border-radius:99px}
+.plat p{font-size:12px;color:var(--sub);line-height:1.6;margin-bottom:8px}
+.plat .p-link{font-size:12.5px;font-weight:600}
+.note{background:#fff;border:1px dashed rgba(255,100,130,.4);border-radius:12px;padding:13px 17px;font-size:12.5px;color:var(--sub);line-height:1.7;margin-top:12px}
+.note b{color:var(--ink)}
+
+/* ── FAQ ── */
+.faq{display:grid;gap:8px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:11px;overflow:hidden}
+.faq details[open]{box-shadow:var(--shadow)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:11px;padding:13px 17px;font-size:14px;font-weight:600;user-select:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .q{width:21px;height:21px;border-radius:7px;background:var(--bg2);display:grid;place-items:center;font-size:11px;font-weight:800;color:var(--coral);flex:none}
+.faq summary .ar{margin-left:auto;transition:transform .22s;color:var(--grey);flex:none}
+.faq details[open] summary .ar{transform:rotate(180deg)}
+.faq .a{padding:0 17px 14px 49px;font-size:13px;color:var(--sub);line-height:1.75}
+.faq .a b{color:var(--ink)}
+
+/* ── Final / Footer ── */
+.final{text-align:center;padding:56px 0 50px;position:relative;overflow:hidden;border-top:1px solid var(--line)}
+.final-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 115%,rgba(255,159,10,.15),transparent 65%),radial-gradient(ellipse 50% 50% at 18% 100%,rgba(255,100,130,.12),transparent 60%)}
+.final h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:11px;position:relative}
+.final p{font-size:15px;color:var(--sub);max-width:520px;margin:0 auto 24px;position:relative}
+.final .cta-row{justify-content:center;position:relative}
+footer{border-top:1px solid var(--line);padding:24px 0 28px;background:#fff}
+.foot-in{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:12.5px;color:var(--sub)}
+.foot-in .f-links{margin-left:auto;display:flex;gap:15px;flex-wrap:wrap}
+.foot-in a{color:var(--sub)}
+.foot-in a:hover{color:var(--ink)}
+.foot-ver{font-size:11.5px;color:var(--grey);margin-top:6px;width:100%;line-height:1.7}
+
+@media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}.reveal{opacity:1;transform:none}}
+
+/* ── 千问 AI 技能 Hub 主推巨幅卡片 ── */
+/* ── 移动端顶栏收紧 ── */
+.nav-cta .sm{display:none}
+@media(max-width:640px){
+  .nav-in{gap:9px;padding:0 13px;height:54px}
+  .logo{white-space:nowrap;font-size:14px;gap:6px}
+  .logo svg{width:23px;height:23px}
+  .lang a{padding:4px 9px;font-size:11.5px}
+  .nav-cta{padding:6px 12px;font-size:12px;white-space:nowrap}
+  .nav-cta .lg{display:none}
+  .nav-cta .sm{display:inline}
+  .nav-cta.try{display:none}
+}
+
+.hub{margin:0;padding:16px 0 2px}
+.hub-card{position:relative;overflow:hidden;border-radius:22px;padding:30px 32px;
+  background:var(--grad-warm);box-shadow:var(--shadow-lg);color:#fff}
+.hub-card::after{content:"";position:absolute;right:-70px;top:-90px;width:320px;height:320px;border-radius:50%;
+  background:rgba(255,255,255,.13);pointer-events:none}
+.hub-card::before{content:"";position:absolute;right:60px;bottom:-120px;width:200px;height:200px;border-radius:50%;
+  background:rgba(255,255,255,.10);pointer-events:none}
+.hub-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.4px;
+  background:rgba(255,255,255,.20);border:1px solid rgba(255,255,255,.32);padding:5px 12px;border-radius:99px}
+.hub-eyebrow .live{width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.28)}
+.hub-h{position:relative;margin:13px 0 0;font-size:29px;line-height:1.28;font-weight:800;letter-spacing:-.4px}
+.hub-h em{font-style:normal;background:rgba(255,255,255,.18);border-radius:8px;padding:1px 9px}
+.hub-d{position:relative;margin-top:10px;font-size:14.5px;line-height:1.72;max-width:640px;color:rgba(255,255,255,.94)}
+.hub-url{position:relative;display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 14px;border-radius:10px;
+  background:rgba(0,0,0,.16);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;color:#fff;word-break:break-all}
+.hub-actions{position:relative;display:flex;flex-wrap:wrap;gap:11px;margin-top:18px}
+.hub-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1D1D1F;font-weight:700;font-size:15px;
+  padding:14px 26px;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.16);transition:transform .18s,box-shadow .18s}
+.hub-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.22)}
+.hub-btn.ghost{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.42);box-shadow:none}
+.hub-btn.ghost:hover{background:rgba(255,255,255,.26)}
+.hub-facts{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px;
+  padding-top:18px;border-top:1px solid rgba(255,255,255,.26)}
+.hub-facts div{font-size:12.5px;color:rgba(255,255,255,.92)}
+.hub-facts b{display:block;font-size:19px;font-weight:800;color:#fff;letter-spacing:-.2px}
+.hub-cmd{position:relative;margin-top:16px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.18);
+  border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;align-items:stretch;gap:9px}
+.hub-cmd code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12px;color:#fff;word-break:break-all;line-height:1.55;display:block}
+.hub-cmd button{align-self:flex-end;background:#fff;color:#1D1D1F;border:0;border-radius:8px;padding:7px 16px;
+  font-size:12.5px;font-weight:700;cursor:pointer}
+.hub-note{position:relative;margin-top:11px;font-size:12px;color:rgba(255,255,255,.86)}
+@media(max-width:640px){
+  .hub-card{padding:22px 20px;border-radius:18px}
+  .hub-h{font-size:22px}
+  .hub-facts{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ── 下载矩阵 ── */
+.dl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+.dl-item{display:flex;flex-direction:column;gap:5px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
+.dl-item .t{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px}
+.dl-item .t .tag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;background:var(--bg2);color:var(--sub);white-space:nowrap}
+.dl-item .t .tag.hot{background:var(--grad-warm);color:#fff}
+.dl-item .t .tag.stale{background:#FFF4E0;color:#8A5A00}
+.dl-sub{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--sub);grid-column:1/-1;margin-top:6px;padding-bottom:2px;border-bottom:1px dashed var(--line)}
+.dl-item .d{font-size:12.5px;color:var(--sub);line-height:1.65}
+.dl-item .m{font-size:11px;color:var(--grey);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-all;line-height:1.5}
+.dl-item a.dl{align-self:flex-start;margin-top:2px;font-size:12.5px;font-weight:700;color:var(--blue)}
+@media(max-width:960px){.dl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.dl-grid{grid-template-columns:1fr}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://agent.worldstip.com/#website",
+      "url": "https://agent.worldstip.com/",
+      "name": "WorldsTip 旅行规划大师",
+      "inLanguage": "zh-CN",
+      "publisher": {"@id": "https://agent.worldstip.com/#org"}
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://agent.worldstip.com/#org",
+      "name": "WorldsTip by MrdT",
+      "url": "https://worldstip.com",
+      "logo": "https://agent.worldstip.com/og-cover.png"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://agent.worldstip.com/#app",
+      "name": "WorldsTip 旅行规划大师（worldstip-travel-planner）",
+      "applicationCategory": "TravelApplication",
+      "applicationSubCategory": "AI Skill / Agent",
+      "operatingSystem": "任意支持 Skill 的 AI Agent（千问 / WorkBuddy / 扣子 / Qoder / 百度搭子 / Marvel / MiniMax / 任意 Agent）",
+      "softwareVersion": "0.1.25",
+      "dateModified": "2026-10-18",
+      "url": "https://agent.worldstip.com/",
+      "downloadUrl": "https://agent.worldstip.com/downloads/worldstip-travel-planner-v0.1.25.zip",
+      "isAccessibleForFree": true,
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"},
+      "description": "国内+出境双模式 AI 行程规划技能。五大能力支柱：国内全交通族系、摩旅五项门禁（31 省高速准入 / 45 城禁摩 / 续航加油半径）、房车后勤自检、出境可行性四灯、散心模式。可信度内核 stable/volatile/unknown，查不到即灰灯待查，绝不编造；956 项回归断言。产出 A5 紧凑卡册风格单文件 HTML 小册子，Ctrl+P 即得 PDF。",
+      "featureList": [
+        "国内全交通族系比选（飞机/高铁/客车/轮船/自驾/骑行/徒步）",
+        "摩旅五项门禁：准驾证件 / 头盔 / 逐省高速准入 / 逐城禁摩 / 续航加油半径",
+        "绿荫优先选线与高速前加油决策点动作序列",
+        "房车/自驾后勤：限高 / 驾照牌照 / 补给半径 / 黑灰水 / 营地",
+        "出境可行性门禁：护照 / 签证 / 疫苗 / 保险四灯",
+        "散心模式：只出目的地不出交通",
+        "A5 紧凑卡册单文件 HTML 小册子（零图、字段密集、可打印）"
+      ],
+      "publisher": {"@id": "https://agent.worldstip.com/#org"},
+      "sameAs": [
+        "https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner",
+        "https://worldstip.com"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "WorldsTip", "item": "https://worldstip.com"},
+        {"@type": "ListItem", "position": 2, "name": "旅行规划大师 Agent", "item": "https://agent.worldstip.com/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "提示「这趟走不了」怎么办？",
+         "acceptedAnswer": {"@type": "Answer", "text": "「走不了」意味着有违法或硬性条件没解决——此时小册子输出的是拦停页而非行程正文，只列出必须先解决的事与核验渠道。逐项解决后改参重跑即可。「要先处理」是待办清单，「查不到」是未核实（你自己再确认，系统不猜）。三种提示的含义见「03 行前体检」。"}},
+        {"@type": "Question", "name": "票价、门票、天气信息准吗？",
+         "acceptedAnswer": {"@type": "Answer", "text": "两条硬规则：查不到的绝不编造，只给查询路径与购票时机；已可用的才标注——天气走 Open-Meteo 并打核验日期，12306 车站码已缓存（仅车次号，OD 查询不支持）。票价门票因需登录态而不联网，只给查询路径。"}},
+        {"@type": "Question", "name": "能帮我订票订酒店吗？能打印 PDF 吗？改需求要重说一遍吗？",
+         "acceptedAnswer": {"@type": "Answer", "text": "订票订酒店不能，也不假装能——代订需要交易权限与实时库存。PDF 能：单文件 HTML，Ctrl+P 直接另存，导航自动隐藏、页边距自动压缩。改需求也不用重说：只改你提到的维度（天数 / 出发地 / 排量 / 照类 / 高速偏好）重跑即可。"}},
+        {"@type": "Question", "name": "摩托车能不能上高速？这个技能怎么判断？",
+         "acceptedAnswer": {"@type": "Answer", "text": "内置 31 省高速准入名单（13 允许 / 17 禁止 / 1 有条件）与 45 城禁摩限摩名单，逐省逐城带证据等级。禁高速省不拦你——只提醒改走国道（耗时 +40–80%）；只有你明确要走高速才判红灯。未查证的城市一律灰灯加需自行核实，绝不默认绿灯。"}},
+        {"@type": "Question", "name": "Skill 和 Agent 应用，我该选哪个？",
+         "acceptedAnswer": {"@type": "Answer", "text": "能力本体是同一个包，差别在入口与归属：Skill 装进你已有的 Agent（千问 / WorkBuddy / 扣子 / Qoder / 百度搭子 / Marvel / MiniMax / 任意 Agent），一分钟装好但入口在别人的 App 里；Agent 应用是你自托管在自己的服务器，自有域名、数据不出境、能力零裁剪。详见「05 两种用法」。"}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="#top"><svg viewBox="0 0 32 32"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF9F0A"/><stop offset="1" stop-color="#FF6482"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><circle cx="16" cy="15" r="8" fill="none" stroke="#fff" stroke-width="2"/><path d="M16 7l3 8-8 0z" fill="#fff"/></svg>WorldsTip</a>
+    <div class="lang"><a href="index.html" class="on">中文</a><a href="index-en.html">EN</a></div>
+    <div class="sp">
+      <a class="nav-cta warm" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener"><span class="lg">千问 AI 技能 Hub →</span><span class="sm">千问 Hub →</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="chips" id="chips">
+  <a href="#what">它做什么</a><a href="#samples">真实范本</a><a href="#gates">行前体检</a><a href="#use">两种用法</a><a href="#install">安装下载</a><a href="#faq">常见问题</a>
+</div>
+
+<div class="page" id="top">
+  <aside class="rail" id="rail">
+    <div class="rail-t">目录</div>
+    <a href="#qianwen-hub"><i>★</i>千问 Hub 主页</a>
+    <a href="#what"><i>01</i>它做什么</a>
+    <a href="#samples"><i>02</i>真实范本</a>
+    <a href="#gates"><i>03</i>行前体检</a>
+    <a href="#trust"><i>04</i>数据底座</a>
+    <a href="#use"><i>05</i>两种用法</a>
+    <a href="#install"><i>06</i>安装下载</a>
+    <a href="#faq"><i>07</i>常见问题</a>
+    <a class="rail-cta" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener"><b>★ 千问 Hub 主页</b>一分钟装好</a>
+  </aside>
+
+  <main class="main">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="badges">
+        <span class="badge"><span class="dot"></span><b>v0.1.25</b> 已发布</span>
+        <span class="badge">🧭 国内 + 出境<b>双模式</b></span>
+        <span class="badge">✅ <b>956</b> 项回归断言全过</span>
+        <span class="badge">📦 Skill / 自托管 <b>Agent 双形态</b></span>
+      </div>
+      <h1 class="h1-skill"><a href="https://worldstip.com" target="_blank" rel="noopener">旅行规划大师 · SKILL</a></h1>
+      <h1 class="h1-site"><a href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">把一句话，<br>变成<span class="hl">能照着走</span>的小册子</a></h1>
+      <p class="hero-sub">说清目的地、天数、和谁去——它替你排好每天几点出门、去几个点、订什么房，<b>摩托能不能上高速、房车限高过不过得去、出境签证来不来得及</b>。统一 A5 紧凑卡册排版（米白底 + 深墨绿 + 字段密集、零图），单文件 HTML，Ctrl+P 即得 PDF。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">在千问 AI 获取技能 →</a>
+        <a class="btn btn-ghost" href="downloads/worldstip-travel-planner-v0.1.25.zip">下载技能包（701 KB）</a>
+      </div>
+      <div class="chip-row">
+        <span class="chip">🏍 <b>31</b> 省高速准入</span>
+        <span class="chip">🚫 <b>45</b> 城禁摩</span>
+        <span class="chip">🚐 房车查 5 项</span>
+        <span class="chip">🛂 出境查 4 证 · <b>32</b> 国基线</span>
+        <span class="chip">👥 同行结构 <b>6</b> 类</span>
+        <span class="chip">🔍 查不到就明说，不编造</span>
+      </div>
+      <div class="hero-frame">
+        <div class="bar"><i></i><i></i><i></i><span>真实生成样例 · 长沙周末徒步 2 天（可滚动）</span></div>
+        <iframe src="samples/sample-changsha-hiking-light.html" title="真实生成的旅行小册子样例" loading="lazy"></iframe>
+      </div>
+    </header>
+
+    <!-- ★ 千问 AI 技能 Hub 官方主页 · 主推 -->
+    <section class="hub" id="qianwen-hub" aria-label="千问 AI 技能 Hub 官方主页">
+      <div class="hub-card reveal">
+        <span class="hub-eyebrow"><span class="live"></span>官方已上架 · 千问 AI 技能 Hub</span>
+        <h2 class="hub-h">在千问 AI 技能 Hub 一键装好<br><em>WorldsTip 旅行规划大师</em> v0.1.25</h2>
+        <p class="hub-d">点进 Hub 主页 →「加入我的 Agent」，一分钟装好。摩托能不能上高速、房车限高过不过得去、出境签证来不来得及——出发前先替你查一遍，查不到的直接说查不到，不编造。</p>
+        <a class="hub-url" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">🔗 qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner</a>
+        <div class="hub-actions">
+          <a class="hub-btn" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">打开千问 AI 技能 Hub 主页 →</a>
+          <a class="hub-btn ghost" href="#install">看其他平台怎么装</a>
+        </div>
+        <div class="hub-cmd">
+          <code id="cmdHub">帮我安装这个 Skill: https://agent.worldstip.com/downloads/worldstip-travel-planner-v0.1.25.zip</code>
+          <button data-copy="cmdHub">复制指令</button>
+        </div>
+        <p class="hub-note">把这句指令粘给千问里的任意 Agent，一句话装好；也可以直接下载技能包 ZIP 给其他 Agent 用。</p>
+        <div class="hub-facts">
+          <div><b>v0.1.25</b>当前版本（千问 Hub 已上架；全平台 v0.1.25 已同步）</div>
+          <div><b>956</b>项回归断言全过</div>
+          <div><b>5</b>大能力支柱</div>
+          <div><b>0</b>编造 · 查不到即灰灯</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee"><div class="marquee-track" id="marquee">
+      <span>帮我规划大理 4 天</span><span>周末去哪玩</span><span>爬山看日出</span><span>摩旅 G318</span><span>摩托车能不能上高速</span><span>房车营地怎么找</span><span>演唱会攻略</span><span>citywalk</span><span>出境签证怎么办</span><span>带爸妈去哪</span><span>穷游攻略</span><span>赏秋去哪</span><span>房车限高</span><span>C6 驾照拖挂</span><span>从 X 到 Y 怎么去</span>
+    </div></div>
+
+    <!-- 01 它做什么 -->
+    <section id="what">
+      <div class="sec-head reveal"><div class="sec-no">01 · 它做什么</div>
+        <h2>一句需求进，一本小册子出</h2>
+        <p class="sec-desc">定位不是「告诉你有什么」，而是<b>在有限预算、天数和体力下替你砍掉一半、排对顺序、并保证不翻车</b>。</p>
+      </div>
+      <div class="io reveal">
+        <div class="io-box"><h3>🗣 你给它一句需求</h3>
+          <div class="q">「10 月去大理玩 4 天，一家三口带娃，从岳阳出发，预算 6000。」</div>
+          <ul><li>出发地 / 目的地 / 天数</li><li>人员构成 / 关系</li><li>预算 / 出行方式</li></ul>
+        </div>
+        <div class="io-arrow">→</div>
+        <div class="io-box"><h3>📖 它给你一本小册子</h3>
+          <ul><li><b>逐日动线</b>：每天几点出门、去几个点、怎么串</li><li><b>住宿分房</b>：几间房、什么床型、为什么这么分</li><li><b>门票预约</b>：多少钱、要不要抢、在哪买</li><li><b>天气预检</b>：那天能不能玩、不达标怎么改</li><li><b>预算明细</b> + 装备清单 + 机位建议</li></ul>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card reveal"><div class="c-ico ico-warm">🚄</div><h3>全交通族系</h3>
+          <p>公共交通（飞机 / 高铁 / 火车 / 客车 / 轮船）六方式比选出方案 A/B/C，叠加<b>自驾、骑行、徒步、极限运动、演唱会锚点</b>，按距离圈给「快 / 省 / 灵活」三视角。</p>
+          <div class="mini-stats"><span class="mini-stat">六方式比选</span><span class="mini-stat"><i>24</i> 种节奏画像</span></div>
+        </div>
+        <div class="card reveal"><div class="c-ico ico-rose">🏍</div><h3>骑摩托先查 5 件事</h3>
+          <p>准驾车型证件 / 头盔 / 逐省高速准入 / 逐城禁摩 / 续航加油半径，<b>每条带证据等级</b>；加油决策点给动作序列，18 条线路带绿荫等级。</p>
+          <div class="lamp-row"><span class="lamp lamp-yellow">禁高速省 → 改走国道</span><span class="lamp lamp-red">非要闯禁才拦你</span></div>
+        </div>
+        <div class="card reveal"><div class="c-ico ico-sky">🚐</div><h3>房车 / 出境自检</h3>
+          <p>按你<b>声明的车型</b>给限高、驾照牌照（C1 / B-A / C6）、补给半径与黑水灰水合规；出境护照 / 签证 / 疫苗 / 保险<b>四证先查，不合格先拦</b>。不推荐车型，不代办签证。</p>
+          <div class="lamp-row"><span class="lamp lamp-red">违法 / 不达标才拦</span><span class="lamp lamp-grey">没查证的标出来</span></div>
+        </div>
+        <div class="card reveal"><div class="c-ico ico-green">🔍</div><h3>可信度内核</h3>
+          <p>信息分三档：<b>稳定的 / 会变的 / 查不到的</b>。会变的（天气、票价）强制联网现查并标日期；查不到的就明说待查，<b>绝不编造</b>。改需求只改提到的部分，不用整个重来。</p>
+          <div class="mini-stats"><span class="mini-stat">日期戳</span><span class="mini-stat">降级角标</span><span class="mini-stat">third_party 标注</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 真实范本 -->
+    <section id="samples">
+      <div class="sec-head reveal"><div class="sec-no">02 · 真实范本</div>
+        <h2>真实跑出来的小册子，不是设计稿</h2>
+        <p class="sec-desc">下面这一份是 v0.1.25 用一句需求生成的完整产物——<b>可滚动、可 Ctrl+P 存 PDF</b>。</p>
+      </div>
+      <div class="samples">
+        <div class="sample reveal"><div class="cover sc2"><span class="tag">周末 · 早爬山</span><span class="emoji">🥾</span><iframe src="samples/sample-changsha-hiking-light.html" title="长沙周边爬山预览" loading="lazy" scrolling="no"></iframe></div>
+          <div class="body"><h3>长沙周边 · 周末早爬山</h3><p>本地人视角：按出发时间给 5 个坡的车程、用时与费用，再给两套可执行的半日方案。逐日动线、装备清单、天气预检与预算明细都在册子里。</p>
+          <div class="links"><a href="samples/sample-changsha-hiking.html" target="_blank" rel="noopener">打开完整版 →</a><a href="samples/sample-changsha-hiking-light.html" target="_blank" rel="noopener">紧凑版</a></div></div></div>
+      </div>
+    </section>
+
+    <!-- 03 行前体检 -->
+    <section id="gates">
+      <div class="sec-head reveal"><div class="sec-no">03 · 行前体检</div>
+        <h2>行前体检：出发前帮你查「这趟能不能走」</h2>
+        <p class="sec-desc">骑摩托、开房车、出境，规矩和开轿车完全不是一回事——<b>它把这些「能不能走、合不合法、有没有坑」在出发前一项项查清楚，用最简单的方式告诉你</b>。</p>
+      </div>
+      <div class="tbl-wrap reveal">
+        <table class="d">
+          <tr><th style="width:96px">约束</th><th>汽车</th><th>摩托 / 房车 / 出境的处理</th></tr>
+          <tr><td class="k">证件</td><td>有驾照就行</td><td><b>准驾车型必须匹配</b>（C1 骑摩托按无证驾驶）；房车 ≥6m 或 ≥4500kg 属黄牌需 B/A 照，拖挂需 C6</td></tr>
+          <tr><td class="k">高速 / 限高</td><td>随便上</td><td>高速<b>逐省不同</b>：31 省里 17 省明文禁止摩托上高速——这种省只会提醒你改走国道（多花 40–80% 时间），你非要闯禁才真拦；房车按实测高度判限高</td></tr>
+          <tr><td class="k">城区</td><td>限行可绕</td><td><b>逐城不同</b>：45 城禁摩限摩，闯进去可能直接扣车</td></tr>
+          <tr><td class="k">续航 / 补给</td><td>600–800km，站密布</td><td><b>200–400km</b>，山区站间距 150km；加油决策点给动作序列；房车按水 85L/人·天等算补给半径</td></tr>
+          <tr><td class="k">出境准入</td><td>—</td><td>护照 / 签证 / 疫苗 / 保险<b>四证先查</b>，不合格先拦再谈行程；没收录的国家一律说「查不到」</td></tr>
+        </table>
+      </div>
+      <div class="lamp-row reveal" style="justify-content:flex-start;margin-top:-2px">
+        <span class="lamp lamp-red">🚫 走不了：违法 / 条件不达标，出拦停页</span>
+        <span class="lamp lamp-yellow">⚠️ 能走，但要先处理：给待办清单</span>
+        <span class="lamp lamp-grey">❓ 查不到：明说未核实，不装懂</span>
+      </div>
+      <div class="note reveal">三条判定纪律（956 项回归断言锁死）：<b>「禁止上高速」≠「不能去」</b>，永远可以走国道；<b>未查证的城市既不报红也不报绿</b>，只标待核实；线路库只写稳定事实（走向、地形、季节），加油站坐标与实时路况必须出行前现查。</div>
+    </section>
+
+    <!-- 04 数据底座 -->
+    <section id="trust">
+      <div class="sec-head reveal"><div class="sec-no">04 · 数据底座</div>
+        <h2>为什么值得信：不编造是底线</h2>
+        <p class="sec-desc">同样是「注意安全、带好雨具」，它给的是<b>能直接执行的那一版</b>；查不到的就明说不知道，绝不装懂。</p>
+      </div>
+      <div class="stats reveal" id="stats">
+        <div class="stat"><div class="num" data-n="956">0</div><div class="lbl">项回归断言全过（含摩旅 465 项）</div></div>
+        <div class="stat"><div class="num" data-n="31">0</div><div class="lbl">省高速准入，17 省禁止逐省带证据</div></div>
+        <div class="stat"><div class="num" data-n="45">0</div><div class="lbl">城禁摩限摩名单</div></div>
+        <div class="stat"><div class="num" data-n="18">0</div><div class="lbl">条摩旅线路（跑山 8 / 长途 6 / 环线 4）</div></div>
+        <div class="stat"><div class="num" data-n="3404">0</div><div class="lbl">个 12306 车站码已缓存</div></div>
+        <div class="stat"><div class="num" data-n="39">0</div><div class="lbl">个确定性脚本，纯标准库零依赖</div></div>
+      </div>
+    </section>
+
+    <!-- 05 两种用法 -->
+    <section id="use">
+      <div class="sec-head reveal"><div class="sec-no">05 · 两种用法</div>
+        <h2>一个包，两种形态</h2>
+        <p class="sec-desc">能力本体是同一个包，差别只在入口与归属：</p>
+      </div>
+      <div class="use">
+        <div class="u reveal"><span class="u-tag">形态 A · SKILL</span>
+          <h3>装进你已有的 Agent</h3>
+          <p>把技能包装进千问 / WorkBuddy / Coze / MiniMax / Marvis——<b>寄生式</b>，由宿主 Agent 加载并代跑。</p>
+          <ul><li>触发词唤起：「帮我规划 XX 天行程」</li><li>适合：已有常用 Agent 的个人用户</li><li>能力完整，但入口在别人的 App 里</li></ul>
+          <a class="btn btn-ghost" href="#install">看安装方式 →</a>
+        </div>
+        <div class="u dark reveal"><span class="u-tag">形态 B · AGENT</span>
+          <h3>自托管为独立 Agent 应用</h3>
+          <p>下载整包<b>自托管为独立 Agent 应用</b>：表单进、小册子出，<b>能力零裁剪</b>，39 个确定性脚本纯标准库、零第三方依赖，Python 3.8+ 就跑。</p>
+          <ul><li>自有域名入口，数据不出你的服务器</li><li>约 2 秒出册，支持摩旅 / 房车全参数</li><li>地名歧义先查后问，不能走就出拦停页</li></ul>
+          <a class="btn btn-primary" href="downloads/worldstip-travel-planner-v0.1.25.zip">下载整包自行部署 →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 安装下载 -->
+    <section id="install">
+      <div class="sec-head reveal"><div class="sec-no">06 · 安装下载</div>
+        <h2>装进你的 Agent，或部署你自己的</h2>
+        <p class="sec-desc">各平台暂无网页一键安装深链，以下是<b>真实可执行</b>的方式。</p>
+      </div>
+            <div class="plats">
+        <div class="plat plat-hot reveal"><div class="p-top"><span class="p-emoji">🧠</span><h3>千问 AI</h3><span class="p-st">官方已上架 v0.1.25</span></div>
+          <p>打开 <b>千问 AI 技能 Hub 主页</b> 点「加入我的 Agent」，一分钟装好；或把安装指令粘给千问里的任意 Agent。已上架，无需下载也能用。</p>
+          <div class="cmd"><code id="cmdQ">帮我安装这个 Skill: https://agent.worldstip.com/downloads/worldstip-travel-planner-v0.1.25.zip</code><button data-copy="cmdQ">复制</button></div>
+          <div style="margin-top:8px"><a class="p-link" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">打开千问 AI 技能 Hub 主页 →</a></div>
+        </div>
+        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🛠</span><h3>WorkBuddy</h3><span class="p-st">v0.1.25 双包</span></div>
+          <p>两种装法：①<b>技能包</b> <code>.skill</code> 拖进对话或导入；②<b>专家/智能体包</b> <code>.codebuddy-plugin</code> 作为专家导入（含智能体人设 + 头像）。也可解压到 <code>~/.workbuddy/skills/</code>。</p>
+          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.25.skill">下载技能包 .skill（v0.1.25）→</a></div>
+          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-expert-v0.1.25-workbuddy.zip">下载专家/智能体包 .codebuddy-plugin（v0.1.25）→</a></div>
+        </div>
+        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🥟</span><h3>扣子 Coze</h3><span class="p-st">v0.1.25 已打包</span></div>
+          <p>Coze 无 markdown 技能 zip 直导，推荐 Bot + 知识库法：把 <code>-coze.zip</code> 内 <code>SKILL.md</code> 正文贴进 Bot 人设，<code>references/</code> 作知识库上传，开启联网核验。包内附 <code>INSTALL.md</code> 详细步骤。</p>
+          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.25-coze.zip">下载扣子包 ZIP（v0.1.25）→</a></div>
+        </div>
+        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🅠</span><h3>Qoder</h3><span class="p-st">v0.1.25 专家包</span></div>
+          <p>上传 <code>.qoder-plugin/plugin.json</code> 格式的专家包（含 <code>skills/</code>、图标与 Hub 元数据），作为 Qoder 智能体一键导入。</p>
+          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-expert-v0.1.25-qoder.zip">下载 Qoder 专家包（v0.1.25）→</a></div>
+        </div>
+        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🐾</span><h3>百度搭子</h3><span class="p-st">v0.1.25 手动挂载</span></div>
+          <p>百度系智能体（文心/搭子）暂未开放技能 zip 导入。把 <code>-baidu.zip</code> 内 <code>SKILL.md</code> 正文作系统提示词，<code>references/</code> 关键 JSON 作知识库上传，开启联网核验。包内 <code>INSTALL.md</code> 有步骤。</p>
+          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.25-baidu.zip">下载百度搭子包 ZIP（v0.1.25）→</a></div>
+        </div>
+        <div class="plat reveal"><div class="p-top"><span class="p-emoji">⚡</span><h3>Marvel</h3><span class="p-st">v0.1.25 手动挂载</span></div>
+          <p>若 Marvel 支持文件夹/zip 技能导入：直接导入 <code>-marvel.zip</code>；否则把 <code>SKILL.md</code> 作系统提示词、<code>references/</code> 作知识库。包内 <code>INSTALL.md</code> 有步骤。</p>
+          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.25-marvel.zip">下载 Marvel 包 ZIP（v0.1.25）→</a></div>
+        </div>
+        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🌊</span><h3>MiniMax</h3><span class="p-st">v0.1.25</span></div>
+          <p>对话直发指令装到 <code>/workspace/.skills/</code>；或下载通用 ZIP 解压到 skills 目录后重启。</p>
+          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.25.zip">下载技能包 ZIP（v0.1.25）→</a></div>
+        </div>
+        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🔌</span><h3>任意其他 Agent</h3><span class="p-st">v0.1.25 通用</span></div>
+          <p>能读 URL 就会自己装；不行就下载通用 ZIP 解压到它的 <code>skills/</code> 目录再重启。首层即 <code>SKILL.md</code>，跨平台通用。</p>
+          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.25.zip">下载通用技能包 ZIP（v0.1.25）→</a></div>
+        </div>
+      </div>
+<div class="note reveal"><b>为什么没有「一键安装」按钮？</b>各平台均未开放网页侧技能安装深链，安装只能发生在 App 内或对话里。整包 39 个脚本纯 Python 标准库、零第三方依赖，Python 3.8+ 即可运行。</div>
+
+      <div class="sec-head reveal" style="margin-top:34px"><div class="sec-no">06-B · 下载矩阵</div>
+        <h2>技能包下载（最新 v0.1.25 · 各平台包格式不同）</h2>
+        <p class="sec-desc">同一个能力本体，<b>按平台打包格式分发</b>——格式错了平台不认，别混用。每个平台都提供 <b>技能包（Skill）</b> 与 <b>智能体包（Agent）</b> 两种形态（千问走 Hub 除外），包内均附 <code>INSTALL.md</code> 安装指引。</p>
+      </div>
+            <div class="dl-grid">
+        <div class="dl-sub">千问 AI（Hub 已上架）</div>
+        <div class="dl-item reveal">
+          <div class="t">千问 AI 技能 Hub <span class="tag hot">官方上架</span></div>
+          <div class="m">在线安装 · 无需下载</div>
+          <a class="dl" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">打开 Hub →</a>
+        </div>
+        <div class="dl-sub">通用 / 任意 Agent（首层 SKILL.md）</div>
+        <div class="dl-item reveal">
+          <div class="t">通用技能包 <span class="tag">Skill</span></div>
+          <div class="m">worldstip-travel-planner-v0.1.25.zip · 701 KB</div>
+          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.25.zip">下载 →</a>
+        </div>
+        <div class="dl-sub">WorkBuddy</div>
+        <div class="dl-item reveal">
+          <div class="t">技能包 <span class="tag">.skill</span></div>
+          <div class="m">worldstip-travel-planner-v0.1.25.skill · 701 KB</div>
+          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.25.skill">下载 →</a>
+        </div>
+        <div class="dl-item reveal">
+          <div class="t">专家/智能体包 <span class="tag">.codebuddy-plugin</span></div>
+          <div class="m">worldstip-travel-planner-expert-v0.1.25-workbuddy.zip · 720 KB</div>
+          <a class="dl" href="downloads/worldstip-travel-planner-expert-v0.1.25-workbuddy.zip">下载 →</a>
+        </div>
+        <div class="dl-sub">Qoder</div>
+        <div class="dl-item reveal">
+          <div class="t">专家/智能体包 <span class="tag">.qoder-plugin</span></div>
+          <div class="m">worldstip-travel-planner-expert-v0.1.25-qoder.zip · 715 KB</div>
+          <a class="dl" href="downloads/worldstip-travel-planner-expert-v0.1.25-qoder.zip">下载 →</a>
+        </div>
+        <div class="dl-sub">扣子 Coze（Bot + 知识库）</div>
+        <div class="dl-item reveal">
+          <div class="t">扣子包 <span class="tag">首层 SKILL.md</span></div>
+          <div class="m">worldstip-travel-planner-v0.1.25-coze.zip · 701 KB</div>
+          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.25-coze.zip">下载 →</a>
+        </div>
+        <div class="dl-sub">百度搭子（手动挂载）</div>
+        <div class="dl-item reveal">
+          <div class="t">百度搭子包 <span class="tag">提示词 + 知识库</span></div>
+          <div class="m">worldstip-travel-planner-v0.1.25-baidu.zip · 701 KB</div>
+          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.25-baidu.zip">下载 →</a>
+        </div>
+        <div class="dl-sub">Marvel（手动挂载）</div>
+        <div class="dl-item reveal">
+          <div class="t">Marvel 包 <span class="tag">提示词 + 知识库</span></div>
+          <div class="m">worldstip-travel-planner-v0.1.25-marvel.zip · 701 KB</div>
+          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.25-marvel.zip">下载 →</a>
+        </div>
+        <div class="dl-sub" style="margin-top:18px">历史存档（旧版本，不推荐新装）</div>
+        <div class="dl-item reveal">
+          <div class="t">千问/通用 v0.1.24 <span class="tag stale">存档</span></div>
+          <div class="m">worldstip-travel-planner-v0.1.24.zip · 692 KB</div>
+          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.24.zip">下载 →</a>
+        </div>
+        <div class="dl-item reveal">
+          <div class="t">Qoder 专家 v0.1.24 <span class="tag stale">存档</span></div>
+          <div class="m">worldstip-travel-planner-expert-v0.1.24.zip · 703 KB</div>
+          <a class="dl" href="downloads/worldstip-travel-planner-expert-v0.1.24.zip">下载 →</a>
+        </div>
+        <div class="dl-item reveal">
+          <div class="t">千问/通用 v0.1.21 <span class="tag stale">存档</span></div>
+          <div class="m">worldstip-travel-planner-v0.1.21.zip · 681 KB</div>
+          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.21.zip">下载 →</a>
+        </div>
+        <div class="dl-item reveal">
+          <div class="t">全平台 v0.1.16 存档 <span class="tag stale">待重打</span></div>
+          <div class="m">coze / .skill / qoder / workbuddy · 635–1080 KB</div>
+          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.16-coze.zip">coze →</a>
+        </div>
+      </div>
+      <p class="sec-desc" style="margin-top:14px"><b>通用安装方式（任意平台兜底）</b>：下载通用 <code>worldstip-travel-planner-v0.1.25.zip</code>，解压后整个文件夹放到平台的 <code>skills/</code> 目录（或导入 <code>SKILL.md</code>）；纯手动场景则把 <code>SKILL.md</code> 正文作为系统提示词、<code>references/</code> 作为知识库挂载，并开启联网用于易变信息核验。所有平台同一版本号，杜绝错位。</p>
+<p class="sec-desc" style="margin-top:14px">🐙 <b>源码与全版本包备份</b>：<a href="https://github.com/MrdT-BitsNote/Skill-WorldsTipAgent" target="_blank" rel="noopener">github.com/MrdT-BitsNote/Skill-WorldsTipAgent</a> —— SKILL.md / 39 个脚本 / references 全量源码，<code>releases/</code> 存各版本 zip。</p>
+    </section>
+
+    <!-- 07 常见问题 -->
+    <section id="faq">
+      <div class="sec-head reveal"><div class="sec-no">07 · 常见问题</div>
+        <h2>常见问题</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal"><summary><span class="q">Q</span>提示「这趟走不了」怎么办？<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">「走不了」意味着有违法或硬性条件没解决——此时小册子输出的是拦停页而非行程正文，只列出必须先解决的事与核验渠道。逐项解决后改参重跑即可。「要先处理」是待办清单，「查不到」是未核实（你自己再确认，系统不猜）。三种提示的含义见「03 行前体检」。</div></details>
+        <details class="reveal"><summary><span class="q">Q</span>票价、门票、天气信息准吗？<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">两条硬规则：<b>查不到的绝不编造</b>，只给查询路径与购票时机；<b>已可用的才标注</b>——天气走 Open-Meteo 并打核验日期，车站码已缓存。完整口径见「04 数据底座」。</div></details>
+        <details class="reveal"><summary><span class="q">Q</span>能帮我订票订酒店吗？能打印 PDF 吗？<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">订票订酒店<b>不能，也不假装能</b>——代订需要交易权限与实时库存。PDF <b>能</b>：单文件 HTML，Ctrl+P 直接另存，导航自动隐藏、页边距自动压缩。改需求也不用重说：只改你提到的维度（天数 / 出发地 / 排量 / 照类 / 高速偏好）重跑即可。</div></details>
+        <details class="reveal"><summary><span class="q">Q</span>摩托车能不能上高速？它怎么判断？<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">内置 31 省高速准入名单（13 允许 / 17 禁止 / 1 有条件）与 45 城禁摩限摩名单，逐省逐城带证据等级（法规明文 / 执法口径 / 第三方汇总）。<b>禁高速省不拦你</b>——只提醒改走国道（耗时 +40–80%）；只有你明确要走高速才判红灯。未查证的城市一律灰灯 + 需自行核实，绝不默认绿灯。</div></details>
+        <details class="reveal"><summary><span class="q">Q</span>Skill 和 Agent 应用，我该选哪个？<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">能力本体同一个包，差别在入口与归属：<b>Skill</b> 装进已有 Agent，一分钟装好但入口在别人 App 里；<b>Agent 应用</b>跑在你自己的服务器上，自有域名、数据不出境、能力零裁剪。详见「06 两种用法」。</div></details>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="final">
+      <div class="final-bg"></div>
+      <h2 class="reveal">把你的行程丢给它</h2>
+      <p class="reveal">说出目的地、天数、和谁去——拿一份能照着走的旅行小册子。</p>
+      <div class="cta-row reveal">
+        <a class="btn btn-primary" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">在千问 AI 获取技能 →</a>
+        <a class="btn btn-ghost" href="downloads/worldstip-travel-planner-v0.1.25.zip">下载技能包（701 KB）</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="wrap" style="max-width:1080px">
+    <div class="foot-in">
+      <span>🧭 <b style="color:var(--ink)">WorldsTip</b> · 旅行规划大师（worldstip-travel-planner）</span>
+      <span class="f-links">
+        <a href="index-en.html">English</a>
+        <a href="https://worldstip.com" target="_blank" rel="noopener">worldstip.com</a>
+        <a href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">千问技能市场</a>
+        <a href="https://github.com/MrdT-BitsNote/Skill-WorldsTipAgent" target="_blank" rel="noopener">GitHub 源码</a>
+      </span>
+      <span class="foot-ver">版本纪律：对外发布版本 = 本地开发包版本 = <b>v0.1.25</b>；任何一端改动后，本地 / 千问 / WorkBuddy / 扣子 / Qoder / 百度搭子 / Marvel / GitHub / 本站同步同一版本号，各平台包格式不同不可混用（通用=首层 SKILL.md｜WorkBuddy=.skill + .codebuddy-plugin｜Qoder=.qoder-plugin｜扣子/百度搭子/Marvel=系统提示词+知识库+INSTALL.md）。当前 v0.1.25：全平台包已同步至 v0.1.25 并上架千问 Hub；源码同步至 GitHub。范本为 v0.1.25 真实生成产物（§01–§10 共 10 章，§02 内新增「出行查询指引」）。本站为纯静态展示站，不提供在线试用。</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var railLinks=[].slice.call(document.querySelectorAll('.rail a[href^="#"]'));
+  var chipLinks=[].slice.call(document.querySelectorAll('.chips a'));
+  var all=railLinks.concat(chipLinks);
+  var secs=all.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+  function onScroll(){
+    var y=scrollY+120,cur=null;
+    secs.forEach(function(s){if(s.offsetTop<=y)cur=s;});
+    all.forEach(function(a){
+      var on=cur&&a.getAttribute('href')==='#'+cur.id;
+      a.classList.toggle('on',on);
+    });
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
+  },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  var sio=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;sio.unobserve(e.target);
+      e.target.querySelectorAll('.num').forEach(function(n){
+        var t=+n.dataset.n,st=null;
+        function tick(ts){if(!st)st=ts;var p=Math.min((ts-st)/1100,1);
+          n.textContent=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString();
+          if(p<1)requestAnimationFrame(tick);}
+        requestAnimationFrame(tick);
+      });
+    });
+  },{threshold:.25});
+  sio.observe(document.getElementById('stats'));
+
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=document.getElementById(b.dataset.copy).textContent;
+      var done=function(){b.textContent='已复制 ✓';setTimeout(function(){b.textContent='复制';},1500);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done);}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+
+  var mk=document.getElementById('marquee');mk.innerHTML+=mk.innerHTML;
+
+  var items=document.querySelectorAll('.faq details');
+  items.forEach(function(d){d.addEventListener('toggle',function(){
+    if(d.open)items.forEach(function(o){if(o!==d)o.open=false;});});});
+})();
+</script>
+</body>
+</html>
