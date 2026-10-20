@@ -405,7 +405,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 28px;background:#fff}
         {"@type": "Question", "name": "提示「这趟走不了」怎么办？",
          "acceptedAnswer": {"@type": "Answer", "text": "「走不了」意味着有违法或硬性条件没解决——此时小册子输出的是拦停页而非行程正文，只列出必须先解决的事与核验渠道。逐项解决后改参重跑即可。「要先处理」是待办清单，「查不到」是未核实（你自己再确认，系统不猜）。三种提示的含义见「03 行前体检」。"}},
         {"@type": "Question", "name": "票价、门票、天气信息准吗？",
-         "acceptedAnswer": {"@type": "Answer", "text": "两条硬规则：查不到的绝不编造，只给查询路径与购票时机；已可用的才标注——天气走 Open-Meteo 并打核验日期，12306 车站码已缓存（仅车次号，OD 查询不支持）。票价门票因需登录态而不联网，只给查询路径。"}},
+         "acceptedAnswer": {"@type": "Answer", "text": "两条硬规则：查不到的绝不编造，只给查询路径与购票时机；已可用的才标注——天气走 Open-Meteo 并打核验日期，12306 车站码已缓存（仅车次号，OD 查询不支持）。票价门票因需登录信息而不联网，只给查询路径。"}},
         {"@type": "Question", "name": "能帮我订票订酒店吗？能打印 PDF 吗？改需求要重说一遍吗？",
          "acceptedAnswer": {"@type": "Answer", "text": "订票订酒店不能，也不假装能——代订需要交易权限与实时库存。PDF 能：单文件 HTML，Ctrl+P 直接另存，导航自动隐藏、页边距自动压缩。改需求也不用重说：只改你提到的维度（天数 / 出发地 / 排量 / 照类 / 高速偏好）重跑即可。"}},
         {"@type": "Question", "name": "摩托车能不能上高速？这个技能怎么判断？",
@@ -641,80 +641,6 @@ footer{border-top:1px solid var(--line);padding:24px 0 28px;background:#fff}
       </div>
 <div class="note reveal"><b>为什么没有「一键安装」按钮？</b>各平台均未开放网页侧技能安装深链，安装只能发生在 App 内或对话里。整包 43 个脚本纯 Python 标准库、零第三方依赖，Python 3.8+ 即可运行。</div>
 
-      <div class="sec-head reveal" style="margin-top:34px"><div class="sec-no">05-B · 下载矩阵</div>
-        <h2>技能包下载（最新 v0.1.29 · 各平台包格式不同）</h2>
-        <p class="sec-desc">同一个能力本体，<b>按平台打包格式分发</b>——格式错了平台不认，别混用。每个平台都提供 <b>技能包（Skill）</b> 与 <b>智能体包（Agent）</b> 两种形态（千问走 Hub 除外），包内均附 <code>INSTALL.md</code> 安装指引。</p>
-      </div>
-            <div class="dl-grid">
-        <div class="dl-sub">千问 AI（Hub 已上架）</div>
-        <div class="dl-item reveal">
-          <div class="t">千问 AI 技能 Hub <span class="tag hot">官方上架</span></div>
-          <div class="m">在线安装 · 无需下载</div>
-          <a class="dl" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">打开 Hub →</a>
-        </div>
-        <div class="dl-sub">通用 / 任意 Agent（首层 SKILL.md）</div>
-        <div class="dl-item reveal">
-          <div class="t">通用技能包 <span class="tag">Skill</span></div>
-          <div class="m">worldstip-travel-planner-v0.1.29.zip · 724 KB</div>
-          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.29.zip">下载 →</a>
-        </div>
-        <div class="dl-sub">WorkBuddy</div>
-        <div class="dl-item reveal">
-          <div class="t">技能包 <span class="tag">.skill</span></div>
-          <div class="m">worldstip-travel-planner-v0.1.29.skill · 724 KB</div>
-          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.29.skill">下载 →</a>
-        </div>
-        <div class="dl-item reveal">
-          <div class="t">专家/智能体包 <span class="tag">.codebuddy-plugin</span></div>
-          <div class="m">worldstip-travel-planner-expert-v0.1.29-workbuddy.zip · 746 KB</div>
-          <a class="dl" href="downloads/worldstip-travel-planner-expert-v0.1.29-workbuddy.zip">下载 →</a>
-        </div>
-        <div class="dl-sub">Qoder</div>
-        <div class="dl-item reveal">
-          <div class="t">专家/智能体包 <span class="tag">.qoder-plugin</span></div>
-          <div class="m">worldstip-travel-planner-expert-v0.1.29-qoder.zip · 741 KB</div>
-          <a class="dl" href="downloads/worldstip-travel-planner-expert-v0.1.29-qoder.zip">下载 →</a>
-        </div>
-        <div class="dl-sub">扣子 Coze（Bot + 知识库）</div>
-        <div class="dl-item reveal">
-          <div class="t">扣子包 <span class="tag">首层 SKILL.md</span></div>
-          <div class="m">worldstip-travel-planner-v0.1.29-coze.zip · 724 KB</div>
-          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.29-coze.zip">下载 →</a>
-        </div>
-        <div class="dl-sub">百度搭子（手动挂载）</div>
-        <div class="dl-item reveal">
-          <div class="t">百度搭子包 <span class="tag">提示词 + 知识库</span></div>
-          <div class="m">worldstip-travel-planner-v0.1.29-baidu.zip · 724 KB</div>
-          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.29-baidu.zip">下载 →</a>
-        </div>
-        <div class="dl-sub">Marvel（手动挂载）</div>
-        <div class="dl-item reveal">
-          <div class="t">Marvel 包 <span class="tag">提示词 + 知识库</span></div>
-          <div class="m">worldstip-travel-planner-v0.1.29-marvel.zip · 724 KB</div>
-          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.29-marvel.zip">下载 →</a>
-        </div>
-        <div class="dl-sub" style="margin-top:18px">历史存档（旧版本，不推荐新装）</div>
-        <div class="dl-item reveal">
-          <div class="t">千问/通用 v0.1.24 <span class="tag stale">存档</span></div>
-          <div class="m">worldstip-travel-planner-v0.1.24.zip · 692 KB</div>
-          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.24.zip">下载 →</a>
-        </div>
-        <div class="dl-item reveal">
-          <div class="t">Qoder 专家 v0.1.24 <span class="tag stale">存档</span></div>
-          <div class="m">worldstip-travel-planner-expert-v0.1.24.zip · 703 KB</div>
-          <a class="dl" href="downloads/worldstip-travel-planner-expert-v0.1.24.zip">下载 →</a>
-        </div>
-        <div class="dl-item reveal">
-          <div class="t">千问/通用 v0.1.21 <span class="tag stale">存档</span></div>
-          <div class="m">worldstip-travel-planner-v0.1.21.zip · 681 KB</div>
-          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.21.zip">下载 →</a>
-        </div>
-        <div class="dl-item reveal">
-          <div class="t">全平台 v0.1.16 存档 <span class="tag stale">待重打</span></div>
-          <div class="m">coze / .skill / qoder / workbuddy · 635–1080 KB</div>
-          <a class="dl" href="downloads/worldstip-travel-planner-v0.1.16-coze.zip">coze →</a>
-        </div>
-      </div>
       <p class="sec-desc" style="margin-top:14px"><b>通用安装方式（任意平台兜底）</b>：下载通用 <code>worldstip-travel-planner-v0.1.29.zip</code>，解压后整个文件夹放到平台的 <code>skills/</code> 目录（或导入 <code>SKILL.md</code>）；纯手动场景则把 <code>SKILL.md</code> 正文作为系统提示词、<code>references/</code> 作为知识库挂载，并开启联网用于易变信息核验。所有平台同一版本号，杜绝错位。</p>
 <p class="sec-desc" style="margin-top:14px">🐙 <b>源码与全版本包备份</b>：<a href="https://github.com/MrdT-BitsNote/Skill-WorldsTipAgent" target="_blank" rel="noopener">github.com/MrdT-BitsNote/Skill-WorldsTipAgent</a> —— SKILL.md / 43 个脚本 / references 全量源码，<code>releases/</code> 存各版本 zip。</p>
     </section>
