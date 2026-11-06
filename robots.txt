@@ -3,4 +3,5 @@ Allow: /
 
 # WorldsTip 旅行规划大师 · agent.worldstip.com
 # 纯静态展示站，无后端、无 /plan/ 反代
+# 下载目录允许抓取，便于各端同步与校验
 Sitemap: https://agent.worldstip.com/sitemap.xml

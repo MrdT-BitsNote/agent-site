@@ -3,710 +3,935 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WorldsTip Travel Planner Master · AI Trip Booklet Skill v0.1.41 | Qianwen AI Skill Hub</title>
-<meta name="description" content="WorldsTip Travel Planner Master (worldstip-travel-planner v0.1.41): domestic + outbound (32 countries / regions baseline) dual-mode AI trip planning skill, published on the Qianwen AI Skill Hub. Six pillars — full domestic transit comparison, motorcycle five-gate check (31 provinces' highway access / 45 city bans), RV logistics, outbound four lights, relax mode, and on-demand guide search (lists real guides with source and date, then digests verified facts into the booklet). 1028 regression assertions, gray-light when unverified, never fabricates. Outputs an A5 compact single-file HTML booklet.">
-<meta name="keywords" content="travel planner,AI itinerary,AI trip plan,motorcycle trip,can motorcycles use the highway,motorcycle ban cities,RV road trip,RV campsite,outbound travel,visa free,Qianwen AI skill,AI skill hub,worldstip,self-hosted agent">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-<meta name="author" content="WorldsTip by MrdT">
-<meta name="theme-color" content="#0F4C3A">
-<meta name="application-name" content="WorldsTip Travel Planner Master">
-<meta name="description" content="WorldsTip Travel Planner (worldstip-travel-planner v0.1.41): domestic + outbound. Checks motorcycle gates (31 provinces, 45 cities), RV logistics and outbound admissibility before you leave; states unknown instead of inventing; 1028 regression assertions. Outputs an A5 compact single-file HTML booklet. Available as a Skill or a self-hosted Agent.">
-<meta name="keywords" content="AI travel planning,motorcycle travel,highway access China,RV road trip,outbound travel,travel booklet,AI skill,agent,worldstip">
-<meta property="og:title" content="WorldsTip Travel Planner · Turn one sentence into a followable booklet">
-<meta property="og:description" content="One request in, one booklet out. Checks moto / RV / outbound admissibility before you leave, never invents what it can't verify. 1028 regression assertions.">
+<title>WorldsTip Travel Guide Booklet · One sentence in, a followable booklet out</title>
+<meta name="description" content="WorldsTip Travel Guide Booklet: a travel-planning skill for domestic and outbound trips, with a motorcycle-route and city-spend data layer. Six-way transport comparison, room splitting, four outbound gates and five moto gates. Volatile facts are verified or flagged grey — never invented. Packaged for WorkBuddy, Qwen, Coze, Baidu Dazi, SkillHub and DataBuilder.">
+<meta name="keywords" content="travel planning,itinerary,travel guide,motorcycle touring,road trip,outbound travel,visa,AI skill,WorldsTip">
+<meta name="author" content="MrdT">
 <meta property="og:type" content="website">
+<meta property="og:title" content="WorldsTip Travel Guide Booklet v0.2.1">
+<meta property="og:description" content="Comes with skill packs for six platforms plus three marketplace entries. Unverified facts are flagged grey, never invented.">
 <meta property="og:url" content="https://agent.worldstip.com/index-en.html">
 <meta property="og:image" content="https://agent.worldstip.com/og-cover.png">
-<meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://agent.worldstip.com/index-en.html">
-<link rel="alternate" hreflang="en" href="https://agent.worldstip.com/index-en.html">
-<link rel="alternate" hreflang="zh-CN" href="https://agent.worldstip.com/">
-<link rel="alternate" hreflang="x-default" href="https://agent.worldstip.com/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="WorldsTip Travel Planner Master">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="zh_CN">
-<meta property="og:url" content="https://agent.worldstip.com/index-en.html">
-<meta property="og:title" content="WorldsTip Travel Planner Master v0.1.41 | One sentence → a booklet you can actually follow">
-<meta property="og:description" content="Domestic + outbound dual mode. Before you go it checks whether your motorcycle may use the highway, whether the RV clears the height limit, whether the visa can arrive in time. What cannot be verified is never invented. Published on the Qianwen AI Skill Hub.">
-<meta property="og:image" content="https://agent.worldstip.com/og-cover.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="WorldsTip Travel Planner Master · A5 compact trip booklet">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@worldstip">
-<meta name="twitter:title" content="WorldsTip Travel Planner Master v0.1.41 | One sentence → a booklet you can follow">
-<meta name="twitter:description" content="Motorcycle five gates · RV logistics · outbound four lights · relax mode. Gray-light when unverified, never fabricated. On the Qianwen AI Skill Hub.">
-<meta name="twitter:image" content="https://agent.worldstip.com/og-cover.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23FF9F0A'/%3E%3Cstop offset='1' stop-color='%23FF6482'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Ccircle cx='16' cy='15' r='8' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M16 7l3 8-8 0z' fill='white'/%3E%3C/svg%3E">
-<style>
-:root{
-  --bg:#FAF8F4;--bg2:#F4F1EB;--card:#FFFFFF;--ink:#1D1D1F;--sub:#6E6E73;--line:rgba(0,0,0,.08);
-  --amber:#FF9F0A;--coral:#FF6482;--rose:#FF2D55;--blue:#0071E3;--sky:#5AC8FA;
-  --ok:#34C759;--warn:#FF3B30;--caution:#FF9500;--grey:#8E8E93;
-  --grad-warm:linear-gradient(120deg,#FF9F0A 0%,#FF6482 55%,#FF2D55 100%);
-  --r:16px;--shadow:0 1px 2px rgba(0,0,0,.03),0 6px 20px rgba(0,0,0,.05);
-  --shadow-lg:0 2px 6px rgba(0,0,0,.04),0 16px 44px rgba(0,0,0,.10);
-  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Helvetica Neue","Segoe UI",sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:var(--blue);text-decoration:none}
-::selection{background:rgba(255,100,130,.22)}
-
-.nav{position:sticky;top:0;z-index:100;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);background:rgba(250,248,244,.78);border-bottom:1px solid var(--line)}
-.nav-in{max-width:1080px;margin:0 auto;padding:0 22px;height:58px;display:flex;align-items:center;gap:18px}
-.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15.5px;color:var(--ink)}
-.logo svg{width:26px;height:26px}
-.lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;font-size:12px;font-weight:600}
-.lang a{padding:4px 12px;color:var(--sub);background:#fff}
-.lang a.on{color:#fff;background:var(--ink)}
-.nav .sp{margin-left:auto;display:flex;gap:10px;align-items:center}
-.nav-cta{font-size:13px;font-weight:600;color:#fff;background:var(--ink);padding:7px 15px;border-radius:99px;transition:transform .18s,box-shadow .18s}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(0,0,0,.18)}
-.nav-cta.warm{background:var(--grad-warm);box-shadow:0 5px 16px rgba(255,100,130,.3)}
-
-.page{max-width:1080px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:190px minmax(0,1fr);gap:42px;align-items:start}
-.rail{position:sticky;top:74px;padding:24px 0 40px;max-height:calc(100vh - 90px);overflow:auto}
-.rail .rail-t{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--grey);text-transform:uppercase;margin-bottom:10px}
-.rail a{display:flex;gap:9px;align-items:baseline;font-size:13px;color:var(--sub);padding:6px 9px;border-radius:8px;transition:all .15s;line-height:1.45}
-.rail a i{font-style:normal;font-size:10.5px;font-weight:700;color:var(--grey);font-variant-numeric:tabular-nums}
-.rail a:hover{color:var(--ink);background:#fff}
-.rail a.on{color:var(--ink);background:#fff;font-weight:600;box-shadow:var(--shadow)}
-.rail a.on i{color:var(--coral)}
-.rail .rail-cta{margin-top:12px;padding:10px 13px;background:var(--ink);border-radius:12px;color:#fff;font-size:12.5px;font-weight:600;display:block;line-height:1.5}
-.rail .rail-cta b{display:block;font-size:13.5px}
-.main{min-width:0;padding:28px 0 10px}
-.chips{display:none;gap:8px;overflow-x:auto;padding:10px 0 14px;position:sticky;top:58px;background:var(--bg);z-index:90}
-.chips a{flex:none;font-size:12.5px;font-weight:600;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 13px}
-.chips a.on{color:#fff;background:var(--ink);border-color:var(--ink)}
-@media(max-width:960px){.page{grid-template-columns:1fr;gap:0}.rail{display:none}.chips{display:flex}}
-
-.hero{padding:30px 0 24px}
-.badges{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
-.badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;background:#fff;border:1px solid var(--line);color:var(--sub)}
-.badge b{color:var(--ink)}
-.badge .dot{width:6px;height:6px;border-radius:50%;background:var(--grad-warm);animation:pulse 2.2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
-h1.h1-skill{font-size:13px;font-weight:700;letter-spacing:.14em;margin-bottom:9px}
-h1.h1-skill a{background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-h1.h1-site{font-size:clamp(30px,4vw,46px);font-weight:800;line-height:1.16;letter-spacing:-.026em;margin-bottom:15px}
-h1.h1-site a{color:var(--ink);transition:color .2s}
-h1.h1-site a .hl{position:relative;white-space:nowrap}
-h1.h1-site a .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:3px;height:11px;background:linear-gradient(90deg,rgba(255,159,10,.4),rgba(255,100,130,.4));z-index:-1;border-radius:3px;transform:skewX(-8deg)}
-h1.h1-site a:hover{color:var(--coral)}
-.hero-sub{font-size:16px;color:var(--sub);max-width:600px;margin-bottom:20px}
-.hero-sub b{color:var(--ink)}
-.cta-row{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:18px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:14.5px;padding:11px 21px;border-radius:99px;transition:transform .18s,box-shadow .18s;border:none;cursor:pointer;font-family:inherit}
-.btn-primary{color:#fff;background:var(--grad-warm);box-shadow:0 7px 20px rgba(255,100,130,.32)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 11px 26px rgba(255,100,130,.42)}
-.btn-ghost{color:var(--ink);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
-.btn-ghost:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-.chip-row{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font-size:12.5px;font-weight:600;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 12px}
-.chip b{color:var(--ink)}
-.hero-frame{margin-top:20px;background:#fff;border-radius:var(--r);border:1px solid var(--line);box-shadow:var(--shadow-lg);overflow:hidden}
-.hero-frame .bar{display:flex;align-items:center;gap:6px;padding:9px 13px;border-bottom:1px solid var(--line);background:#FBFBFD}
-.hero-frame .bar i{width:9px;height:9px;border-radius:50%}
-.hero-frame .bar i:nth-child(1){background:#FF5F57}.hero-frame .bar i:nth-child(2){background:#FEBC2E}.hero-frame .bar i:nth-child(3){background:#28C840}
-.hero-frame .bar span{margin-left:8px;font-size:11px;color:var(--grey);background:#F0F0F3;border-radius:6px;padding:2px 10px}
-.hero-frame iframe{width:100%;height:290px;border:0;display:block;background:#F5F5F7}
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;overflow:hidden;padding:11px 0;margin-top:22px}
-.marquee-track{display:flex;gap:30px;width:max-content;animation:scroll 32s linear infinite}
-.marquee:hover .marquee-track{animation-play-state:paused}
-@keyframes scroll{to{transform:translateX(-50%)}}
-.marquee span{font-size:12.5px;font-weight:600;color:var(--sub);white-space:nowrap;display:flex;align-items:center;gap:8px}
-.marquee span::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--grad-warm)}
-
-section{padding:36px 0;border-top:1px solid var(--line)}
-.sec-head{margin-bottom:20px}
-.sec-no{font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--coral);margin-bottom:6px}
-h2{font-size:clamp(22px,2.6vw,29px);font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:8px}
-.sec-desc{font-size:14px;color:var(--sub);max-width:640px}
-.sec-desc b{color:var(--ink)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.22,.61,.36,1),transform .55s cubic-bezier(.22,.61,.36,1)}
-.reveal.show{opacity:1;transform:translateY(0)}
-
-.io{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;align-items:stretch;margin-bottom:16px}
-.io .io-box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow)}
-.io .io-arrow{display:grid;place-items:center;font-size:18px;color:var(--coral);font-weight:700}
-.io h3{font-size:14px;font-weight:700;margin-bottom:8px}
-.io .q{font-size:13px;color:var(--ink);background:var(--bg2);border-radius:10px;padding:9px 12px;margin-bottom:9px;line-height:1.6}
-.io ul{list-style:none;display:grid;gap:5px}
-.io li{font-size:12.5px;color:var(--sub);padding-left:16px;position:relative;line-height:1.55}
-.io li::before{content:"";position:absolute;left:2px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--grad-warm)}
-.io li b{color:var(--ink)}
-.io .io-box{display:flex;flex-direction:column}
-.io .io-box:first-child ul{margin-top:auto;padding-top:4px}
-@media(max-width:720px){.io{grid-template-columns:1fr}.io .io-arrow{transform:rotate(90deg);padding:5px 0}}
-
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-@media(max-width:820px){.cards{grid-template-columns:1fr}}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.card .c-ico{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;font-size:17px;margin-bottom:10px}
-.ico-warm{background:rgba(255,159,10,.13)}.ico-rose{background:rgba(255,100,130,.13)}
-.ico-sky{background:rgba(0,113,227,.1)}.ico-green{background:rgba(52,199,89,.12)}
-.ico-caution{background:rgba(255,149,0,.14)}.ico-grey{background:rgba(142,142,147,.13)}
-.card h3{font-size:15px;font-weight:700;margin-bottom:5px}
-.card p{font-size:12.5px;color:var(--sub);line-height:1.65;margin-bottom:9px}
-.card p b{color:var(--ink)}
-.lamp-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
-.lamp{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px}
-.lamp::before{content:"";width:7px;height:7px;border-radius:50%}
-.lamp-red{background:rgba(255,59,48,.1);color:#B3241C}.lamp-red::before{background:#FF3B30}
-.lamp-yellow{background:rgba(255,149,0,.12);color:#A05E00}.lamp-yellow::before{background:#FF9500}
-.lamp-green{background:rgba(52,199,89,.12);color:#1E8E3E}.lamp-green::before{background:#34C759}
-.lamp-grey{background:rgba(142,142,147,.12);color:#5A5A5F}.lamp-grey::before{background:#8E8E93}
-.mini-stats{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
-.mini-stat{font-size:11.5px;font-weight:700;background:var(--bg2);border-radius:7px;padding:4px 9px}
-.mini-stat i{font-style:normal;color:var(--coral)}
-
-.flow{display:grid;grid-template-columns:repeat(7,1fr);grid-auto-rows:1fr;gap:10px;margin-top:14px}
-.flow .st{background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px 10px;position:relative;display:flex;flex-direction:column}
-.flow .st .no{width:20px;height:20px;border-radius:6px;background:var(--ink);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;margin-bottom:7px}
-.flow .st h4{font-size:12px;font-weight:700;margin-bottom:3px;line-height:1.35}
-.flow .st p{font-size:10.5px;color:var(--sub);line-height:1.45}
-.flow .st::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--grey)}
-.flow .st:last-child::after{display:none}
-@media(max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}.flow .st::after{display:none}}
-@media(max-width:560px){.flow{grid-template-columns:1fr}}
-
-.tbl-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;margin-bottom:12px}
-table.d{width:100%;border-collapse:collapse;font-size:12.5px}
-table.d th{background:#FBFBFD;font-size:11.5px;font-weight:700;color:var(--sub);text-align:left;padding:8px 13px;border-bottom:1px solid var(--line);white-space:nowrap}
-table.d td{padding:8px 13px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6;color:var(--sub)}
-table.d tr:last-child td{border-bottom:none}
-table.d td b{color:var(--ink)}
-table.d td.k{font-weight:600;color:var(--ink);white-space:nowrap}
-table.d .yes{color:#1E8E3E;font-weight:700}
-table.d .no{color:#B3241C;font-weight:700}
-
-
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}
-@media(max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.stat{background:#fff;border:1px solid var(--line);border-radius:11px;padding:13px 15px;box-shadow:var(--shadow)}
-.stat .num{font-size:24px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(120deg,#FF9F0A,#FF6482);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-variant-numeric:tabular-nums}
-.stat .lbl{font-size:11px;color:var(--sub);margin-top:2px;line-height:1.5}
-@media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
-
-.samples{display:grid;grid-template-columns:1fr;gap:13px;max-width:620px;margin:0 auto}
-.sample{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;display:block}
-.sample:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.sample .cover{position:relative;overflow:hidden;height:300px}
-.sample .cover iframe{position:absolute;top:0;left:0;width:127%;height:127%;border:0;transform:scale(.787);transform-origin:top left;pointer-events:none;background:#F7F4EE}
-.sample .body{padding-top:15px}
-.sc1{background:linear-gradient(135deg,#5AC8FA,#0071E3)}.sc2{background:linear-gradient(135deg,#34C759,#30B350)}
-.sc3{background:linear-gradient(135deg,#FF9F0A,#FF6482)}.sc4{background:linear-gradient(135deg,#AF52DE,#5856D6)}
-.sample .cover .tag{position:absolute;top:10px;left:10px;font-size:10.5px;font-weight:700;color:#fff;background:rgba(0,0,0,.26);backdrop-filter:blur(8px);padding:4px 10px;border-radius:99px;z-index:2}
-.sample .cover .emoji{position:absolute;right:12px;bottom:8px;font-size:28px;z-index:2;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
-.sample .body{padding:18px 20px;display:flex;flex-direction:column;justify-content:center;min-width:0}
-.sample h3{font-size:14.5px;font-weight:700;margin-bottom:4px}
-.sample p{font-size:12px;color:var(--sub);flex:1;margin-bottom:10px;line-height:1.6}
-.sample .links{display:flex;gap:13px;font-size:12.5px;font-weight:600}
-
-.use{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-@media(max-width:820px){.use{grid-template-columns:1fr}}
-.use .u{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow)}
-.use .u.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
-.use .u .u-tag{display:inline-flex;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:99px;background:rgba(255,159,10,.15);color:#A05E00;margin-bottom:10px}
-.use .u.dark .u-tag{background:rgba(255,159,10,.22);color:#FFB340}
-.use .u h3{font-size:16px;font-weight:700;margin-bottom:7px}
-.use .u p{font-size:12.5px;color:var(--sub);line-height:1.7;margin-bottom:10px}
-.use .u.dark p{color:rgba(255,255,255,.75)}
-.use .u p b{color:var(--ink)}
-.use .u.dark p b{color:#fff}
-.use .u ul{list-style:none;display:grid;gap:6px;margin-bottom:12px}
-.use .u li{font-size:12.5px;color:var(--sub);padding-left:17px;position:relative;line-height:1.6}
-.use .u li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700;font-size:11px}
-.use .u.dark li{color:rgba(255,255,255,.8)}
-.cmd{display:flex;flex-direction:column;gap:7px;background:#1D1D1F;border-radius:9px;padding:9px 11px;font-size:11px;color:#E5E5EA;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-.cmd code{display:block;white-space:normal;word-break:break-all;line-height:1.5}
-.cmd button{align-self:flex-end;font-size:11px;font-weight:700;color:#1D1D1F;background:#FFD9A0;border:none;border-radius:6px;padding:4px 12px;cursor:pointer;font-family:inherit}
-
-.plats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;align-items:start}
-@media(max-width:960px){.plats{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.plats{grid-template-columns:1fr}}
-.plat{background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px 16px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;min-width:0}
-.plat .cmd code,.plat code{word-break:break-all}
-.plat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.plat .p-top{display:flex;align-items:center;gap:9px;margin-bottom:7px}
-.plat .p-emoji{font-size:19px}
-.plat h3{font-size:14px;font-weight:700}
-.plat .p-st{margin-left:auto;font-size:10.5px;font-weight:700;color:#1E8E3E;background:rgba(52,199,89,.12);padding:2px 8px;border-radius:99px}
-.plat p{font-size:12px;color:var(--sub);line-height:1.6;margin-bottom:8px}
-.plat .p-link{font-size:12.5px;font-weight:600}
-.note{background:#fff;border:1px dashed rgba(255,100,130,.4);border-radius:12px;padding:13px 17px;font-size:12.5px;color:var(--sub);line-height:1.7;margin-top:12px}
-.note b{color:var(--ink)}
-
-.faq{display:grid;gap:8px}
-.faq details{background:#fff;border:1px solid var(--line);border-radius:11px;overflow:hidden}
-.faq details[open]{box-shadow:var(--shadow)}
-.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:11px;padding:13px 17px;font-size:14px;font-weight:600;user-select:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary .q{width:21px;height:21px;border-radius:7px;background:var(--bg2);display:grid;place-items:center;font-size:11px;font-weight:800;color:var(--coral);flex:none}
-.faq summary .ar{margin-left:auto;transition:transform .22s;color:var(--grey);flex:none}
-.faq details[open] summary .ar{transform:rotate(180deg)}
-.faq .a{padding:0 17px 14px 49px;font-size:13px;color:var(--sub);line-height:1.75}
-.faq .a b{color:var(--ink)}
-
-.final{text-align:center;padding:56px 0 50px;position:relative;overflow:hidden;border-top:1px solid var(--line)}
-.final-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 115%,rgba(255,159,10,.15),transparent 65%),radial-gradient(ellipse 50% 50% at 18% 100%,rgba(255,100,130,.12),transparent 60%)}
-.final h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:11px;position:relative}
-.final p{font-size:15px;color:var(--sub);max-width:520px;margin:0 auto 24px;position:relative}
-.final .cta-row{justify-content:center;position:relative}
-footer{border-top:1px solid var(--line);padding:24px 0 28px;background:#fff}
-.foot-in{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:12.5px;color:var(--sub)}
-.foot-in .f-links{margin-left:auto;display:flex;gap:15px;flex-wrap:wrap}
-.foot-in a{color:var(--sub)}
-.foot-in a:hover{color:var(--ink)}
-.foot-ver{font-size:11.5px;color:var(--grey);margin-top:6px;width:100%;line-height:1.7}
-
-@media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}.reveal{opacity:1;transform:none}}
-
-/* ── 千问 AI 技能 Hub 主推巨幅卡片 ── */
-/* ── 移动端顶栏收紧 ── */
-.nav-cta .sm{display:none}
-@media(max-width:640px){
-  .nav-in{gap:9px;padding:0 13px;height:54px}
-  .logo{white-space:nowrap;font-size:14px;gap:6px}
-  .logo svg{width:23px;height:23px}
-  .lang a{padding:4px 9px;font-size:11.5px}
-  .nav-cta{padding:6px 12px;font-size:12px;white-space:nowrap}
-  .nav-cta .lg{display:none}
-  .nav-cta .sm{display:inline}
-  .nav-cta.try{display:none}
-}
-
-.hub{margin:0;padding:16px 0 2px}
-.hub-card{position:relative;overflow:hidden;border-radius:22px;padding:30px 32px;
-  background:var(--grad-warm);box-shadow:var(--shadow-lg);color:#fff}
-.hub-card::after{content:"";position:absolute;right:-70px;top:-90px;width:320px;height:320px;border-radius:50%;
-  background:rgba(255,255,255,.13);pointer-events:none}
-.hub-card::before{content:"";position:absolute;right:60px;bottom:-120px;width:200px;height:200px;border-radius:50%;
-  background:rgba(255,255,255,.10);pointer-events:none}
-.hub-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.4px;
-  background:rgba(255,255,255,.20);border:1px solid rgba(255,255,255,.32);padding:5px 12px;border-radius:99px}
-.hub-eyebrow .live{width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.28)}
-.hub-h{position:relative;margin:13px 0 0;font-size:29px;line-height:1.28;font-weight:800;letter-spacing:-.4px}
-.hub-h em{font-style:normal;background:rgba(255,255,255,.18);border-radius:8px;padding:1px 9px}
-.hub-d{position:relative;margin-top:10px;font-size:14.5px;line-height:1.72;max-width:640px;color:rgba(255,255,255,.94)}
-.hub-url{position:relative;display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 14px;border-radius:10px;
-  background:rgba(0,0,0,.16);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;color:#fff;word-break:break-all}
-.hub-actions{position:relative;display:flex;flex-wrap:wrap;gap:11px;margin-top:18px}
-.hub-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1D1D1F;font-weight:700;font-size:15px;
-  padding:14px 26px;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.16);transition:transform .18s,box-shadow .18s}
-.hub-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.22)}
-.hub-btn.ghost{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.42);box-shadow:none}
-.hub-btn.ghost:hover{background:rgba(255,255,255,.26)}
-.hub-facts{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px;
-  padding-top:18px;border-top:1px solid rgba(255,255,255,.26)}
-.hub-facts div{font-size:12.5px;color:rgba(255,255,255,.92)}
-.hub-facts b{display:block;font-size:19px;font-weight:800;color:#fff;letter-spacing:-.2px}
-.hub-cmd{position:relative;margin-top:16px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.18);
-  border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;align-items:stretch;gap:9px}
-.hub-cmd code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  font-size:12px;color:#fff;word-break:break-all;line-height:1.55;display:block}
-.hub-cmd button{align-self:flex-end;background:#fff;color:#1D1D1F;border:0;border-radius:8px;padding:7px 16px;
-  font-size:12.5px;font-weight:700;cursor:pointer}
-.hub-note{position:relative;margin-top:11px;font-size:12px;color:rgba(255,255,255,.86)}
-@media(max-width:640px){
-  .hub-card{padding:22px 20px;border-radius:18px}
-  .hub-h{font-size:22px}
-  .hub-facts{grid-template-columns:repeat(2,1fr)}
-}
-
-/* ── 下载矩阵 ── */
-.dl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
-.dl-item{display:flex;flex-direction:column;gap:5px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
-.dl-item .t{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px}
-.dl-item .t .tag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;background:var(--bg2);color:var(--sub);white-space:nowrap}
-.dl-item .t .tag.hot{background:var(--grad-warm);color:#fff}
-.dl-item .t .tag.stale{background:#FFF4E0;color:#8A5A00}
-.dl-sub{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--sub);grid-column:1/-1;margin-top:6px;padding-bottom:2px;border-bottom:1px dashed var(--line)}
-.dl-item .d{font-size:12.5px;color:var(--sub);line-height:1.65}
-.dl-item .m{font-size:11px;color:var(--grey);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-all;line-height:1.5}
-.dl-item a.dl{align-self:flex-start;margin-top:2px;font-size:12.5px;font-weight:700;color:var(--blue)}
-@media(max-width:960px){.dl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:640px){.dl-grid{grid-template-columns:1fr}}
-</style>
-
+<link rel="canonical" href="https://agent.worldstip.com/index-en.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://agent.worldstip.com/">
+<link rel="alternate" hreflang="en" href="https://agent.worldstip.com/index-en.html">
+<link rel="alternate" hreflang="x-default" href="https://agent.worldstip.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%231F4E3D'/%3E%3Cpath d='M3 16h26M16 3c3.6 3.6 5.5 8 5.5 13s-1.9 9.4-5.5 13c-3.6-3.6-5.5-8-5.5-13S12.4 6.6 16 3z' stroke='%23FAF7F0' stroke-width='1.6' fill='none'/%3E%3C/svg%3E">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://agent.worldstip.com/#website-en",
-      "url": "https://agent.worldstip.com/index-en.html",
-      "name": "WorldsTip Travel Planner",
-      "inLanguage": "en",
-      "publisher": {"@id": "https://agent.worldstip.com/#org"}
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://agent.worldstip.com/#org",
-      "name": "WorldsTip by MrdT",
-      "url": "https://worldstip.com",
-      "logo": "https://agent.worldstip.com/og-cover.png"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "WorldsTip Travel Planner (worldstip-travel-planner)",
-      "applicationCategory": "TravelApplication",
-      "applicationSubCategory": "AI Skill / Agent",
-      "operatingSystem": "Any AI Agent that supports Skills (Qianwen / WorkBuddy / Coze / Qoder / Baidu Dazi / Marvel / MiniMax)",
-      "softwareVersion": "0.1.41",
-      "dateModified": "2026-10-24",
-      "url": "https://agent.worldstip.com/index-en.html",
-      "downloadUrl": "https://agent.worldstip.com/downloads/worldstip-travel-planner-v0.1.41.zip",
-      "isAccessibleForFree": true,
-      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"},
-      "description": "Domestic + outbound AI itinerary planning skill. Six pillars: all domestic transport families, five motorcycle gates (31 provinces highway access / 45 city bans / range & refuel radius), RV logistics, outbound four-document check, a wandering mode, and an on-demand guide-search mode. Credibility core stable/volatile/unknown: unknown is stated, never invented; 1028 regression assertions. Outputs an A5 compact single-file HTML booklet, Ctrl+P to PDF.",
-      "publisher": {"@id": "https://agent.worldstip.com/#org"},
-      "sameAs": ["https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner"]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "It says the trip can't happen — what now?",
-         "acceptedAnswer": {"@type": "Answer", "text": "A cannot-happen verdict means an illegal or hard condition is unresolved — the booklet renders a stop page instead of an itinerary, listing only what must be resolved first and where to verify. Fix each item and re-run."}},
-        {"@type": "Question", "name": "Are fares, tickets and weather accurate?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Two hard rules: what can't be found is never invented — only query paths and booking timing are given; only verified data is labeled — weather comes from Open-Meteo with verification dates, 12306 station codes are cached (train numbers only, no OD search)."}},
-        {"@type": "Question", "name": "Can it book tickets or hotels? Can I print a PDF? Do I re-explain everything when requirements change?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Booking no — and it doesn't pretend to: transactions need payment permissions and live inventory. PDF yes: single-file HTML, Ctrl+P saves directly. Changing requirements doesn't mean re-explaining: only the dimension you mention re-runs."}},
-        {"@type": "Question", "name": "Can motorcycles use the highway? How does it decide?",
-         "acceptedAnswer": {"@type": "Answer", "text": "It ships 31 provinces of highway access rules (13 allow / 17 ban / 1 conditional) and 45 cities with moto bans, each with an evidence level. A highway ban never stops you — it only tells you to take national roads (+40–80% time); a red light appears only if you insist on the highway. Unverified cities are always grey."}},
-        {"@type": "Question", "name": "Skill or Agent app — which should I choose?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Same capability core, different entry and ownership: a Skill installs into an existing Agent in a minute but lives in someone else's app; an Agent app runs on your own server with your own domain, data staying local, zero capability trimming."}}
-      ]
-    }
+  "@type": "SoftwareApplication",
+  "name": "WorldsTip Travel Guide Booklet",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "Any",
+  "softwareVersion": "0.2.1",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"},
+  "description": "Dual-mode (domestic / outbound) travel planning skill with a motorcycle-route and city-spend data layer. Produces a compact A5 booklet, packaged for six skill platforms.",
+  "url": "https://agent.worldstip.com/index-en.html",
+  "downloadUrl": "https://agent.worldstip.com/downloads/worldstip-travel-planner-v0.2.1-fused.zip",
+  "sameAs": [
+    "https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner",
+    "https://www.workbuddy.cn/share/asset?shareCode=1vcWCDMZzdZOCyznXg4EQg&sig=DWLyHwIltgobijgO",
+    "https://skillhub.cn/skills/user_dc997363/worldstip",
+    "https://github.com/MrdT-BitsNote/Skill-WorldsTipAgent",
+    "https://github.com/MrdT-BitsNote/agent-site"
   ]
 }
 </script>
+<style>
+:root{
+  --bg:#FAF7F0;
+  --bg-2:#F3EEE3;
+  --card:#FFFFFF;
+  --ink:#132420;
+  --ink-2:#3D514A;
+  --ink-3:#6B7C75;
+  --green:#1F4E3D;
+  --green-2:#2F7A5E;
+  --green-pale:#E8F1EC;
+  --accent:#C9633A;
+  --accent-pale:#FBEDE6;
+  --line:rgba(31,78,61,.14);
+  --line-2:rgba(31,78,61,.07);
+  --shadow:0 1px 2px rgba(19,36,32,.04),0 8px 24px -12px rgba(19,36,32,.14);
+  --shadow-lift:0 2px 6px rgba(19,36,32,.06),0 20px 44px -20px rgba(19,36,32,.24);
+  --r:14px;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--ink);
+  font:400 15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{width:min(1180px,calc(100% - 44px));margin:0 auto}
+a{color:inherit;text-decoration:none}
+code{font:500 .92em/1 var(--mono);background:var(--bg-2);padding:2px 5px;border-radius:4px;color:var(--green)}
+
+/* ── Top navigation ── */
+.nav{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);
+  background:rgba(250,247,240,.82);border-bottom:1px solid var(--line-2);
+}
+.nav-in{display:flex;align-items:center;gap:26px;height:54px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:650;font-size:15px;letter-spacing:-.01em}
+.brand svg{width:22px;height:22px}
+.nav-links{display:flex;gap:22px;margin-left:auto;font-size:13.5px;color:var(--ink-2)}
+.nav-links a{position:relative;padding:3px 0;transition:color .18s}
+.nav-links a:hover{color:var(--green)}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;
+  background:var(--green);transition:width .22s cubic-bezier(.4,0,.2,1);
+}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:6px;padding:7px 15px;border-radius:999px;
+  background:var(--green);color:#fff;font-size:13px;font-weight:600;
+  transition:transform .18s,box-shadow .18s,background .18s;
+}
+.nav-cta:hover{background:var(--green-2);transform:translateY(-1px);box-shadow:0 6px 18px -8px rgba(31,78,61,.6)}
+
+/* ── Hero ── */
+.hero{position:relative;padding:64px 0 52px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-30% -10% auto -10%;height:560px;
+  background:
+    radial-gradient(46% 52% at 18% 40%,rgba(47,122,94,.13),transparent 70%),
+    radial-gradient(40% 46% at 82% 26%,rgba(201,99,58,.11),transparent 72%);
+  animation:drift 22s ease-in-out infinite alternate;pointer-events:none;
+}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-18px,14px,0) scale(1.06)}}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(var(--line-2) 1px,transparent 1px),linear-gradient(90deg,var(--line-2) 1px,transparent 1px);
+  background-size:46px 46px;
+  mask-image:radial-gradient(60% 70% at 50% 30%,#000,transparent 78%);
+  -webkit-mask-image:radial-gradient(60% 70% at 50% 30%,#000,transparent 78%);
+}
+.hero-in{position:relative;z-index:1}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;padding:5px 13px 5px 9px;border-radius:999px;
+  background:var(--green-pale);border:1px solid rgba(47,122,94,.2);
+  font-size:12.5px;font-weight:600;color:var(--green);letter-spacing:.01em;
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--green-2);box-shadow:0 0 0 3px rgba(47,122,94,.16);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.82)}}
+
+h1.title{
+  margin-top:20px;font-size:clamp(34px,5.1vw,58px);line-height:1.1;
+  font-weight:760;letter-spacing:-.028em;color:var(--ink);
+}
+h1.title em{font-style:normal;color:var(--green);position:relative;white-space:nowrap}
+h1.title em::after{
+  content:"";position:absolute;left:0;right:0;bottom:2px;height:8px;
+  background:rgba(201,99,58,.18);border-radius:3px;z-index:-1;
+}
+h1.subtitle{
+  margin-top:14px;font-size:clamp(15px,1.65vw,18.5px);font-weight:500;
+  line-height:1.6;color:var(--ink-2);max-width:44em;letter-spacing:-.005em;
+}
+h1.subtitle a{
+  color:var(--green);font-weight:650;border-bottom:1.5px solid rgba(47,122,94,.34);
+  transition:border-color .18s,color .18s;
+}
+h1.subtitle a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+h1.subtitle a::after{content:"↗";font-size:.78em;margin-left:2px;opacity:.62}
+
+.hero-cmds{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 21px;border-radius:10px;
+  font-size:14px;font-weight:620;letter-spacing:-.005em;transition:all .2s cubic-bezier(.4,0,.2,1);
+}
+.btn-primary{background:var(--green);color:#fff;box-shadow:0 1px 2px rgba(19,36,32,.1),0 10px 22px -14px rgba(31,78,61,.8)}
+.btn-primary:hover{background:var(--green-2);transform:translateY(-2px);box-shadow:0 2px 6px rgba(19,36,32,.1),0 16px 30px -16px rgba(31,78,61,.9)}
+.btn-ghost{background:var(--card);color:var(--green);border:1px solid var(--line);box-shadow:var(--shadow)}
+.btn-ghost:hover{border-color:rgba(47,122,94,.42);transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+.btn svg{width:15px;height:15px}
+
+/* ── Metric strip ── */
+.metrics{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:44px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+}
+.metric{background:var(--card);padding:18px 20px;transition:background .2s}
+.metric:hover{background:#FDFBF6}
+.metric .v{font:700 25px/1.1 var(--mono);letter-spacing:-.03em;color:var(--green)}
+.metric .v span{font-size:13px;font-weight:600;color:var(--ink-3);margin-left:3px;letter-spacing:0}
+.metric .k{margin-top:5px;font-size:12.5px;color:var(--ink-3);letter-spacing:.01em}
+
+/* ── Generic section ── */
+section{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.sec-tag{
+  font:600 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);padding:5px 9px;border-radius:5px;background:var(--accent-pale);
+}
+h2.sec-title{font-size:clamp(21px,2.5vw,27px);font-weight:720;letter-spacing:-.02em;line-height:1.25}
+.sec-desc{color:var(--ink-3);font-size:13.5px;margin-left:auto;max-width:32em;line-height:1.55}
+
+/* ── Four pillars ── */
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.pillar{
+  position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px 22px 18px;overflow:hidden;transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s,border-color .22s;
+}
+.pillar::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--green);transform:scaleY(0);transform-origin:top;
+  transition:transform .28s cubic-bezier(.4,0,.2,1);
+}
+.pillar:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:rgba(47,122,94,.3)}
+.pillar:hover::before{transform:scaleY(1)}
+.pillar-h{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.pillar-h .ico{
+  width:26px;height:26px;border-radius:7px;background:var(--green-pale);
+  display:grid;place-items:center;flex:0 0 auto;
+}
+.pillar-h .ico svg{width:14px;height:14px;stroke:var(--green);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pillar-h h3{font-size:15px;font-weight:680;letter-spacing:-.01em}
+.pillar p{font-size:13.5px;color:var(--ink-2);line-height:1.6}
+.pillar .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:11px}
+.pillar .tags i{
+  font-style:normal;font:500 11.5px/1 var(--mono);padding:4px 7px;border-radius:4px;
+  background:var(--bg-2);color:var(--ink-2);letter-spacing:.01em;
+}
+
+/* ── Three-tier kernel ── */
+.kernel{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kcard{
+  border-radius:var(--r);padding:18px 19px;border:1px solid var(--line);
+  background:var(--card);position:relative;transition:transform .2s,box-shadow .2s;
+}
+.kcard:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.kcard .lamp{display:inline-flex;align-items:center;gap:7px;font:600 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.kcard .lamp b{width:9px;height:9px;border-radius:50%}
+.kcard h4{margin:11px 0 6px;font-size:14.5px;font-weight:680}
+.kcard p{font-size:13px;color:var(--ink-2);line-height:1.58}
+.k-stable .lamp{color:#2F7A5E}.k-stable .lamp b{background:#2F7A5E;box-shadow:0 0 0 3px rgba(47,122,94,.16)}
+.k-volatile .lamp{color:#B8791F}.k-volatile .lamp b{background:#D9A03C;box-shadow:0 0 0 3px rgba(217,160,60,.18)}
+.k-unknown .lamp{color:#7A8480}.k-unknown .lamp b{background:#9AA5A1;box-shadow:0 0 0 3px rgba(154,165,161,.18)}
+
+/* ── Marketplace entries ── */
+.plats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.plat{
+  display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r);padding:19px 20px 17px;
+  transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s,border-color .22s;
+}
+.plat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:rgba(47,122,94,.32)}
+.plat-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.plat-ico{
+  width:32px;height:32px;border-radius:9px;display:grid;place-items:center;
+  font:700 14px/1 var(--mono);flex:0 0 auto;
+}
+.plat-ico.wb{background:#E8F1EC;color:#1F4E3D}
+.plat-ico.qw{background:#FBEDE6;color:#C9633A}
+.plat-ico.sh{background:#EDEAF6;color:#5A4B9C}
+.plat-name{font-size:14.5px;font-weight:680;letter-spacing:-.01em}
+.plat-ver{
+  margin-left:auto;font:600 11px/1 var(--mono);padding:4px 7px;border-radius:4px;
+  background:var(--bg-2);color:var(--ink-3);letter-spacing:.02em;white-space:nowrap;
+}
+.plat-ver.live{background:var(--green-pale);color:var(--green)}
+.plat-path{
+  font:500 11.5px/1.5 var(--mono);color:var(--ink-3);
+  word-break:break-all;margin-bottom:11px;
+}
+.plat-note{font-size:12.5px;color:var(--ink-2);line-height:1.55;margin-bottom:13px}
+.plat-go{
+  margin-top:auto;display:flex;align-items:center;justify-content:space-between;
+  padding-top:12px;border-top:1px dashed var(--line);
+  font-size:12.5px;font-weight:640;color:var(--green);
+}
+.plat-go .ar{transition:transform .2s}
+.plat:hover .plat-go .ar{transform:translateX(4px)}
+.plat-off{
+  display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-3);
+  padding:13px 16px;border:1px dashed var(--line);border-radius:10px;
+  background:rgba(243,238,227,.5);margin-top:14px;line-height:1.55;
+}
+
+/* ── Version reality alert ── */
+.alert{
+  display:flex;gap:11px;padding:14px 16px;border-radius:11px;margin-top:16px;
+  background:var(--accent-pale);border:1px solid rgba(201,99,58,.22);
+  font-size:12.8px;line-height:1.62;color:#8A4526;
+}
+.alert b{color:#A34E28}
+.alert svg{width:15px;height:15px;flex:0 0 auto;margin-top:2px;stroke:#C9633A;fill:none;stroke-width:1.8}
+
+/* ── Download ── */
+.tabs{display:inline-flex;gap:4px;padding:4px;border-radius:11px;background:var(--bg-2);margin-bottom:20px}
+.tab{
+  display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border:0;border-radius:8px;
+  background:transparent;color:var(--ink-2);font:600 13px/1 inherit;cursor:pointer;
+  transition:background .18s,color .18s,box-shadow .18s;font-family:inherit;
+}
+.tab:hover{color:var(--green)}
+.tab.on{background:var(--card);color:var(--green);box-shadow:0 1px 3px rgba(19,36,32,.09)}
+.tab .badge{
+  font:600 10px/1 var(--mono);padding:3px 5px;border-radius:3px;
+  background:var(--green);color:#fff;letter-spacing:.04em;
+}
+/* Cards use flex rather than grid: eight fill 4+4, three fill a single row,
+   so the last row is always flush without a half-empty slot. */
+.dl-grid{display:flex;flex-wrap:wrap;gap:12px}
+.dl{
+  flex:1 1 270px;min-width:270px;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 16px 14px;
+  opacity:0;transform:translateY(8px);animation:dlIn .42s cubic-bezier(.4,0,.2,1) forwards;
+  transition:border-color .2s,box-shadow .2s;
+}
+@keyframes dlIn{to{opacity:1;transform:none}}
+.dl:hover{border-color:rgba(47,122,94,.3);box-shadow:var(--shadow)}
+.dl-top{display:flex;align-items:center;gap:7px;margin-bottom:10px}
+.dl-plat{font-size:13px;font-weight:680;letter-spacing:-.01em}
+.dl-kind{
+  margin-left:auto;font:600 10.5px/1 var(--mono);padding:3.5px 6px;border-radius:4px;letter-spacing:.03em;
+}
+.k-skill{background:var(--green-pale);color:var(--green)}
+.k-expert{background:var(--accent-pale);color:#B0562F}
+.dl-file{
+  display:flex;align-items:baseline;flex-wrap:wrap;gap:0;
+  font:500 11.5px/1.5 var(--mono);height:47px;overflow:hidden;
+  word-break:break-all;color:var(--ink);
+}
+.dl-file .pre{color:var(--ink-3);opacity:.78}
+.dl-file .tail{font-weight:650;white-space:nowrap}
+.dl-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;font:500 11px/1 var(--mono);color:var(--ink-3)}
+.dl-meta b{color:var(--ink-2);font-weight:600}
+.dl-note{
+  margin-top:9px;padding-top:9px;border-top:1px dashed var(--line-2);
+  font-size:12px;color:var(--ink-2);line-height:1.5;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:8px;
+}
+.dl-dl{
+  flex:0 0 auto;font:600 11px/1 var(--mono);color:var(--green);
+  opacity:0;transform:translateY(3px);
+  transition:opacity .2s,transform .2s;
+}
+.dl:hover .dl-dl{opacity:1;transform:none}
+.dl-empty{flex:1 1 100%;padding:28px;text-align:center;color:var(--ink-3);font-size:13px}
+
+/* ── Compatibility matrix ── */
+.mtx-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.mtx-scroll{overflow-x:auto}
+table.mtx{width:100%;border-collapse:collapse;font-size:12.5px;min-width:760px}
+table.mtx th{
+  text-align:left;padding:12px 14px;background:var(--bg-2);
+  font:600 11px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-3);white-space:nowrap;border-bottom:1px solid var(--line);
+}
+table.mtx td{padding:12px 14px;border-bottom:1px solid var(--line-2);vertical-align:top;line-height:1.5}
+table.mtx tr:last-child td{border-bottom:0}
+table.mtx tbody tr:hover td{background:#FDFBF6}
+table.mtx .pn{font-weight:680;white-space:nowrap}
+table.mtx .mono{font:500 11.5px/1.5 var(--mono);color:var(--ink-2);word-break:break-all}
+table.mtx .yes{color:var(--green);font-weight:640}
+table.mtx .no{color:var(--ink-3)}
+
+/* ── Quick start ── */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.step h4{display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:680;margin-bottom:9px}
+.step h4 .n{
+  width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;
+  display:grid;place-items:center;font:700 11.5px/1 var(--mono);flex:0 0 auto;
+}
+.step p{font-size:13px;color:var(--ink-2);line-height:1.62}
+
+/* ── Verification ── */
+.verify{
+  background:linear-gradient(135deg,#1B4536,#255A45 55%,#1F4E3D);
+  border-radius:18px;padding:38px 40px;color:#EAF2ED;position:relative;overflow:hidden;
+}
+.verify::before{
+  content:"";position:absolute;inset:0;opacity:.16;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);
+  background-size:38px 38px;
+  mask-image:radial-gradient(70% 80% at 22% 20%,#000,transparent 76%);
+  -webkit-mask-image:radial-gradient(70% 80% at 22% 20%,#000,transparent 76%);
+}
+.verify-in{position:relative;display:grid;grid-template-columns:1.05fr 1.55fr;gap:34px;align-items:center}
+.verify h2{font-size:clamp(20px,2.3vw,25px);font-weight:730;letter-spacing:-.02em;line-height:1.28}
+.verify .sub{margin-top:11px;font-size:13px;line-height:1.65;color:rgba(234,242,237,.76)}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14);border-radius:11px;overflow:hidden}
+.vcell{background:rgba(255,255,255,.055);padding:15px 12px;text-align:center}
+.vcell .n{font:700 20px/1.1 var(--mono);color:#fff;letter-spacing:-.02em}
+.vcell .n small{font-size:11px;font-weight:600;color:rgba(234,242,237,.6);margin-left:1px}
+.vcell .t{margin-top:5px;font-size:11px;color:rgba(234,242,237,.66);letter-spacing:.01em}
+
+/* ── Footer ── */
+footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
+.foot{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
+.foot-l{font-size:12.5px;color:var(--ink-2);line-height:1.7}
+.foot-l b{font-weight:680;color:var(--ink)}
+.foot-r{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-2)}
+.foot-r a{border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
+.foot-r a:hover{color:var(--green);border-bottom-color:rgba(47,122,94,.4)}
+.disclaimer{margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);font-size:11.5px;line-height:1.7;color:var(--ink-3)}
+
+/* ── Scroll reveal ── */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:960px){
+  .pillars,.plats,.steps{grid-template-columns:repeat(2,1fr)}
+  .dl{flex:1 1 240px;min-width:240px}
+  .verify-in{grid-template-columns:1fr;gap:24px}
+  .vgrid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:760px){
+  .nav-links{display:none}
+  .hero{padding:44px 0 40px}
+  section{padding:44px 0}
+  .verify{padding:26px 20px}
+}
+@media(max-width:560px){
+  .wrap{width:calc(100% - 32px)}
+  .pillars,.plats,.steps{grid-template-columns:1fr}
+  .kernel{grid-template-columns:1fr}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .vgrid{grid-template-columns:repeat(3,1fr)}
+  .vgrid>*:last-child:nth-child(3n+1){grid-column:1/-1}
+  .sec-desc{margin-left:0;max-width:none}
+  h1.title{font-size:31px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .dl{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
 
 <nav class="nav">
-  <div class="nav-in">
-    <a class="logo" href="#top"><svg viewBox="0 0 32 32"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF9F0A"/><stop offset="1" stop-color="#FF6482"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><circle cx="16" cy="15" r="8" fill="none" stroke="#fff" stroke-width="2"/><path d="M16 7l3 8-8 0z" fill="#fff"/></svg>WorldsTip</a>
-    <div class="lang"><a href="index.html">中文</a><a href="index-en.html" class="on">EN</a></div>
-    <div class="sp">
-      <a class="nav-cta warm" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener"><span class="lg">Qianwen AI Skill Hub →</span><span class="sm">Qianwen Hub →</span></a>
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="9.2" stroke="#1F4E3D" stroke-width="1.6"/>
+        <path d="M3.2 12h17.6M12 2.8c2.6 2.6 4 5.8 4 9.2s-1.4 6.6-4 9.2c-2.6-2.6-4-5.8-4-9.2s1.4-6.6 4-9.2z" stroke="#1F4E3D" stroke-width="1.3"/>
+      </svg>
+      WorldsTip
+    </a>
+    <div class="nav-links">
+      <a href="#ability">Ability</a>
+      <a href="#kernel">Trust</a>
+      <a href="#online">Install</a>
+      <a href="#download">Download</a>
+      <a href="#matrix">Matrix</a>
+      <a href="#verify">Verification</a>
     </div>
+    <a class="nav-cta" href="#download">
+      Get the pack
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" style="width:13px;height:13px"><path d="M8 2v8m0 0l3-3m-3 3L5 7M2.5 12.5h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
   </div>
 </nav>
 
-<div class="chips" id="chips">
-  <a href="#what">What it does</a><a href="#samples">Sample</a><a href="#gates">Pre-trip check</a><a href="#install">Install</a><a href="#faq">FAQ</a>
-</div>
+<header class="hero" id="top">
+  <div class="wrap hero-in">
+    <div class="eyebrow"><span class="dot"></span>v0.2.1 fused &middot; eight packs &middot; six platforms</div>
 
-<div class="page" id="top">
-  <aside class="rail" id="rail">
-    <div class="rail-t">Contents</div>
-    <a href="#what"><i>01</i>What it does</a>
-    <a href="#samples"><i>02</i>Real sample</a>
-    <a href="#gates"><i>03</i>Pre-trip check</a>
-    <a href="#install"><i>05</i>Install into your Agent</a>
-    <a href="#faq"><i>06</i>FAQ</a>
-    <a class="rail-cta" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener"><b>★ Qianwen Skill Hub</b>Install in 1 min</a>
-  </aside>
+    <h1 class="title">One sentence in, a booklet you can <em>actually follow</em></h1>
 
-  <main class="main">
+    <h1 class="subtitle">
+      WorldsTip Travel Guide Booklet &mdash; domestic and outbound in one skill: six-way transport comparison,
+      room splitting, four outbound gates and five moto gates that stop unverified claims at the door.
+      Everything in one place: <a href="#online">install from a marketplace</a>, or <a href="#download">download the pack</a> for your platform.
+      Main site at <a href="https://worldstip.com" target="_blank" rel="noopener">worldstip.com</a>.
+    </h1>
 
-    <header class="hero">
-      <div class="badges">
-        <span class="badge"><span class="dot"></span><b>v0.1.41</b> released</span>
-        <span class="badge">🧭 Domestic + outbound <b>dual-mode</b></span>
-        <span class="badge">✅ <b>1028</b> regression assertions passing</span>
-        <span class="badge">📦 Skill / self-hosted <b>Agent</b></span>
-      </div>
-      <h1 class="h1-skill"><a href="https://worldstip.com" target="_blank" rel="noopener">TRAVEL PLANNER MASTER · SKILL</a></h1>
-      <h1 class="h1-site"><a href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">One sentence in,<br>a booklet you can <span class="hl">actually follow</span></a></h1>
-      <p class="hero-sub">Name the destination, days and company — it works out when to leave each morning, which spots in which order, which rooms to book, <b>whether your motorcycle is allowed on the highway, whether your RV clears the bridges, whether your visa will arrive in time</b>. Apple-style layout, single-file HTML, Ctrl+P to PDF.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">Get it on Qianwen AI →</a>
-        <a class="btn btn-ghost" href="downloads/worldstip-travel-planner-v0.1.41.zip">Download the skill pack (724 KB)</a>
-      </div>
-      <div class="chip-row">
-        <span class="chip">🏍 <b>31</b> provinces highway rules</span>
-        <span class="chip">🚫 <b>45</b> cities moto bans</span>
-        <span class="chip">🚐 RV five lamps</span>
-        <span class="chip">🛂 Outbound: 4 documents · <b>32</b> countries</span>
-        <span class="chip">👥 <b>6</b> party structures</span>
-        <span class="chip">🔍 Unknown = grey lamp, never invented</span>
-      </div>
-      <div class="hero-frame">
-        <div class="bar"><i></i><i></i><i></i><span>Real generated sample · Changsha weekend hike, 2 days (scrollable)</span></div>
-        <iframe src="samples/sample-changsha-hiking-light.html" title="Real generated travel booklet sample" loading="lazy"></iframe>
-      </div>
-    </header>
+    <div class="hero-cmds">
+      <a class="btn btn-primary" href="#download">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0l3-3m-3 3L5 7M2.5 12.5h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Pick your platform
+      </a>
+      <a class="btn btn-ghost" href="#matrix">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2.2" y="2.2" width="11.6" height="11.6" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M2.2 6.4h11.6M6.6 6.4v7.4" stroke="currentColor" stroke-width="1.4"/></svg>
+        How the eight differ
+      </a>
+    </div>
 
-    <!-- ★ Qianwen AI Skill Hub · featured -->
-    <section class="hub" id="qianwen-hub" aria-label="Qianwen AI Skill Hub official page">
-      <div class="hub-card reveal">
-        <span class="hub-eyebrow"><span class="live"></span>OFFICIAL · QIANWEN AI SKILL HUB</span>
-        <h2 class="hub-h">Install <em>WorldsTip Travel Planner Master</em><br>v0.1.41 — straight from the Qianwen AI Skill Hub</h2>
-        <p class="hub-d">Open the Hub page and hit "Add to my Agent" — done in a minute. Before you go it checks whether your motorcycle may use the highway, whether the RV clears the height limit, and whether your visa can arrive in time. What it cannot verify, it says so. It never invents.</p>
-        <a class="hub-url" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">🔗 qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner</a>
-        <div class="hub-actions">
-          <a class="hub-btn" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">Open Qianwen AI Skill Hub →</a>
-          <a class="hub-btn ghost" href="#install">Other platforms</a>
-        </div>
-        <div class="hub-cmd">
-          <code id="cmdHub">Install this Skill: https://agent.worldstip.com/downloads/worldstip-travel-planner-v0.1.41.zip</code>
-          <button data-copy="cmdHub">Copy</button>
-        </div>
-        <p class="hub-note">Paste it to any Agent in Qianwen and it installs in one go — or download the ZIP for other Agents.</p>
-        <div class="hub-facts">
-          <div><b>v0.1.41</b>current (on Qianwen Hub; all platforms synced to v0.1.41)</div>
-          <div><b>1028</b>regression assertions</div>
-          <div><b>6</b>capability pillars</div>
-          <div><b>0</b>no fabrication</div>
-        </div>
+    <div class="metrics">
+      <div class="metric">
+        <div class="v"><span data-count="8">0</span><span>packs</span></div>
+        <div class="k">v0.2.1 across six platforms, plus three v0.1.49 archives</div>
       </div>
-    </section>
+      <div class="metric">
+        <div class="v"><span data-count="313">0</span><span>checks</span></div>
+        <div class="k">Regression assertions passing: 27 + 204 + 38 + 44</div>
+      </div>
+      <div class="metric">
+        <div class="v"><span data-count="11">0</span><span>packs</span></div>
+        <div class="k">Every pack cleared the structure probe, zero blockers</div>
+      </div>
+      <div class="metric">
+        <div class="v">0<span>files</span></div>
+        <div class="k">Extension-less files left in any pack</div>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <div class="marquee"><div class="marquee-track" id="marquee">
-      <span>Plan Dali for 4 days</span><span>Where to go this weekend</span><span>Sunrise hike</span><span>Moto G318</span><span>Can motorcycles use highways</span><span>RV campsites</span><span>Concert trip</span><span>Citywalk</span><span>Visa for outbound</span><span>Travel with parents</span><span>Budget travel</span><span>Autumn foliage</span><span>RV height limits</span><span>C6 trailer license</span><span>How to get from X to Y</span>
-    </div></div>
+<section id="ability">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">Capability</span>
+      <h2 class="sec-title">Four pillars. It cuts options, not information.</h2>
+      <p class="sec-desc">No wall of tips. Given a fixed budget, day count and energy level, it removes half the options and orders the rest so every line is executable.</p>
+    </div>
 
-    <section id="what">
-      <div class="sec-head reveal"><div class="sec-no">01 · WHAT IT DOES</div>
-        <h2>One request in, one booklet out</h2>
-        <p class="sec-desc">Not "here's what exists" — it <b>cuts half the options, puts the rest in the right order, and makes sure the trip doesn't fall apart</b>, within your budget, days and energy.</p>
-      </div>
-      <div class="io reveal">
-        <div class="io-box"><h3>🗣 You give one request</h3>
-          <div class="q">"Dali in October, 4 days, family of three with a kid, leaving from Yueyang, budget 6,000."</div>
-          <ul><li>Origin / destination / days</li><li>Party composition &amp; relations</li><li>Budget / travel mode</li></ul>
+    <div class="pillars">
+      <article class="pillar rv">
+        <div class="pillar-h">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 17h16M6 17V9l3-4h6l3 4v8M8 13h8"/><circle cx="8" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/></svg></span>
+          <h3>Domestic transport comparison</h3>
         </div>
-        <div class="io-arrow">→</div>
-        <div class="io-box"><h3>📖 You get a booklet</h3>
-          <ul><li><b>Day-by-day route</b>: when to leave, which spots, how they connect</li><li><b>Room plan</b>: how many rooms, which beds, why</li><li><b>Ticketing</b>: price, whether to book ahead, where</li><li><b>Weather pre-check</b>: workable that day, and the fallback</li><li><b>Budget breakdown</b> + packing list + photo spots</li></ul>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="card reveal"><div class="c-ico ico-warm">🚄</div><h3>All transport families</h3>
-          <p>Public transit (plane / high-speed rail / train / coach / ferry) six-mode comparison into plans A/B/C, plus <b>self-drive, cycling, hiking, extreme sports, concert-anchored trips</b> — fast / cheap / flexible by distance band.</p>
-          <div class="mini-stats"><span class="mini-stat">Six-mode compare</span><span class="mini-stat"><i>24</i> pace profiles</span></div>
-        </div>
-        <div class="card reveal"><div class="c-ico ico-rose">🏍</div><h3>5 things to check before riding</h3>
-          <p>License class / helmet / province-by-province highway access / city-by-city bans / range &amp; refuel radius, <b>each with an evidence level</b>; refuel action sequences; 18 routes with shade ratings.</p>
-          <div class="lamp-row"><span class="lamp lamp-yellow">Highway-banned province → take national roads</span><span class="lamp lamp-red">Only a deliberate ban-break stops you</span></div>
-        </div>
-        <div class="card reveal"><div class="c-ico ico-sky">🚐</div><h3>RV &amp; outbound checks</h3>
-          <p>Per your <b>declared vehicle</b>: height limits, license classes (C1 / B-A / C6), supply radius, black/grey water compliance; outbound passport / visa / vaccine / insurance <b>four documents checked first — fail stops the trip</b>. It never recommends a vehicle model, never files visas for you.</p>
-          <div class="lamp-row"><span class="lamp lamp-red">Only illegal / non-compliant stops you</span><span class="lamp lamp-grey">Unverified is flagged</span></div>
-        </div>
-        <div class="card reveal"><div class="c-ico ico-green">🔍</div><h3>Credibility core</h3>
-          <p>Facts split into <b>stable / volatile / unknown</b>: volatile data must be re-verified online and date-stamped, unverified data carries a downgrade badge, <b>unknown is stated as unknown — nothing is invented</b>. Change one parameter, only that dimension re-runs.</p>
-          <div class="mini-stats"><span class="mini-stat">Date stamps</span><span class="mini-stat">Downgrade badges</span><span class="mini-stat">third_party tags</span></div>
-        </div>
-      </div>
-    </section>
+        <p>Ring distance first, then mode: within 30 km, 30&ndash;150 km suburban, beyond 150 km intercity. High-speed rail, flight, self-drive, coach, carpool and charter compared in one table, with the walk from the arrival station.</p>
+        <div class="tags"><i>ring rule</i><i>six modes</i><i>arrival route</i></div>
+      </article>
 
-    <section id="samples">
-      <div class="sec-head reveal"><div class="sec-no">02 · REAL SAMPLE</div>
-        <h2>A real generated booklet — not a mockup</h2>
-        <p class="sec-desc">The one below was produced by v0.1.41 from a single request: <b>scrollable, Ctrl+P to PDF</b>.</p>
-      </div>
-      <div class="samples">
-        <div class="sample reveal"><div class="cover sc2"><span class="tag">Weekend · sunrise hike</span><span class="emoji">🥾</span><iframe src="samples/sample-changsha-hiking-light.html" title="Changsha hike preview" loading="lazy" scrolling="no"></iframe></div>
-          <div class="body"><h3>Around Changsha · weekend sunrise hike</h3><p>A local's view: drive time, duration and cost for 5 hills by departure time, plus two executable half-day plans. Day-by-day routes, packing list, weather pre-check and budget breakdown are all inside.</p>
-          <div class="links"><a href="samples/sample-changsha-hiking.html" target="_blank" rel="noopener">Open full version →</a><a href="samples/sample-changsha-hiking-light.html" target="_blank" rel="noopener">Compact</a></div></div></div>
-      </div>
-    </section>
+      <article class="pillar rv">
+        <div class="pillar-h">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 4l9 6.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg></span>
+          <h3>Room splitting and budget</h3>
+        </div>
+        <p>Room count and bed type come from relationship times gender, not headcount divided by two. Nights, district and the basis for each budget line come out together, so you can reconcile before booking.</p>
+        <div class="tags"><i>two-axis split</i><i>district advice</i><i>budget basis</i></div>
+      </article>
 
-    <section id="gates">
-      <div class="sec-head reveal"><div class="sec-no">03 · PRE-TRIP CHECK</div>
-        <h2>Pre-trip check: can this trip actually happen?</h2>
-        <p class="sec-desc">Riding a moto, driving an RV, or going abroad follows completely different rules than driving a car — <b>it checks "can this go, is it legal, any traps" item by item before you leave, and tells you in plain terms</b>.</p>
+      <article class="pillar rv">
+        <div class="pillar-h">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l7.5 3.4v5c0 4.6-3.1 8.1-7.5 9.6-4.4-1.5-7.5-5-7.5-9.6v-5z"/><path d="M8.8 12.1l2.2 2.2 4.2-4.4"/></svg></span>
+          <h3>Four outbound gates, five moto gates</h3>
+        </div>
+        <p>Passport validity, visa status, vaccination proof and travel insurance default to blocking any unverified conclusion. Motorcycling adds licence, helmet, provincial expressway access, city bans and fuel range.</p>
+        <div class="tags"><i>four gates</i><i>five gates</i><i>red amber green grey</i></div>
+      </article>
+
+      <article class="pillar rv">
+        <div class="pillar-h">
+          <span class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 14l3-7h6l3 7M9 7h6"/></svg></span>
+          <h3>Moto routes and city-spend layer</h3>
+        </div>
+        <p>2,514 points of interest, an administrative base covering 34 provinces, 361 cities and 3,001 counties, plus city dining, lodging, districts and cost level. Offline fixtures included &mdash; it runs without a network.</p>
+        <div class="tags"><i>2,514 POIs</i><i>district data</i><i>runs offline</i></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="kernel" style="background:linear-gradient(180deg,transparent,rgba(31,78,61,.028) 18%,rgba(31,78,61,.028) 82%,transparent)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">Kernel</span>
+      <h2 class="sec-title">If it cannot be verified, it says so. That is a constraint, not a style choice.</h2>
+      <p class="sec-desc">Facts sit in three tiers, each with exactly one handling rule. Model memory may not be used to fill in prices, visa status or opening hours.</p>
+      <p class="sec-desc" style="margin-top:10px">Since v0.2.1 the <b>decision logic itself has to survive counter-examples</b>. Even at a clean A/100 static score, nine places still read &ldquo;October 3&rdquo; as three days, mistook &ldquo;help me write a report&rdquo; for a motorcycle trip, and compared the last bus against a last ferry.<br>All nine are fixed and locked behind 44 counter-example assertions &mdash; each one records the original wording that failed, then asserts it can no longer recur.</p>
+    </div>
+
+    <div class="kernel">
+      <div class="kcard k-stable rv">
+        <span class="lamp"><b></b>stable</span>
+        <h4>Stable facts</h4>
+        <p>Geography, culture, institutions. Taken from the local base, sourced and re-checkable.</p>
       </div>
-      <div class="tbl-wrap reveal">
-        <table class="d">
-          <tr><th style="width:110px">Constraint</th><th>Car</th><th>Motorcycle / RV / outbound handling</th></tr>
-          <tr><td class="k">License</td><td>Any valid license</td><td><b>Class must match</b> (riding a moto on a C1 counts as unlicensed); RV ≥6m or ≥4,500kg needs B/A license, trailer needs C6</td></tr>
-          <tr><td class="k">Highway / height</td><td>Just go</td><td>Highway <b>varies by province</b>: 17 of 31 provinces ban motorcycles on highways — those just warn you to take national roads (+40–80% time); only deliberately breaking the ban gets stopped; RV height checked against measured height</td></tr>
-          <tr><td class="k">City limits</td><td>Detour possible</td><td><b>Varies by city</b>: 45 cities ban or restrict motorcycles — entering may get the bike impounded</td></tr>
-          <tr><td class="k">Range / supply</td><td>600–800km, dense stations</td><td><b>200–400km</b>, mountain gaps up to 150km; refuel action sequences; RV supply radius computed at ~85L water/person/day</td></tr>
-          <tr><td class="k">Outbound admission</td><td>—</td><td>Passport / visa / vaccine / insurance <b>four documents checked first</b> — fail and it stops before any itinerary; unlisted countries are marked "unknown"</td></tr>
+      <div class="kcard k-volatile rv">
+        <span class="lamp"><b></b>volatile</span>
+        <h4>Volatile items must be verified</h4>
+        <p>Fares, schedules, opening hours, quotas, visa policy, road conditions. Verified with a date stamp; anything stale is marked &ldquo;re-check before departure&rdquo;.</p>
+      </div>
+      <div class="kcard k-unknown rv">
+        <span class="lamp"><b></b>unknown</span>
+        <h4>Grey light, no conclusion</h4>
+        <p>Not found, or the source is unclear. It only says where to look and what to check &mdash; no room for guesswork.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="online">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">Install in place</span>
+      <h2 class="sec-title">Three marketplaces already carry it</h2>
+      <p class="sec-desc">All three point at the same skill's published build, ready to use once installed. Version numbers below were read off each marketplace page; they do not necessarily match the local pack.</p>
+    </div>
+
+    <div class="plats">
+      <a class="plat rv" href="https://www.workbuddy.cn/share/asset?shareCode=1vcWCDMZzdZOCyznXg4EQg&amp;sig=DWLyHwIltgobijgO" target="_blank" rel="noopener">
+        <div class="plat-top">
+          <span class="plat-ico wb">W</span>
+          <span class="plat-name">WorkBuddy</span>
+          <span class="plat-ver">not shown</span>
+        </div>
+        <div class="plat-path">workbuddy.cn/share/asset?shareCode=1vcWCDMZzdZOCyznXg4EQg</div>
+        <div class="plat-note">The share page is a single-page app whose body carries no version field; version is whatever the page detail says. Use the v0.2.1 skill or expert pack below.</div>
+        <div class="plat-go"><span>Open share page</span><span class="ar">&rarr;</span></div>
+      </a>
+
+      <a class="plat rv" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">
+        <div class="plat-top">
+          <span class="plat-ico qw">Q</span>
+          <span class="plat-name">Qwen AI</span>
+          <span class="plat-ver">v0.1.48</span>
+        </div>
+        <div class="plat-path">qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner</div>
+        <div class="plat-note">The marketplace page currently reads v0.1.48, one version behind local v0.2.1: the nine logic fixes are not live there yet. Re-upload the v0.2.1 Qwen pack to align.</div>
+        <div class="plat-go"><span>Open skill page</span><span class="ar">&rarr;</span></div>
+      </a>
+
+      <a class="plat rv" href="https://skillhub.cn/skills/user_dc997363/worldstip" target="_blank" rel="noopener">
+        <div class="plat-top">
+          <span class="plat-ico sh">S</span>
+          <span class="plat-name">SkillHub</span>
+          <span class="plat-ver live">v1.0.0</span>
+        </div>
+        <div class="plat-path">skillhub.cn/skills/user_dc997363/worldstip</div>
+        <div class="plat-note">SkillHub runs its own version series and shows v1.0.0, which is not the same numbering as local 0.2.1 &mdash; no need to force alignment. Updated today.</div>
+        <div class="plat-go"><span>Open skill page</span><span class="ar">&rarr;</span></div>
+      </a>
+    </div>
+
+    <div class="alert rv">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.2M12 16.2v.6" stroke-linecap="round"/></svg>
+      <div><b>Three platforms, three different versions. That is the current state, not a defect.</b> Qwen shows v0.1.48, SkillHub v1.0.0, local is v0.2.1, and WorkBuddy does not display a version. For the build with all nine logic fixes, take the v0.2.1 pack below and upload it yourself; an older marketplace install will not auto-upgrade.</div>
+    </div>
+
+    <div class="plat-off rv">
+      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.2" stroke="#6B7C75" stroke-width="1.3"/><path d="M8 4.8v3.6l2.4 1.4" stroke="#6B7C75" stroke-width="1.3" stroke-linecap="round"/></svg>
+      <div>Baidu Dazi, Coze and DataBuilder <b>ship packs only, with no public store listing</b>. Download from below and upload through each platform's own console. This page does not invent links.</div>
+    </div>
+  </div>
+</section>
+
+<section id="download" style="background:linear-gradient(180deg,transparent,rgba(201,99,58,.03) 20%,rgba(201,99,58,.03) 80%,transparent)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">Download</span>
+      <h2 class="sec-title">Grab the pack for your platform</h2>
+      <p class="sec-desc">Sizes are measured unzipped bytes per pack. Business content is identical across platforms in a version; only directory layout and frontmatter differ.</p>
+    </div>
+
+    <div class="tabs rv" role="tablist" aria-label="Version">
+      <button class="tab on" role="tab" aria-selected="true" data-ver="0.2.1">v0.2.1 fused<span class="badge">latest</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-ver="0.1.49">v0.1.49 itinerary-only</button>
+    </div>
+
+    <div class="dl-grid" id="dlGrid" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="matrix">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">Matrix</span>
+      <h2 class="sec-title">How the eight packs differ</h2>
+      <p class="sec-desc">Same skill content, but each platform only accepts its own layout and frontmatter. The wrong layout gets rejected as &ldquo;no SKILL.md found&rdquo; regardless of content quality.</p>
+    </div>
+
+    <div class="mtx-box rv">
+      <div class="mtx-scroll">
+        <table class="mtx">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Suffix</th>
+              <th>Layout</th>
+              <th>Frontmatter</th>
+              <th>Extra files</th>
+              <th>Unzipped</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pn">WorkBuddy skill</td>
+              <td class="mono">-fused.zip</td>
+              <td>Flat, <code>SKILL.md</code> at root</td>
+              <td>generic</td>
+              <td class="no">none</td>
+              <td class="mono">2.92 MiB</td>
+            </tr>
+            <tr>
+              <td class="pn">WorkBuddy expert</td>
+              <td class="mono">-expert-fused.zip</td>
+              <td><code>.codebuddy-plugin/</code> + <code>agents/</code> + <code>skills/</code></td>
+              <td>driven by plugin.json</td>
+              <td class="yes">plugin.json, avatar PNG</td>
+              <td class="mono">2.94 MiB</td>
+            </tr>
+            <tr>
+              <td class="pn">Qwen AI</td>
+              <td class="mono">-qianwen.zip</td>
+              <td>Flat, <code>SKILL.md</code> at root</td>
+              <td>7 fields, no outbound URLs</td>
+              <td class="yes">tests/ removed (netting conflicts with source-link assertions)</td>
+              <td class="mono">2.86 MiB</td>
+            </tr>
+            <tr>
+              <td class="pn">Coze</td>
+              <td class="mono">-coze.skill</td>
+              <td>Flat, <code>SKILL.md</code> at root</td>
+              <td>generic</td>
+              <td class="yes">.skill suffix, same content as fused</td>
+              <td class="mono">2.92 MiB</td>
+            </tr>
+            <tr>
+              <td class="pn">Baidu Dazi skill</td>
+              <td class="mono">-baidu-dazi.zip</td>
+              <td>Wrapped in one top-level folder</td>
+              <td><code>metadata.dumate</code> block</td>
+              <td class="yes">tests/cases.json, 14 cases</td>
+              <td class="mono">2.93 MiB</td>
+            </tr>
+            <tr>
+              <td class="pn">Baidu Dazi suite</td>
+              <td class="mono">-baidu-dazi-plugin.zip</td>
+              <td><code>.claude-plugin/</code> + <code>agents/</code> + <code>skills/</code></td>
+              <td>driven by plugin.json</td>
+              <td class="yes">entry agent + embedded skill</td>
+              <td class="mono">2.94 MiB</td>
+            </tr>
+            <tr>
+              <td class="pn">DataBuilder</td>
+              <td class="mono">-baidu_databuilder.zip</td>
+              <td>Wrapped in one top-level folder</td>
+              <td>generic</td>
+              <td class="no">none</td>
+              <td class="mono">2.92 MiB</td>
+            </tr>
+            <tr>
+              <td class="pn">SkillHub</td>
+              <td class="mono">-skillhub.zip</td>
+              <td>Flat, <code>SKILL.md</code> must sit at root</td>
+              <td>slug / version / displayName</td>
+              <td class="yes">permissions section</td>
+              <td class="mono">2.92 MiB</td>
+            </tr>
+          </tbody>
         </table>
       </div>
-      <div class="tbl-wrap reveal">
-        <table class="d">
-          <tr><th style="width:110px">Branch</th><th>🚫 Can't go</th><th>⚠️ Go, but handle first</th><th>❓ Unknown — won't guess</th></tr>
-          <tr><td class="k">🏍 Motorcycle</td><td>License mismatch still riding; highway planned in a banning province</td><td>Highway-banned province; moto-banned city; tight range</td><td>Local enforcement practice unverified</td></tr>
-          <tr><td class="k">🚐 RV</td><td>License vs. vehicle legal requirement mismatch still driving</td><td>Height limits uncertain; sparse supply; camp compliance pending</td><td>Overnight camp eligibility not phone-confirmed</td></tr>
-          <tr><td class="k">🛂 Outbound</td><td>Any of visa / passport / vaccine / insurance fails</td><td>Documents in process; peak-season queues</td><td>Countries with unlisted policy</td></tr>
-        </table>
-      </div>
-      <div class="note reveal">Two disciplines locked by 465 assertions: <b>"highway banned" ≠ "can't go"</b> — national roads always work; re-verify policy 1–3 days before departure, one phone call beats one impoundment. <b>Route library discipline</b>: only stable facts (existence, direction, terrain, season) — never gas station coordinates or live road conditions; those must be checked on the day.</div>
+    </div>
 
-      </section>
+    <div class="alert rv">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.2M12 16.2v.6" stroke-linecap="round"/></svg>
+      <div><b>What changed in this round:</b> after Baidu rejected a build with &ldquo;disallowed file type: LICENSE&rdquo;, every pack now uses an extension allowlist &mdash; only <code>.md</code>, <code>.json</code>, <code>.py</code> and <code>.svg</code> get in. <code>LICENSE</code>, <code>.gitignore</code> and <code>.skillhubignore</code> are all extension-less and were removed, along with <code>tests/_tmp_plan.json</code>. The licence is still declared in frontmatter as <code>license: MIT</code>; it never depended on that file.</div>
+    </div>
+  </div>
+</section>
 
-    <section id="trust">
-      <div class="sec-head reveal"><div class="sec-no">04 · DATA & TRUST</div>
-        <h2>Why it's trustworthy: no invention is the baseline</h2>
-        <p class="sec-desc">Where others say "stay safe, bring rain gear", it gives <b>the version you can act on</b>; what it can't find, it flags grey — it never pretends to know.</p>
-      </div>
-      <div class="stats reveal" id="stats">
-        <div class="stat"><div class="num" data-n="1028">0</div><div class="lbl">regression assertions passing (465 moto)</div></div>
-        <div class="stat"><div class="num" data-n="31">0</div><div class="lbl">provinces with highway rules, 17 banning</div></div>
-        <div class="stat"><div class="num" data-n="45">0</div><div class="lbl">cities with moto bans / restrictions</div></div>
-        <div class="stat"><div class="num" data-n="18">0</div><div class="lbl">moto routes (8 twisties / 6 long / 4 loops)</div></div>
-        <div class="stat"><div class="num" data-n="3404">0</div><div class="lbl">cached 12306 station codes</div></div>
-        <div class="stat"><div class="num" data-n="39">0</div><div class="lbl">deterministic scripts, stdlib only</div></div>
-      </div>
-    </section>
+<section id="start" style="background:linear-gradient(180deg,transparent,rgba(31,78,61,.028) 18%,rgba(31,78,61,.028) 82%,transparent)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-tag">Quick Start</span>
+      <h2 class="sec-title">Three steps to your first booklet</h2>
+      <p class="sec-desc">No dependencies to install; the scripts use the Python standard library only. If the host has no network access it degrades and says so.</p>
+    </div>
 
-    <!-- 05 Install into your Agent (merged former 05 Two forms + 06 Install & downloads) -->
-    <section id="install">
-      <div class="sec-head reveal"><div class="sec-no">05 · INSTALL INTO YOUR AGENT</div>
-        <h2>Two forms, and how to install per platform</h2>
-        <p class="sec-desc">The capability core is the same package, <b>two forms</b>: <b>Form A</b> installs into your existing Agent (Qianwen / WorkBuddy / Coze / Qoder / Baidu Dazi / Marvel / MiniMax — hosted, the entry lives in someone else's app); <b>Form B</b> downloads the full package to <b>self-host as a standalone app</b> (your own domain, data never leaves your server, zero capability trimming — 39 stdlib scripts, Python 3.8+). Below are the actually executable install paths per platform.</p>
-        <a class="btn btn-primary" href="downloads/worldstip-travel-planner-v0.1.41.zip" style="margin-top:10px">Download the full package (self-host / generic) →</a>
+    <div class="steps">
+      <div class="step rv">
+        <h4><span class="n">1</span>Install</h4>
+        <p>Match the layout in the matrix above, then upload the pack to the right entry. Expert packs go to the expert entry, skill packs to the skill entry &mdash; do not mix them. Three marketplaces are already live.</p>
       </div>
-            <div class="plats">
-        <div class="plat plat-hot reveal"><div class="p-top"><span class="p-emoji">🧠</span><h3>Qianwen AI</h3><span class="p-st">v0.1.41 on Hub</span></div>
-          <p>Tap "Add to my Agent" on the skill market page, or paste the install command to any Agent inside Qianwen. Published — no download needed.</p>
-          <div class="cmd"><code id="cmdQ">Install this Skill: https://agent.worldstip.com/downloads/worldstip-travel-planner-v0.1.41.zip</code><button data-copy="cmdQ">Copy</button></div>
-          <div style="margin-top:8px"><a class="p-link" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">Open skill market →</a></div>
-        </div>
-        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🛠</span><h3>WorkBuddy</h3><span class="p-st">v0.1.41 dual</span></div>
-          <p>Two ways: ①<b>Skill pack</b> <code>.skill</code> drag into chat or import; ②<b>expert/agent pack</b> <code>.codebuddy-plugin</code> import as an expert (includes persona + avatar). Or unzip to <code>~/.workbuddy/skills/</code>.</p>
-          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.41.skill">Download skill .skill (v0.1.41) →</a></div>
-          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-expert-v0.1.41-workbuddy.zip">Download expert/agent .codebuddy-plugin (v0.1.41) →</a></div>
-        </div>
-        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🥟</span><h3>Coze</h3><span class="p-st">v0.1.41 ready</span></div>
-          <p>Coze has no markdown-skill zip import; use Bot + knowledge: paste the <code>SKILL.md</code> body from <code>-coze.zip</code> into the Bot persona, upload <code>references/</code> as knowledge, enable web search. <code>INSTALL.md</code> inside the pack has steps.</p>
-          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.41-coze.zip">Download Coze pack ZIP (v0.1.41) →</a></div>
-        </div>
-        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🅠</span><h3>Qoder</h3><span class="p-st">v0.1.41 expert</span></div>
-          <p>Upload the expert pack in <code>.qoder-plugin/plugin.json</code> layout (includes <code>skills/</code>, icon and Hub metadata) as a Qoder agent.</p>
-          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-expert-v0.1.41-qoder.zip">Download Qoder expert pack (v0.1.41) →</a></div>
-        </div>
-        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🐾</span><h3>Baidu Dazi</h3><span class="p-st">v0.1.41 manual</span></div>
-          <p>Baidu agents (Wenxin / Dazi) have no skill-zip import yet. Use the <code>-baidu.zip</code>: paste <code>SKILL.md</code> as the system prompt, upload key <code>references/</code> JSON as knowledge, enable web search. <code>INSTALL.md</code> inside.</p>
-          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.41-baidu.zip">Download Baidu Dazi pack ZIP (v0.1.41) →</a></div>
-        </div>
-        <div class="plat reveal"><div class="p-top"><span class="p-emoji">⚡</span><h3>Marvel</h3><span class="p-st">v0.1.41 manual</span></div>
-          <p>If Marvel imports folders/zips: import <code>-marvel.zip</code> directly; otherwise paste <code>SKILL.md</code> as the system prompt and upload <code>references/</code> as knowledge. <code>INSTALL.md</code> inside.</p>
-          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.41-marvel.zip">Download Marvel pack ZIP (v0.1.41) →</a></div>
-        </div>
-        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🌊</span><h3>MiniMax</h3><span class="p-st">v0.1.41</span></div>
-          <p>Send the command in chat, installs to <code>/workspace/.skills/</code>. Or unzip the generic ZIP into its skills directory and restart.</p>
-          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.41.zip">Download skill ZIP →</a></div>
-        </div>
-        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🔌</span><h3>Any other Agent</h3><span class="p-st">v0.1.41 generic</span></div>
-          <p>If it can read URLs it installs itself; otherwise unzip the generic ZIP into its <code>skills/</code> directory and restart. SKILL.md at root — cross-platform.</p>
-          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-v0.1.41.zip">Download generic skill ZIP →</a></div>
-        </div>
-        <div class="plat reveal"><div class="p-top"><span class="p-emoji">🧩</span><h3>Extension pack: moto-places</h3><span class="p-st">v0.1.41 optional · 508 KB</span></div>
-          <p><b>Optional add-on</b>: unlocks <b>spot-level suggestions</b> — 2,514 waypoints from motorcycle routes (coordinates + real descriptions; Hunan leads with 384), moving advice from "which city" to "which spot and why". <b>Not bundled</b> in the main package; the skill works either way: when absent it falls back to city-level suggestions and <b>shows an explicit grey-flag notice</b> — never a silent downgrade. Quality-filtered (1,996 usable / 518 flagged), queried via script so the data never floods the context.</p>
-          <div style="margin-top:8px"><a class="p-link" href="downloads/worldstip-travel-planner-ext-motoplaces-v0.1.41.zip">Download moto-places extension pack (508 KB) →</a></div>
-        </div>
+      <div class="step rv">
+        <h4><span class="n">2</span>Describe the trip</h4>
+        <p>One sentence is enough: <code>three days in Zhangjiajie from Foshan, two people, sunrise hike, budget 3000</code>. Missing parameters are collected in two short rounds, not one long form.</p>
       </div>
-<div class="note reveal"><b>Why no one-click button?</b> No platform exposes a web-side skill install deep link — installation only happens inside apps or chats. All 43 scripts are pure Python stdlib with zero third-party dependencies, running on any Python 3.8+.</div>
-    <p class="sec-desc" style="margin-top:14px"><b>Universal install (any platform fallback)</b>: download the generic <code>worldstip-travel-planner-v0.1.41.zip</code>, unzip the folder into the platform's <code>skills/</code> directory (or import <code>SKILL.md</code>); for pure-manual setups, paste the <code>SKILL.md</code> body as the system prompt and mount <code>references/</code> as knowledge, with web search on for volatile facts. One version number across all platforms — no drift.</p>
-<p class="sec-desc" style="margin-top:14px">🐙 <b>Source &amp; full package archive</b>: <a href="https://github.com/MrdT-BitsNote/Skill-WorldsTipAgent" target="_blank" rel="noopener">github.com/MrdT-BitsNote/Skill-WorldsTipAgent</a> — full SKILL.md / 43 scripts / references source, plus <code>releases/</code> holding every version zip.</p>
-    </section>
+      <div class="step rv">
+        <h4><span class="n">3</span>Get the booklet</h4>
+        <p>You get a compact A5 card-style HTML booklet with 13 sections: requirement card, transport comparison, lodging, day-by-day routing, budget breakdown, gate lights and a re-check list.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="faq">
-      <div class="sec-head reveal"><div class="sec-no">06 · FAQ</div>
-        <h2>Frequently asked questions</h2>
+<section id="verify">
+  <div class="wrap">
+    <div class="verify rv">
+      <div class="verify-in">
+        <div>
+          <h2>Everything here was run, not estimated</h2>
+          <p class="sub">Static audit, four regression suites, structure probes across eleven packs, syntax compilation and an offline smoke run. Anything not run is marked as not measured, never written up as a pass.</p>
+        </div>
+        <div class="vgrid">
+          <div class="vcell"><div class="n">A<small>/100</small></div><div class="t">static audit</div></div>
+          <div class="vcell"><div class="n">27<small>/27</small></div><div class="t">structure</div></div>
+          <div class="vcell"><div class="n">204<small>/204</small></div><div class="t">data engine</div></div>
+          <div class="vcell"><div class="n">38<small>/38</small></div><div class="t">fusion</div></div>
+          <div class="vcell"><div class="n">44<small>/44</small></div><div class="t">counter-examples</div></div>
+          <div class="vcell"><div class="n">11<small>packs</small></div><div class="t">probe pass</div></div>
+          <div class="vcell"><div class="n">40<small>files</small></div><div class="t">0 syntax errors</div></div>
+          <div class="vcell"><div class="n">498<small>lines</small></div><div class="t">SKILL.md body</div></div>
+          <div class="vcell"><div class="n">2.94<small>MiB</small></div><div class="t">largest pack, under 3 MiB</div></div>
+        </div>
       </div>
-      <div class="faq">
-        <details class="reveal"><summary><span class="q">Q</span>It says the trip can't happen — what now?<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">"Can't happen" means an illegal or hard condition is unresolved — the booklet then renders a stop page instead of an itinerary, listing only what must be resolved first and where to verify. Fix each item and re-run with adjusted parameters. "Handle first" is a to-do list; "unknown" means unverified (check yourself — the system won't guess). Meanings: see "03 Pre-trip check".</div></details>
-        <details class="reveal"><summary><span class="q">Q</span>Are fares, tickets and weather accurate?<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">Two hard rules: <b>what can't be found is never invented</b> — only query paths and booking timing are given; <b>only verified data is labeled</b> — weather comes from Open-Meteo with verification dates, station codes are cached. Full scope: "04 Data &amp; trust".</div></details>
-        <details class="reveal"><summary><span class="q">Q</span>Can it book tickets or hotels? Can I print a PDF?<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">Booking <b>no — and it doesn't pretend to</b>: transactions need payment permissions and live inventory. PDF <b>yes</b>: single-file HTML, Ctrl+P saves directly with navigation auto-hidden and margins compressed. Changing requirements doesn't mean re-explaining: only the dimension you mention re-runs.</div></details>
-        <details class="reveal"><summary><span class="q">Q</span>Can motorcycles use the highway? How does it decide?<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">It ships 31 provinces of highway access rules (13 allow / 17 ban / 1 conditional) and 45 cities with moto bans, each with an evidence level. <b>A highway ban never stops you</b> — it only tells you to take national roads (+40–80% time); a red light appears only if you insist on the highway. Unverified cities are always grey — never a silent green.</div></details>
-        <details class="reveal"><summary><span class="q">Q</span>Skill or Agent app — which should I choose?<svg class="ar" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">Same capability core, different entry and ownership: a <b>Skill</b> installs into an existing Agent in a minute but lives in someone else's app; an <b>Agent app</b> runs on your own server with your own domain, data staying local, zero capability trimming. See "05 Install into your Agent (two forms)".</div></details>
-      </div>
-    </section>
-
-    <section class="final">
-      <div class="final-bg"></div>
-      <h2 class="reveal">Throw your trip at it</h2>
-      <p class="reveal">Name the destination, days and company — get a booklet you can actually follow.</p>
-      <div class="cta-row reveal">
-        <a class="btn btn-primary" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">Get it on Qianwen AI →</a>
-        <a class="btn btn-ghost" href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">Get the Skill on Qianwen</a>
-      </div>
-    </section>
-
-  </main>
-</div>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <div class="wrap" style="max-width:1080px">
-    <div class="foot-in">
-      <span>🧭 <b style="color:var(--ink)">WorldsTip</b> · Travel Planner Master (worldstip-travel-planner)</span>
-      <span class="f-links">
-        <a href="index.html">中文</a>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-l">
+        <b>WorldsTip Travel Guide Booklet</b> &middot; v0.2.1 fused<br>
+        Itinerary engine plus motorcycle data layer &middot; pure Python standard library, zero third-party dependencies
+      </div>
+      <div class="foot-r">
         <a href="https://worldstip.com" target="_blank" rel="noopener">worldstip.com</a>
-        <a href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">Qianwen skill market</a>
-        <a href="https://github.com/MrdT-BitsNote/Skill-WorldsTipAgent" target="_blank" rel="noopener">GitHub source</a>
-      </span>
-      <span class="foot-ver">Version discipline: public release = local dev package = <b>v0.1.41</b>; after any change, local / Qianwen / WorkBuddy / Coze / Qoder / Baidu Dazi / Marvel / GitHub / this site stay on the same version — pack formats differ per platform and must not be mixed (generic = SKILL.md at root | WorkBuddy = .skill + .codebuddy-plugin | Qoder = .qoder-plugin | Coze / Baidu Dazi / Marvel = system prompt + knowledge + INSTALL.md). v0.1.41: all platform packs synced to v0.1.41 and published on the Qianwen Hub; source synced to GitHub. All samples are real v0.1.41 output. This is a static showcase site — no live demo is hosted here.</span></span>
+        <a href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">Qwen</a>
+        <a href="https://www.workbuddy.cn/share/asset?shareCode=1vcWCDMZzdZOCyznXg4EQg&amp;sig=DWLyHwIltgobijgO" target="_blank" rel="noopener">WorkBuddy</a>
+        <a href="https://skillhub.cn/skills/user_dc997363/worldstip" target="_blank" rel="noopener">SkillHub</a>
+        <a href="https://github.com/MrdT-BitsNote/Skill-WorldsTipAgent" target="_blank" rel="noopener">Source</a>
+        <a href="https://github.com/MrdT-BitsNote/agent-site" target="_blank" rel="noopener">This site</a>
+        <a href="index.html" hreflang="zh-Hans">&#20013;&#25991;</a>
+        <a href="#download">All downloads</a>
+      </div>
     </div>
+    <p class="disclaimer">
+      Facts are split into stable, volatile and unknown tiers. Volatile items are verified with a date stamp; anything unverifiable gets a grey light. Conclusions about visas, vaccinations, insurance, expressway access and city motorcycle bans are for itinerary planning only &mdash; official channels govern in the end.
+      Every size, file count, assertion count and probe result on this page comes from real build output. Marketplace version numbers were read at capture time and may change after platform updates.
+    </p>
   </div>
 </footer>
 
 <script>
 (function(){
   "use strict";
-  var railLinks=[].slice.call(document.querySelectorAll('.rail a[href^="#"]'));
-  var chipLinks=[].slice.call(document.querySelectorAll('.chips a'));
-  var all=railLinks.concat(chipLinks);
-  var secs=all.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
-  function onScroll(){
-    var y=scrollY+120,cur=null;
-    secs.forEach(function(s){if(s.offsetTop<=y)cur=s;});
-    all.forEach(function(a){
-      var on=cur&&a.getAttribute('href')==='#'+cur.id;
-      a.classList.toggle('on',on);
+
+  var PACKS = [
+    {ver:"0.2.1", plat:"WorkBuddy", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-fused.zip", unzipped:3066016, files:115, sha:"02b17d6ba6265da3", note:"Flat layout, SKILL.md at root, runs as-is"},
+    {ver:"0.2.1", plat:"WorkBuddy", kind:"expert", label:"Expert pack", file:"worldstip-travel-planner-v0.2.1-expert-fused.zip", unzipped:3086595, files:119, sha:"c5ca56dc15693440", note:"plugin.json + agents + embedded skill + avatar"},
+    {ver:"0.2.1", plat:"Qwen AI", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-qianwen.zip", unzipped:2996973, files:109, sha:"b0145390eefe739c", note:"No outbound URLs, all 7 frontmatter fields"},
+    {ver:"0.2.1", plat:"Coze", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-coze.skill", unzipped:3066016, files:115, sha:"02b17d6ba6265da3", note:".skill suffix, same content as fused"},
+    {ver:"0.2.1", plat:"Baidu Dazi", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-baidu-dazi.zip", unzipped:3068740, files:116, sha:"a7041b3c73a0232b", note:"dumate block frontmatter plus 14 cases.json entries"},
+    {ver:"0.2.1", plat:"Baidu Dazi", kind:"expert", label:"Suite pack", file:"worldstip-travel-planner-v0.2.1-baidu-dazi-plugin.zip", unzipped:3077963, files:119, sha:"902322dc4018eab1", note:"Entry agent plus embedded skill, upload via suite console"},
+    {ver:"0.2.1", plat:"DataBuilder", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-baidu_databuilder.zip", unzipped:3066016, files:115, sha:"4f029e3bcb043213", note:"Wrapped in a top-level folder for its importer"},
+    {ver:"0.2.1", plat:"SkillHub", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-skillhub.zip", unzipped:3065083, files:115, sha:"3112607ad147ea21", note:"SKILL.md must be at archive root, includes permissions section"},
+
+    {ver:"0.1.49", plat:"WorkBuddy", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.1.49-skill-fixed.zip", unzipped:2997179, files:93, sha:"28f774e7d1ce8674", note:"Itinerary only, no moto data layer; LICENSE removed under the same rule"},
+    {ver:"0.1.49", plat:"WorkBuddy", kind:"expert", label:"Expert pack", file:"worldstip-travel-planner-v0.1.49-expert-fixed.zip", unzipped:3016197, files:97, sha:"4a7f3c9eca1ae98f", note:"Embedded skill directory restored, avatar kept as a platform asset"},
+    {ver:"0.1.49", plat:"Qwen AI", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.1.49-qianwen.zip", unzipped:4368614, files:95, sha:"806db7f1ef11e95e", note:"No outbound URLs; large unzipped size but still within limit"}
+  ];
+
+  var grid = document.getElementById("dlGrid");
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+
+  function fmtBytes(n){
+    if(n >= 1048576) return (n/1048576).toFixed(2) + " MiB";
+    return (n/1024).toFixed(0) + " KiB";
+  }
+
+  var PREFIX = "worldstip-travel-planner-";
+  function splitFile(name){
+    var pre = "", tail = name;
+    if(name.indexOf(PREFIX) === 0){
+      pre = '<span class="pre">' + PREFIX + '</span>';
+      tail = name.slice(PREFIX.length);
+    }
+    var dot = tail.lastIndexOf(".");
+    var base = dot > 0 ? tail.slice(0, dot) : tail;
+    var ext = dot > 0 ? tail.slice(dot) : "";
+    return pre + '<span class="tail">' + base + ext + '</span>';
+  }
+
+  function esc(s){
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+
+  function render(ver){
+    var list = PACKS.filter(function(p){ return p.ver === ver; });
+    grid.innerHTML = "";
+    if(!list.length){
+      var e = document.createElement("div");
+      e.className = "dl-empty";
+      e.textContent = "No packs for this version.";
+      grid.appendChild(e);
+      return;
+    }
+    list.forEach(function(p, i){
+      // The card itself is the download link
+      var el = document.createElement("a");
+      el.className = "dl";
+      el.href = "downloads/" + p.file;
+      el.setAttribute("download", p.file);
+      el.setAttribute("title", "Download " + p.file);
+      el.style.animationDelay = (i * 42) + "ms";
+      el.innerHTML =
+        '<div class="dl-top">' +
+          '<span class="dl-plat">' + esc(p.plat) + '</span>' +
+          '<span class="dl-kind k-' + p.kind + '">' + esc(p.label) + '</span>' +
+        '</div>' +
+        '<div class="dl-file">' + splitFile(esc(p.file)) + '</div>' +
+        '<div class="dl-meta">' +
+          '<span>unzipped <b>' + fmtBytes(p.unzipped) + '</b></span>' +
+          '<span><b>' + p.files + '</b> files</span>' +
+          '<span>sha <b>' + p.sha + '</b></span>' +
+        '</div>' +
+        '<div class="dl-note">' + esc(p.note) +
+          '<span class="dl-dl" aria-hidden="true">download &darr;</span>' +
+        '</div>';
+      grid.appendChild(el);
     });
   }
-  addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
-  },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-
-  var sio=new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(!e.isIntersecting)return;sio.unobserve(e.target);
-      e.target.querySelectorAll('.num').forEach(function(n){
-        var t=+n.dataset.n,st=null;
-        function tick(ts){if(!st)st=ts;var p=Math.min((ts-st)/1100,1);
-          n.textContent=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString();
-          if(p<1)requestAnimationFrame(tick);}
-        requestAnimationFrame(tick);
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){
+      tabs.forEach(function(x){
+        x.classList.remove("on");
+        x.setAttribute("aria-selected", "false");
       });
-    });
-  },{threshold:.25});
-  sio.observe(document.getElementById('stats'));
-
-  document.querySelectorAll('[data-copy]').forEach(function(b){
-    b.addEventListener('click',function(){
-      var t=document.getElementById(b.dataset.copy).textContent;
-      var done=function(){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy';},1500);};
-      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done);}
-      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
-        try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);done();}
+      t.classList.add("on");
+      t.setAttribute("aria-selected", "true");
+      render(t.getAttribute("data-ver"));
     });
   });
 
-  var mk=document.getElementById('marquee');mk.innerHTML+=mk.innerHTML;
+  render("0.2.1");
 
-  var items=document.querySelectorAll('.faq details');
-  items.forEach(function(d){d.addEventListener('toggle',function(){
-    if(d.open)items.forEach(function(o){if(o!==d)o.open=false;});});});
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add("in");
+        io.unobserve(en.target);
+      }
+    });
+  }, {threshold:0.12, rootMargin:"0px 0px -40px 0px"});
+  Array.prototype.forEach.call(document.querySelectorAll(".rv"), function(el){
+    io.observe(el);
+  });
+
+  function countUp(el){
+    var target = parseInt(el.getAttribute("data-count"), 10);
+    if(!isFinite(target) || target <= 0){ el.textContent = "0"; return; }
+    var dur = 900, t0 = null;
+    function step(ts){
+      if(!t0) t0 = ts;
+      var k = Math.min((ts - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(target * e);
+      if(k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        countUp(en.target);
+        cio.unobserve(en.target);
+      }
+    });
+  }, {threshold:0.6});
+  Array.prototype.forEach.call(document.querySelectorAll("[data-count]"), function(el){
+    cio.observe(el);
+  });
 })();
 </script>
 </body>
