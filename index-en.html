@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WorldsTip Travel Guide Booklet · One sentence in, a followable booklet out</title>
-<meta name="description" content="WorldsTip Travel Guide Booklet: a travel-planning skill for domestic and outbound trips, with a motorcycle-route and city-spend data layer. Six-way transport comparison, room splitting, four outbound gates and five moto gates. Volatile facts are verified or flagged grey — never invented. Packaged for WorkBuddy, Qwen, Coze, Baidu Dazi, SkillHub and DataBuilder.">
+<meta name="description" content="WorldsTip Travel Guide Booklet: a travel-planning skill for domestic and outbound trips, with a motorcycle-route and city-spend data layer. Six-way transport comparison, room splitting, four outbound gates and five moto gates. Volatile facts are verified or flagged grey — never invented. Packaged for WorkBuddy, Qwen AI, Baidu Dazi and SkillHub, plus a standalone expert pack.">
 <meta name="keywords" content="travel planning,itinerary,travel guide,motorcycle touring,road trip,outbound travel,visa,AI skill,WorldsTip">
 <meta name="author" content="MrdT">
 <meta property="og:type" content="website">
-<meta property="og:title" content="WorldsTip Travel Guide Booklet v0.2.1">
-<meta property="og:description" content="Comes with skill packs for six platforms plus three marketplace entries. Unverified facts are flagged grey, never invented.">
+<meta property="og:title" content="WorldsTip Travel Guide Booklet v0.2.276">
+<meta property="og:description" content="Comes with five packs plus three marketplace entries. Unverified facts are flagged grey, never invented.">
 <meta property="og:url" content="https://agent.worldstip.com/index-en.html">
 <meta property="og:image" content="https://agent.worldstip.com/og-cover.png">
 <meta property="og:locale" content="en_US">
@@ -27,15 +27,15 @@
   "name": "WorldsTip Travel Guide Booklet",
   "applicationCategory": "TravelApplication",
   "operatingSystem": "Any",
-  "softwareVersion": "0.2.1",
+  "softwareVersion": "0.2.276",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"},
-  "description": "Dual-mode (domestic / outbound) travel planning skill with a motorcycle-route and city-spend data layer. Produces a compact A5 booklet, packaged for six skill platforms.",
+  "description": "Dual-mode (domestic / outbound) travel planning skill with a motorcycle-route and city-spend data layer. Produces a compact A5 booklet, packaged for four platforms plus an expert pack.",
   "url": "https://agent.worldstip.com/index-en.html",
-  "downloadUrl": "https://agent.worldstip.com/downloads/worldstip-travel-planner-v0.2.1-fused.zip",
+  "downloadUrl": "https://agent.worldstip.com/downloads/worldstip-travel-planner-v0.2.276-workbuddy.zip",
   "sameAs": [
     "https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner",
     "https://www.workbuddy.cn/share/asset?shareCode=1vcWCDMZzdZOCyznXg4EQg&sig=DWLyHwIltgobijgO",
-    "https://skillhub.cn/skills/user_dc997363/worldstip",
+    "https://skillhub.cn/skills/indiv-mrdt/worldstip",
     "https://github.com/MrdT-BitsNote/Skill-WorldsTipAgent",
     "https://github.com/MrdT-BitsNote/agent-site"
   ]
@@ -279,7 +279,7 @@ h2.sec-title{font-size:clamp(21px,2.5vw,27px);font-weight:720;letter-spacing:-.0
   font:600 10px/1 var(--mono);padding:3px 5px;border-radius:3px;
   background:var(--green);color:#fff;letter-spacing:.04em;
 }
-/* Cards use flex rather than grid: eight fill 4+4, three fill a single row,
+/* Cards use flex rather than grid: five fill 3+2, eight fill 4+4,
    so the last row is always flush without a half-empty slot. */
 .dl-grid{display:flex;flex-wrap:wrap;gap:12px}
 .dl{
@@ -438,7 +438,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
 
 <header class="hero" id="top">
   <div class="wrap hero-in">
-    <div class="eyebrow"><span class="dot"></span>v0.2.1 fused &middot; eight packs &middot; six platforms</div>
+    <div class="eyebrow"><span class="dot"></span>v0.2.276 &middot; five packs &middot; four platforms</div>
 
     <h1 class="title">One sentence in, a booklet you can <em>actually follow</em></h1>
 
@@ -456,26 +456,26 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
       </a>
       <a class="btn btn-ghost" href="#matrix">
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2.2" y="2.2" width="11.6" height="11.6" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M2.2 6.4h11.6M6.6 6.4v7.4" stroke="currentColor" stroke-width="1.4"/></svg>
-        How the eight differ
+        How the five differ
       </a>
     </div>
 
     <div class="metrics">
       <div class="metric">
-        <div class="v"><span data-count="8">0</span><span>packs</span></div>
-        <div class="k">v0.2.1 across six platforms, plus three v0.1.49 archives</div>
+        <div class="v"><span data-count="5">0</span><span>packs</span></div>
+        <div class="k">v0.2.276 across four platforms, plus eight v0.2.1 archives</div>
       </div>
       <div class="metric">
-        <div class="v"><span data-count="313">0</span><span>checks</span></div>
-        <div class="k">Regression assertions passing: 27 + 204 + 38 + 44</div>
+        <div class="v"><span data-count="1270">0</span><span>checks</span></div>
+        <div class="k">Script-level assertions passing, plus 134 counter-examples and 45 fusion checks</div>
       </div>
       <div class="metric">
-        <div class="v"><span data-count="11">0</span><span>packs</span></div>
-        <div class="k">Every pack cleared the structure probe, zero blockers</div>
+        <div class="v"><span data-count="6">0</span><span>packs</span></div>
+        <div class="k">Every pack cleared the reviewer gate, zero dangerous hits</div>
       </div>
       <div class="metric">
-        <div class="v">0<span>files</span></div>
-        <div class="k">Extension-less files left in any pack</div>
+        <div class="v">0<span>hits</span></div>
+        <div class="k">Outbound links in the Qwen pack, all seven fields set</div>
       </div>
     </div>
   </div>
@@ -535,7 +535,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
       <span class="sec-tag">Kernel</span>
       <h2 class="sec-title">If it cannot be verified, it says so. That is a constraint, not a style choice.</h2>
       <p class="sec-desc">Facts sit in three tiers, each with exactly one handling rule. Model memory may not be used to fill in prices, visa status or opening hours.</p>
-      <p class="sec-desc" style="margin-top:10px">Since v0.2.1 the <b>decision logic itself has to survive counter-examples</b>. Even at a clean A/100 static score, nine places still read &ldquo;October 3&rdquo; as three days, mistook &ldquo;help me write a report&rdquo; for a motorcycle trip, and compared the last bus against a last ferry.<br>All nine are fixed and locked behind 44 counter-example assertions &mdash; each one records the original wording that failed, then asserts it can no longer recur.</p>
+      <p class="sec-desc" style="margin-top:10px">Since v0.2.1 the <b>decision logic itself has to survive counter-examples</b>. Even at a clean A/100 static score, nine places still read &ldquo;October 3&rdquo; as three days, mistook &ldquo;help me write a report&rdquo; for a motorcycle trip, and compared the last bus against a last ferry.<br>All nine are fixed, and the counter-example set grew to <b>134</b> in v0.2.276 &mdash; each one records the original wording that failed, then asserts it can no longer recur.</p>
     </div>
 
     <div class="kernel">
@@ -574,7 +574,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
           <span class="plat-ver">not shown</span>
         </div>
         <div class="plat-path">workbuddy.cn/share/asset?shareCode=1vcWCDMZzdZOCyznXg4EQg</div>
-        <div class="plat-note">The share page is a single-page app whose body carries no version field; version is whatever the page detail says. Use the v0.2.1 skill or expert pack below.</div>
+        <div class="plat-note">The share page is a single-page app whose body carries no version field; version is whatever the page detail says. Use the v0.2.276 skill or expert pack below.</div>
         <div class="plat-go"><span>Open share page</span><span class="ar">&rarr;</span></div>
       </a>
 
@@ -585,30 +585,30 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
           <span class="plat-ver">v0.1.48</span>
         </div>
         <div class="plat-path">qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner</div>
-        <div class="plat-note">The marketplace page currently reads v0.1.48, one version behind local v0.2.1: the nine logic fixes are not live there yet. Re-upload the v0.2.1 Qwen pack to align.</div>
+        <div class="plat-note">The marketplace page currently reads v0.1.48, behind local v0.2.276: the logic fixes and data-layer updates are not live there yet. Re-upload the v0.2.276 Qwen pack below to align.</div>
         <div class="plat-go"><span>Open skill page</span><span class="ar">&rarr;</span></div>
       </a>
 
-      <a class="plat rv" href="https://skillhub.cn/skills/user_dc997363/worldstip" target="_blank" rel="noopener">
+      <a class="plat rv" href="https://skillhub.cn/skills/indiv-mrdt/worldstip" target="_blank" rel="noopener">
         <div class="plat-top">
           <span class="plat-ico sh">S</span>
           <span class="plat-name">SkillHub</span>
           <span class="plat-ver live">v1.0.0</span>
         </div>
-        <div class="plat-path">skillhub.cn/skills/user_dc997363/worldstip</div>
-        <div class="plat-note">SkillHub runs its own version series and shows v1.0.0, which is not the same numbering as local 0.2.1 &mdash; no need to force alignment. Updated today.</div>
+        <div class="plat-path">skillhub.cn/skills/indiv-mrdt/worldstip</div>
+        <div class="plat-note">SkillHub runs its own version series and shows v1.0.0, which is not the same numbering as local 0.2.276 &mdash; no need to force alignment.</div>
         <div class="plat-go"><span>Open skill page</span><span class="ar">&rarr;</span></div>
       </a>
     </div>
 
     <div class="alert rv">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.2M12 16.2v.6" stroke-linecap="round"/></svg>
-      <div><b>Three platforms, three different versions. That is the current state, not a defect.</b> Qwen shows v0.1.48, SkillHub v1.0.0, local is v0.2.1, and WorkBuddy does not display a version. For the build with all nine logic fixes, take the v0.2.1 pack below and upload it yourself; an older marketplace install will not auto-upgrade.</div>
+      <div><b>Three platforms, three different versions. That is the current state, not a defect.</b> Qwen shows v0.1.48, SkillHub v1.0.0, local is v0.2.276, and WorkBuddy does not display a version. For the build with all 134 counter-example checks, take the v0.2.276 pack below and upload it yourself; an older marketplace install will not auto-upgrade.</div>
     </div>
 
     <div class="plat-off rv">
       <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.2" stroke="#6B7C75" stroke-width="1.3"/><path d="M8 4.8v3.6l2.4 1.4" stroke="#6B7C75" stroke-width="1.3" stroke-linecap="round"/></svg>
-      <div>Baidu Dazi, Coze and DataBuilder <b>ship packs only, with no public store listing</b>. Download from below and upload through each platform's own console. This page does not invent links.</div>
+      <div>Baidu Dazi and the expert entry <b>ship packs only, with no public store listing</b>. Download from below and upload through each platform's own console. This page does not invent links.</div>
     </div>
   </div>
 </section>
@@ -622,8 +622,8 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
     </div>
 
     <div class="tabs rv" role="tablist" aria-label="Version">
-      <button class="tab on" role="tab" aria-selected="true" data-ver="0.2.1">v0.2.1 fused<span class="badge">latest</span></button>
-      <button class="tab" role="tab" aria-selected="false" data-ver="0.1.49">v0.1.49 itinerary-only</button>
+      <button class="tab on" role="tab" aria-selected="true" data-ver="0.2.276">v0.2.276 current<span class="badge">latest</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-ver="0.2.1">v0.2.1 fused</button>
     </div>
 
     <div class="dl-grid" id="dlGrid" aria-live="polite"></div>
@@ -634,7 +634,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-tag">Matrix</span>
-      <h2 class="sec-title">How the eight packs differ</h2>
+      <h2 class="sec-title">How the five packs differ</h2>
       <p class="sec-desc">Same skill content, but each platform only accepts its own layout and frontmatter. The wrong layout gets rejected as &ldquo;no SKILL.md found&rdquo; regardless of content quality.</p>
     </div>
 
@@ -654,67 +654,43 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
           <tbody>
             <tr>
               <td class="pn">WorkBuddy skill</td>
-              <td class="mono">-fused.zip</td>
+              <td class="mono">-workbuddy.zip</td>
               <td>Flat, <code>SKILL.md</code> at root</td>
-              <td>generic</td>
-              <td class="no">none</td>
-              <td class="mono">2.92 MiB</td>
+              <td>generic + <code>license</code></td>
+              <td class="yes">95-file slim build (37 docs and data files dropped)</td>
+              <td class="mono">2.90 MiB</td>
             </tr>
             <tr>
               <td class="pn">WorkBuddy expert</td>
-              <td class="mono">-expert-fused.zip</td>
+              <td class="mono">worldstip-travel-expert.zip</td>
               <td><code>.codebuddy-plugin/</code> + <code>agents/</code> + <code>skills/</code></td>
               <td>driven by plugin.json</td>
-              <td class="yes">plugin.json, avatar PNG</td>
-              <td class="mono">2.94 MiB</td>
+              <td class="yes">plugin.json, avatar, embedded skill</td>
+              <td class="mono">245 KiB</td>
             </tr>
             <tr>
               <td class="pn">Qwen AI</td>
               <td class="mono">-qianwen.zip</td>
               <td>Flat, <code>SKILL.md</code> at root</td>
               <td>7 fields, no outbound URLs</td>
-              <td class="yes">tests/ removed (netting conflicts with source-link assertions)</td>
-              <td class="mono">2.86 MiB</td>
+              <td class="yes">outbound-trip files and networked scripts removed</td>
+              <td class="mono">2.78 MiB</td>
             </tr>
             <tr>
-              <td class="pn">Coze</td>
-              <td class="mono">-coze.skill</td>
+              <td class="pn">Baidu Dazi</td>
+              <td class="mono">-dumate.zip</td>
               <td>Flat, <code>SKILL.md</code> at root</td>
               <td>generic</td>
-              <td class="yes">.skill suffix, same content as fused</td>
-              <td class="mono">2.92 MiB</td>
-            </tr>
-            <tr>
-              <td class="pn">Baidu Dazi skill</td>
-              <td class="mono">-baidu-dazi.zip</td>
-              <td>Wrapped in one top-level folder</td>
-              <td><code>metadata.dumate</code> block</td>
-              <td class="yes">tests/cases.json, 14 cases</td>
-              <td class="mono">2.93 MiB</td>
-            </tr>
-            <tr>
-              <td class="pn">Baidu Dazi suite</td>
-              <td class="mono">-baidu-dazi-plugin.zip</td>
-              <td><code>.claude-plugin/</code> + <code>agents/</code> + <code>skills/</code></td>
-              <td>driven by plugin.json</td>
-              <td class="yes">entry agent + embedded skill</td>
-              <td class="mono">2.94 MiB</td>
-            </tr>
-            <tr>
-              <td class="pn">DataBuilder</td>
-              <td class="mono">-baidu_databuilder.zip</td>
-              <td>Wrapped in one top-level folder</td>
-              <td>generic</td>
-              <td class="no">none</td>
-              <td class="mono">2.92 MiB</td>
+              <td class="yes">PLATFORM.md import notes</td>
+              <td class="mono">4.25 MiB</td>
             </tr>
             <tr>
               <td class="pn">SkillHub</td>
               <td class="mono">-skillhub.zip</td>
               <td>Flat, <code>SKILL.md</code> must sit at root</td>
               <td>slug / version / displayName</td>
-              <td class="yes">permissions section</td>
-              <td class="mono">2.92 MiB</td>
+              <td class="yes">_meta.json (slug / license / internalVersion)</td>
+              <td class="mono">4.25 MiB</td>
             </tr>
           </tbody>
         </table>
@@ -723,7 +699,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
 
     <div class="alert rv">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.2M12 16.2v.6" stroke-linecap="round"/></svg>
-      <div><b>What changed in this round:</b> after Baidu rejected a build with &ldquo;disallowed file type: LICENSE&rdquo;, every pack now uses an extension allowlist &mdash; only <code>.md</code>, <code>.json</code>, <code>.py</code> and <code>.svg</code> get in. <code>LICENSE</code>, <code>.gitignore</code> and <code>.skillhubignore</code> are all extension-less and were removed, along with <code>tests/_tmp_plan.json</code>. The licence is still declared in frontmatter as <code>license: MIT</code>; it never depended on that file.</div>
+      <div><b>What v0.2.276 aligns:</b> the four platform packs and the expert pack share one file manifest (<code>build_pack.collect()</code>), with fixed timestamps, stable ordering and LF normalisation &mdash; rebuilding from the same source reproduces byte-identical archives, which is how every size and sha256 on this page was re-checked. MIT requires the licence text to travel with the distribution, so <code>LICENSE</code> is back on the allowlist; <code>.gitignore</code>, <code>.skillhubignore</code>, <code>_tmp_*</code> and <code>__pycache__</code> still stay out. All six archives cleared the reviewer gate with zero dangerous hits.</div>
     </div>
   </div>
 </section>
@@ -739,7 +715,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
     <div class="steps">
       <div class="step rv">
         <h4><span class="n">1</span>Install</h4>
-        <p>Match the layout in the matrix above, then upload the pack to the right entry. Expert packs go to the expert entry, skill packs to the skill entry &mdash; do not mix them. Three marketplaces are already live.</p>
+        <p>Match the layout in the matrix above, then upload the pack to the right entry. Expert packs go to the expert entry, skill packs to the skill entry &mdash; do not mix them. Three marketplaces are already live; Baidu Dazi and the expert entry need a manual upload.</p>
       </div>
       <div class="step rv">
         <h4><span class="n">2</span>Describe the trip</h4>
@@ -759,18 +735,18 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
       <div class="verify-in">
         <div>
           <h2>Everything here was run, not estimated</h2>
-          <p class="sub">Static audit, four regression suites, structure probes across eleven packs, syntax compilation and an offline smoke run. Anything not run is marked as not measured, never written up as a pass.</p>
+          <p class="sub">The 17-item doctor self-check, sixteen regression suites, the reviewer gate across six archives, syntax compilation and an offline smoke run. Anything not run is marked as not measured, never written up as a pass.</p>
         </div>
         <div class="vgrid">
-          <div class="vcell"><div class="n">A<small>/100</small></div><div class="t">static audit</div></div>
-          <div class="vcell"><div class="n">27<small>/27</small></div><div class="t">structure</div></div>
-          <div class="vcell"><div class="n">204<small>/204</small></div><div class="t">data engine</div></div>
-          <div class="vcell"><div class="n">38<small>/38</small></div><div class="t">fusion</div></div>
-          <div class="vcell"><div class="n">44<small>/44</small></div><div class="t">counter-examples</div></div>
-          <div class="vcell"><div class="n">11<small>packs</small></div><div class="t">probe pass</div></div>
-          <div class="vcell"><div class="n">40<small>files</small></div><div class="t">0 syntax errors</div></div>
-          <div class="vcell"><div class="n">498<small>lines</small></div><div class="t">SKILL.md body</div></div>
-          <div class="vcell"><div class="n">2.94<small>MiB</small></div><div class="t">largest pack, under 3 MiB</div></div>
+          <div class="vcell"><div class="n">17<small>items</small></div><div class="t">doctor checks</div></div>
+          <div class="vcell"><div class="n">17<small>/17</small></div><div class="t">suites</div></div>
+          <div class="vcell"><div class="n">32<small>/32</small></div><div class="t">new cases</div></div>
+          <div class="vcell"><div class="n">134<small>/134</small></div><div class="t">counter-examples</div></div>
+          <div class="vcell"><div class="n">45<small>/45</small></div><div class="t">fusion</div></div>
+          <div class="vcell"><div class="n">6<small>archives</small></div><div class="t">reviewer gate, 0 hits</div></div>
+          <div class="vcell"><div class="n">34<small>files</small></div><div class="t">packed scripts, 0 syntax errors</div></div>
+          <div class="vcell"><div class="n">500<small>lines</small></div><div class="t">SKILL.md body</div></div>
+          <div class="vcell"><div class="n">2.90<small>MiB</small></div><div class="t">largest pack, under 3 MiB</div></div>
         </div>
       </div>
     </div>
@@ -781,14 +757,14 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
   <div class="wrap">
     <div class="foot">
       <div class="foot-l">
-        <b>WorldsTip Travel Guide Booklet</b> &middot; v0.2.1 fused<br>
+        <b>WorldsTip Travel Guide Booklet</b> &middot; v0.2.276<br>
         Itinerary engine plus motorcycle data layer &middot; pure Python standard library, zero third-party dependencies
       </div>
       <div class="foot-r">
         <a href="https://worldstip.com" target="_blank" rel="noopener">worldstip.com</a>
         <a href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">Qwen</a>
         <a href="https://www.workbuddy.cn/share/asset?shareCode=1vcWCDMZzdZOCyznXg4EQg&amp;sig=DWLyHwIltgobijgO" target="_blank" rel="noopener">WorkBuddy</a>
-        <a href="https://skillhub.cn/skills/user_dc997363/worldstip" target="_blank" rel="noopener">SkillHub</a>
+        <a href="https://skillhub.cn/skills/indiv-mrdt/worldstip" target="_blank" rel="noopener">SkillHub</a>
         <a href="https://github.com/MrdT-BitsNote/Skill-WorldsTipAgent" target="_blank" rel="noopener">Source</a>
         <a href="https://github.com/MrdT-BitsNote/agent-site" target="_blank" rel="noopener">This site</a>
         <a href="index.html" hreflang="zh-Hans">&#20013;&#25991;</a>
@@ -807,6 +783,12 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
   "use strict";
 
   var PACKS = [
+    {ver:"0.2.276", plat:"WorkBuddy", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.276-workbuddy.zip", unzipped:3040737, files:95, sha:"2d6e7dc0c1e67e18", note:"95-file slim build, 2.90 MiB unzipped, under the 3 MiB cap"},
+    {ver:"0.2.276", plat:"WorkBuddy", kind:"expert", label:"Expert pack", file:"worldstip-travel-expert.zip", unzipped:250430, files:8, sha:"3915b126da175f0b", note:"plugin.json + agents + embedded skill + avatar, 8 files"},
+    {ver:"0.2.276", plat:"Qwen AI", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.276-qianwen.zip", unzipped:2918119, files:85, sha:"0e152f6e7e15ca62", note:"No outbound URLs plus neutralised wording, all seven fields, outbound-trip files removed"},
+    {ver:"0.2.276", plat:"Baidu Dazi", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.276-dumate.zip", unzipped:4451789, files:132, sha:"43ce0d02377e75fa", note:"Full pack with PLATFORM.md import notes"},
+    {ver:"0.2.276", plat:"SkillHub", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.276-skillhub.zip", unzipped:4451509, files:132, sha:"af944723f77d9d42", note:"SKILL.md must be at archive root, ships _meta.json"},
+
     {ver:"0.2.1", plat:"WorkBuddy", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-fused.zip", unzipped:3066016, files:115, sha:"02b17d6ba6265da3", note:"Flat layout, SKILL.md at root, runs as-is"},
     {ver:"0.2.1", plat:"WorkBuddy", kind:"expert", label:"Expert pack", file:"worldstip-travel-planner-v0.2.1-expert-fused.zip", unzipped:3086595, files:119, sha:"c5ca56dc15693440", note:"plugin.json + agents + embedded skill + avatar"},
     {ver:"0.2.1", plat:"Qwen AI", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-qianwen.zip", unzipped:2996973, files:109, sha:"b0145390eefe739c", note:"No outbound URLs, all 7 frontmatter fields"},
@@ -814,11 +796,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
     {ver:"0.2.1", plat:"Baidu Dazi", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-baidu-dazi.zip", unzipped:3068740, files:116, sha:"a7041b3c73a0232b", note:"dumate block frontmatter plus 14 cases.json entries"},
     {ver:"0.2.1", plat:"Baidu Dazi", kind:"expert", label:"Suite pack", file:"worldstip-travel-planner-v0.2.1-baidu-dazi-plugin.zip", unzipped:3077963, files:119, sha:"902322dc4018eab1", note:"Entry agent plus embedded skill, upload via suite console"},
     {ver:"0.2.1", plat:"DataBuilder", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-baidu_databuilder.zip", unzipped:3066016, files:115, sha:"4f029e3bcb043213", note:"Wrapped in a top-level folder for its importer"},
-    {ver:"0.2.1", plat:"SkillHub", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-skillhub.zip", unzipped:3065083, files:115, sha:"3112607ad147ea21", note:"SKILL.md must be at archive root, includes permissions section"},
-
-    {ver:"0.1.49", plat:"WorkBuddy", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.1.49-skill-fixed.zip", unzipped:2997179, files:93, sha:"28f774e7d1ce8674", note:"Itinerary only, no moto data layer; LICENSE removed under the same rule"},
-    {ver:"0.1.49", plat:"WorkBuddy", kind:"expert", label:"Expert pack", file:"worldstip-travel-planner-v0.1.49-expert-fixed.zip", unzipped:3016197, files:97, sha:"4a7f3c9eca1ae98f", note:"Embedded skill directory restored, avatar kept as a platform asset"},
-    {ver:"0.1.49", plat:"Qwen AI", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.1.49-qianwen.zip", unzipped:4368614, files:95, sha:"806db7f1ef11e95e", note:"No outbound URLs; large unzipped size but still within limit"}
+    {ver:"0.2.1", plat:"SkillHub", kind:"skill", label:"Skill pack", file:"worldstip-travel-planner-v0.2.1-skillhub.zip", unzipped:3065083, files:115, sha:"3112607ad147ea21", note:"SKILL.md must be at archive root, includes permissions section"}
   ];
 
   var grid = document.getElementById("dlGrid");
@@ -894,7 +872,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
     });
   });
 
-  render("0.2.1");
+  render("0.2.276");
 
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){

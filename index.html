@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WorldsTip 旅行指南小册子 · 一句话变一本能照着走的小册子</title>
-<meta name="description" content="WorldsTip 旅行指南小册子：国内 + 出境双模式旅行规划技能，含摩旅路线与城市消费数据层。交通六方式比选、住宿分房、出境四灯门禁、摩旅五门禁，易变项强制核验，查不到即灰灯不编造。已适配 WorkBuddy、千问、扣子、百度搭子、SkillHub、DataBuilder 六端。">
+<meta name="description" content="WorldsTip 旅行指南小册子：国内 + 出境双模式旅行规划技能，含摩旅路线与城市消费数据层。交通六方式比选、住宿分房、出境四灯门禁、摩旅五门禁，易变项强制核验，查不到即灰灯不编造。已适配 WorkBuddy、千问 AI、百度搭子、SkillHub 四平台，另出独立专家包。">
 <meta name="keywords" content="旅行规划,行程规划,旅游攻略,摩旅,自驾游,出境游,签证,AI 技能,WorldsTip">
 <meta name="author" content="MrdT">
 <meta property="og:type" content="website">
-<meta property="og:title" content="WorldsTip 旅行指南小册子 v0.2.1">
-<meta property="og:description" content="把一句旅行需求，变成能照着走的小册子。查不到的写灰灯，绝不编造。六端技能包与在线入口一站取。">
+<meta property="og:title" content="WorldsTip 旅行指南小册子 v0.2.276">
+<meta property="og:description" content="把一句旅行需求，变成能照着走的小册子。查不到的写灰灯，绝不编造。五包与三个在线入口一站取。">
 <meta property="og:url" content="https://agent.worldstip.com/">
 <meta property="og:image" content="https://agent.worldstip.com/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,15 +25,15 @@
   "name": "WorldsTip 旅行指南小册子",
   "applicationCategory": "TravelApplication",
   "operatingSystem": "Any",
-  "softwareVersion": "0.2.1",
+  "softwareVersion": "0.2.276",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"},
-  "description": "国内 + 出境双模式旅行规划技能，含摩旅路线与城市消费数据层。产出 A5 紧凑卡册风格小册子，适配六端技能平台。",
+  "description": "国内 + 出境双模式旅行规划技能，含摩旅路线与城市消费数据层。产出 A5 紧凑卡册风格小册子，适配四平台并出专家包。",
   "url": "https://agent.worldstip.com/",
-  "downloadUrl": "https://agent.worldstip.com/downloads/worldstip-travel-planner-v0.2.1-fused.zip",
+  "downloadUrl": "https://agent.worldstip.com/downloads/worldstip-travel-planner-v0.2.276-workbuddy.zip",
   "sameAs": [
     "https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner",
     "https://www.workbuddy.cn/share/asset?shareCode=1vcWCDMZzdZOCyznXg4EQg&sig=DWLyHwIltgobijgO",
-    "https://skillhub.cn/skills/user_dc997363/worldstip",
+    "https://skillhub.cn/skills/indiv-mrdt/worldstip",
     "https://github.com/MrdT-BitsNote/Skill-WorldsTipAgent",
     "https://github.com/MrdT-BitsNote/agent-site"
   ]
@@ -277,7 +277,7 @@ h2.sec-title{font-size:clamp(21px,2.5vw,27px);font-weight:720;letter-spacing:-.0
   font:600 10px/1 var(--mono);padding:3px 5px;border-radius:3px;
   background:var(--green);color:#fff;letter-spacing:.04em;
 }
-/* 卡片用 flex 而非 grid：8 张排成 4+4，3 张排成 1 行 3 张，
+/* 卡片用 flex 而非 grid：5 张排成 3+2，8 张排成 4+4，3 张排成 1 行，
    末行永远填满，不会残留半格空白。 */
 .dl-grid{display:flex;flex-wrap:wrap;gap:12px}
 .dl{
@@ -436,13 +436,13 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
 
 <header class="hero" id="top">
   <div class="wrap hero-in">
-    <div class="eyebrow"><span class="dot"></span>v0.2.1 融合版 · 八包 · 六端</div>
+    <div class="eyebrow"><span class="dot"></span>v0.2.276 · 五包 · 四平台</div>
 
     <h1 class="title">一句话，变一本<em>能照着走</em>的小册子</h1>
 
     <h1 class="subtitle">
       WorldsTip 旅行指南小册子 —— 国内与出境双模式，交通六方式比选、住宿分房、出境四灯与摩旅五门禁一路卡住。
-      本页把六端包与三个在线入口理在一处：<a href="#online">市场直接装</a>，或<a href="#download">按平台取包</a>。
+      本页把五包与三个在线入口理在一处：<a href="#online">市场直接装</a>，或<a href="#download">按平台取包</a>。
       源站在 <a href="https://worldstip.com" target="_blank" rel="noopener">worldstip.com</a>。
     </h1>
 
@@ -453,26 +453,26 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
       </a>
       <a class="btn btn-ghost" href="#matrix">
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2.2" y="2.2" width="11.6" height="11.6" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M2.2 6.4h11.6M6.6 6.4v7.4" stroke="currentColor" stroke-width="1.4"/></svg>
-        八包差在哪
+        五包差在哪
       </a>
     </div>
 
     <div class="metrics">
       <div class="metric">
-        <div class="v"><span data-count="8">0</span><span>包</span></div>
-        <div class="k">v0.2.1 六端形态，另附 v0.1.49 三包存档</div>
+        <div class="v"><span data-count="5">0</span><span>包</span></div>
+        <div class="k">v0.2.276 五包形态，另附 v0.2.1 八包存档</div>
       </div>
       <div class="metric">
-        <div class="v"><span data-count="313">0</span><span>项</span></div>
-        <div class="k">回归断言全过：27 + 204 + 38 + 44</div>
+        <div class="v"><span data-count="1270">0</span><span>项</span></div>
+        <div class="k">脚本级断言逐项过，另 134 反例 + 45 融合</div>
       </div>
       <div class="metric">
-        <div class="v"><span data-count="11">0</span><span>包</span></div>
-        <div class="k">全部过结构探针，BLOCKER 0</div>
+        <div class="v"><span data-count="6">0</span><span>包</span></div>
+        <div class="k">逐包过审核器闸门，危险命中 0</div>
       </div>
       <div class="metric">
-        <div class="v">0<span>个</span></div>
-        <div class="k">无扩展名文件残留，六端一律清空</div>
+        <div class="v">0<span>条</span></div>
+        <div class="k">千问包外链命中，七字段齐</div>
       </div>
     </div>
   </div>
@@ -532,7 +532,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
       <span class="sec-tag">Kernel</span>
       <h2 class="sec-title">查不到就说查不到，这是硬约束不是风格</h2>
       <p class="sec-desc">事实分三档，每档只有一种处理方式。模型记忆不许用来补价格、签证状态、营业时间。</p>
-      <p class="sec-desc" style="margin-top:10px">v0.2.1 起，<b>判定逻辑本身也要过反例</b>：静态检查拿 A/100 时，仍有 9 处会把「10月3日」当 3 天、把「帮你写周报」判成摩旅、把末班车时间当末班船比对。<br>这 9 处已逐个修掉，并锁进 44 条反例断言——每条先写下当年判错的原话，再断言不再复现。</p>
+      <p class="sec-desc" style="margin-top:10px">从 v0.2.1 起，<b>判定逻辑本身也要过反例</b>：静态检查拿 A/100 时，仍有 9 处会把「10月3日」当 3 天、把「帮你写周报」判成摩旅、把末班车时间当末班船比对。<br>这 9 处已逐个修掉，反例集在 v0.2.276 扩到 <b>134 条</b>——每条先写下当年判错的原话，再断言不再复现。</p>
     </div>
 
     <div class="kernel">
@@ -571,7 +571,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
           <span class="plat-ver">页面未标注</span>
         </div>
         <div class="plat-path">workbuddy.cn/share/asset?shareCode=1vcWCDMZzdZOCyznXg4EQg</div>
-        <div class="plat-note">分享页为单页应用，正文不含版本字段，版本以页面详情为准。包体可用下方 v0.2.1 技能包或专家包。</div>
+        <div class="plat-note">分享页为单页应用，正文不含版本字段，版本以页面详情为准。包体可用下方 v0.2.276 技能包或专家包。</div>
         <div class="plat-go"><span>打开分享页</span><span class="ar">→</span></div>
       </a>
 
@@ -582,30 +582,30 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
           <span class="plat-ver">v0.1.48</span>
         </div>
         <div class="plat-path">qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner</div>
-        <div class="plat-note">市场页当前标注 v0.1.48，落后本地 v0.2.1 一个版本：9 处判定逻辑修正尚未在该端生效。重传 v0.2.1 千问包即可对齐。</div>
+        <div class="plat-note">市场页当前标注 v0.1.48，落后本地 v0.2.276：判定逻辑修正与数据层更新尚未在该端生效。重传下方 v0.2.276 千问包即可对齐。</div>
         <div class="plat-go"><span>打开技能页</span><span class="ar">→</span></div>
       </a>
 
-      <a class="plat rv" href="https://skillhub.cn/skills/user_dc997363/worldstip" target="_blank" rel="noopener">
+      <a class="plat rv" href="https://skillhub.cn/skills/indiv-mrdt/worldstip" target="_blank" rel="noopener">
         <div class="plat-top">
           <span class="plat-ico sh">S</span>
           <span class="plat-name">SkillHub</span>
           <span class="plat-ver live">v1.0.0</span>
         </div>
-        <div class="plat-path">skillhub.cn/skills/user_dc997363/worldstip</div>
-        <div class="plat-note">SkillHub 走独立版本序列，市场页标注 v1.0.0，与本地 0.2.1 不是同一套编号，不必强行对齐。今天有更新。</div>
+        <div class="plat-path">skillhub.cn/skills/indiv-mrdt/worldstip</div>
+        <div class="plat-note">SkillHub 走独立版本序列，市场页标注 v1.0.0，与本地 0.2.276 不是同一套编号，不必强行对齐。</div>
         <div class="plat-go"><span>打开技能页</span><span class="ar">→</span></div>
       </a>
     </div>
 
     <div class="alert rv">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.2M12 16.2v.6" stroke-linecap="round"/></svg>
-      <div><b>三端版本各不相同，这是实况不是瑕疵。</b>千问 v0.1.48、SkillHub v1.0.0、本地 v0.2.1，WorkBuddy 页面不显示版本。想用带 9 处逻辑修正的最新版，取下方 v0.2.1 包自行上传；已在市场装的旧版不会自动升级。</div>
+      <div><b>三端版本各不相同，这是实况不是瑕疵。</b>千问 v0.1.48、SkillHub v1.0.0、本地 v0.2.276，WorkBuddy 页面不显示版本。想用带 134 项逻辑反例校验的最新版，取下方 v0.2.276 包自行上传；已在市场装的旧版不会自动升级。</div>
     </div>
 
     <div class="plat-off rv">
       <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.2" stroke="#6B7C75" stroke-width="1.3"/><path d="M8 4.8v3.6l2.4 1.4" stroke="#6B7C75" stroke-width="1.3" stroke-linecap="round"/></svg>
-      <div>百度搭子、扣子、DataBuilder 三端<b>只提供包，没有公开商店页</b>——它们的包体需要你自行从下方下载后上传到对应平台后台。本页不虚构链接。</div>
+      <div>百度搭子与专家入口<b>只提供包，没有公开商店页</b>——它们的包体需要你自行从下方下载后上传到对应平台后台。本页不虚构链接。</div>
     </div>
   </div>
 </section>
@@ -619,8 +619,8 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
     </div>
 
     <div class="tabs rv" role="tablist" aria-label="版本选择">
-      <button class="tab on" role="tab" aria-selected="true" data-ver="0.2.1">v0.2.1 融合版<span class="badge">最新</span></button>
-      <button class="tab" role="tab" aria-selected="false" data-ver="0.1.49">v0.1.49 纯行程版</button>
+      <button class="tab on" role="tab" aria-selected="true" data-ver="0.2.276">v0.2.276 现行版<span class="badge">最新</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-ver="0.2.1">v0.2.1 融合版</button>
     </div>
 
     <div class="dl-grid" id="dlGrid" aria-live="polite"></div>
@@ -631,7 +631,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-tag">Matrix</span>
-      <h2 class="sec-title">八包差在哪，一张表看清</h2>
+      <h2 class="sec-title">五包差在哪，一张表看清</h2>
       <p class="sec-desc">同一份技能内容，各平台只认自己的目录结构与 frontmatter。传错结构会被判「找不到 SKILL.md」，与内容质量无关。</p>
     </div>
 
@@ -651,67 +651,43 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
           <tbody>
             <tr>
               <td class="pn">WorkBuddy 技能</td>
-              <td class="mono">-fused.zip</td>
+              <td class="mono">-workbuddy.zip</td>
               <td>扁平，<code>SKILL.md</code> 在根</td>
-              <td>通用字段</td>
-              <td class="no">无</td>
-              <td class="mono">2.92 MiB</td>
+              <td>通用字段 + <code>license</code></td>
+              <td class="yes">95 文件瘦身版（删 37 个文档与数据文件）</td>
+              <td class="mono">2.90 MiB</td>
             </tr>
             <tr>
               <td class="pn">WorkBuddy 专家</td>
-              <td class="mono">-expert-fused.zip</td>
+              <td class="mono">worldstip-travel-expert.zip</td>
               <td><code>.codebuddy-plugin/</code> + <code>agents/</code> + <code>skills/</code></td>
               <td>plugin.json 驱动</td>
-              <td class="yes">plugin.json、avatar PNG</td>
-              <td class="mono">2.94 MiB</td>
+              <td class="yes">plugin.json、avatar、内嵌技能</td>
+              <td class="mono">245 KiB</td>
             </tr>
             <tr>
               <td class="pn">千问 AI</td>
               <td class="mono">-qianwen.zip</td>
               <td>扁平，<code>SKILL.md</code> 在根</td>
-              <td>7 字段，零外链</td>
-              <td class="yes">剔除 tests/（净化与来源链接断言互斥）</td>
-              <td class="mono">2.86 MiB</td>
+              <td>七字段，零外链</td>
+              <td class="yes">剔除出境能力文件与联网脚本</td>
+              <td class="mono">2.78 MiB</td>
             </tr>
             <tr>
-              <td class="pn">扣子</td>
-              <td class="mono">-coze.skill</td>
+              <td class="pn">百度搭子</td>
+              <td class="mono">-dumate.zip</td>
               <td>扁平，<code>SKILL.md</code> 在根</td>
               <td>通用字段</td>
-              <td class="yes">.skill 后缀，内容同 fused</td>
-              <td class="mono">2.92 MiB</td>
-            </tr>
-            <tr>
-              <td class="pn">百度搭子 技能</td>
-              <td class="mono">-baidu-dazi.zip</td>
-              <td>顶层目录包裹</td>
-              <td><code>metadata.dumate</code> 块式</td>
-              <td class="yes">tests/cases.json 14 条</td>
-              <td class="mono">2.93 MiB</td>
-            </tr>
-            <tr>
-              <td class="pn">百度搭子 套件</td>
-              <td class="mono">-baidu-dazi-plugin.zip</td>
-              <td><code>.claude-plugin/</code> + <code>agents/</code> + <code>skills/</code></td>
-              <td>plugin.json 驱动</td>
-              <td class="yes">入口智能体 + 内嵌技能</td>
-              <td class="mono">2.94 MiB</td>
-            </tr>
-            <tr>
-              <td class="pn">DataBuilder</td>
-              <td class="mono">-baidu_databuilder.zip</td>
-              <td>顶层目录包裹</td>
-              <td>通用字段</td>
-              <td class="no">无</td>
-              <td class="mono">2.92 MiB</td>
+              <td class="yes">PLATFORM.md 导入说明</td>
+              <td class="mono">4.25 MiB</td>
             </tr>
             <tr>
               <td class="pn">SkillHub</td>
               <td class="mono">-skillhub.zip</td>
               <td>扁平，<code>SKILL.md</code> 必须在根</td>
               <td>slug / version / displayName</td>
-              <td class="yes">权限声明段</td>
-              <td class="mono">2.92 MiB</td>
+              <td class="yes">_meta.json（slug / license / internalVersion）</td>
+              <td class="mono">4.25 MiB</td>
             </tr>
           </tbody>
         </table>
@@ -720,7 +696,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
 
     <div class="alert rv">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.2M12 16.2v.6" stroke-linecap="round"/></svg>
-      <div><b>本轮统一改了什么：</b>百度以「不允许的文件类型: LICENSE」驳回后，六端包一律改为扩展名白名单——只放行 <code>.md</code> / <code>.json</code> / <code>.py</code> / <code>.svg</code>，<code>LICENSE</code>、<code>.gitignore</code>、<code>.skillhubignore</code> 三个无扩展名文件全部清出，<code>tests/_tmp_plan.json</code> 一并清出。协议仍由 frontmatter 的 <code>license: MIT</code> 声明，不依赖文件。</div>
+      <div><b>v0.2.276 包体对齐说明：</b>四平台包与专家包共用同一份文件清单（<code>build_pack.collect()</code>），固定时间戳 + 稳定排序 + LF 归一，同一输入重建出字节一致的包——本页五个包的体积与 sha256 均已用重建产物复核。MIT 要求许可证原文随包分发，<code>LICENSE</code> 因此回到白名单；仍不放行 <code>.gitignore</code> / <code>.skillhubignore</code> / <code>_tmp_*</code> 与 <code>__pycache__</code>。六包逐包过审核器闸门，危险命中 0。</div>
     </div>
   </div>
 </section>
@@ -736,7 +712,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
     <div class="steps">
       <div class="step rv">
         <h4><span class="n">1</span>装包</h4>
-        <p>先看上方适配表对上结构，再把对应包传到平台入口。专家包走专家入口、技能包走技能入口，别混。三个市场已上架可直接装，其余三端只能下载包自己传。</p>
+        <p>先看上方适配表对上结构，再把对应包传到平台入口。专家包走专家入口、技能包走技能入口，别混。三个市场已上架可直接装，百度搭子与专家入口只能下载包自己传。</p>
       </div>
       <div class="step rv">
         <h4><span class="n">2</span>说需求</h4>
@@ -756,18 +732,18 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
       <div class="verify-in">
         <div>
           <h2>交付前跑过的，不是估的</h2>
-          <p class="sub">静态质检、四套回归、十一包结构探针、语法编译、离线冒烟，全部实跑。没跑的项如实标「未实测」，不写成通过。</p>
+          <p class="sub">doctor 十七项自检、十六套回归、六包审核闸门、语法编译、离线冒烟，全部实跑。没跑的项如实标「未实测」，不写成通过。</p>
         </div>
         <div class="vgrid">
-          <div class="vcell"><div class="n">A<small>/100</small></div><div class="t">静态质检</div></div>
-          <div class="vcell"><div class="n">27<small>/27</small></div><div class="t">结构回归</div></div>
-          <div class="vcell"><div class="n">204<small>/204</small></div><div class="t">数据引擎</div></div>
-          <div class="vcell"><div class="n">38<small>/38</small></div><div class="t">融合专项</div></div>
-          <div class="vcell"><div class="n">44<small>/44</small></div><div class="t">逻辑反例</div></div>
-          <div class="vcell"><div class="n">11<small>包</small></div><div class="t">探针 PASS</div></div>
-          <div class="vcell"><div class="n">40<small>文件</small></div><div class="t">语法 0 错</div></div>
-          <div class="vcell"><div class="n">498<small>行</small></div><div class="t">正文未越 500</div></div>
-          <div class="vcell"><div class="n">2.94<small>MiB</small></div><div class="t">最大包未越 3 MiB</div></div>
+          <div class="vcell"><div class="n">17<small>项</small></div><div class="t">doctor 自检</div></div>
+          <div class="vcell"><div class="n">17<small>/17</small></div><div class="t">回归套件</div></div>
+          <div class="vcell"><div class="n">32<small>/32</small></div><div class="t">新增用例</div></div>
+          <div class="vcell"><div class="n">134<small>/134</small></div><div class="t">逻辑反例</div></div>
+          <div class="vcell"><div class="n">45<small>/45</small></div><div class="t">融合专项</div></div>
+          <div class="vcell"><div class="n">6<small>包</small></div><div class="t">审核闸门 0 命中</div></div>
+          <div class="vcell"><div class="n">34<small>文件</small></div><div class="t">包内脚本语法 0 错</div></div>
+          <div class="vcell"><div class="n">500<small>行</small></div><div class="t">正文未越 500</div></div>
+          <div class="vcell"><div class="n">2.90<small>MiB</small></div><div class="t">最大包未越 3 MiB</div></div>
         </div>
       </div>
     </div>
@@ -778,14 +754,14 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
   <div class="wrap">
     <div class="foot">
       <div class="foot-l">
-        <b>WorldsTip 旅行指南小册子</b> · v0.2.1 融合版<br>
+        <b>WorldsTip 旅行指南小册子</b> · v0.2.276<br>
         行程编排底座 + 摩旅数据引擎 · 纯 Python 标准库，零第三方依赖
       </div>
       <div class="foot-r">
         <a href="https://worldstip.com" target="_blank" rel="noopener">worldstip.com</a>
         <a href="https://www.qianwenai.com/hub/skills/@user_gc9bq/worldstip-travel-planner" target="_blank" rel="noopener">千问</a>
         <a href="https://www.workbuddy.cn/share/asset?shareCode=1vcWCDMZzdZOCyznXg4EQg&amp;sig=DWLyHwIltgobijgO" target="_blank" rel="noopener">WorkBuddy</a>
-        <a href="https://skillhub.cn/skills/user_dc997363/worldstip" target="_blank" rel="noopener">SkillHub</a>
+        <a href="https://skillhub.cn/skills/indiv-mrdt/worldstip" target="_blank" rel="noopener">SkillHub</a>
         <a href="https://github.com/MrdT-BitsNote/Skill-WorldsTipAgent" target="_blank" rel="noopener">技能源码</a>
         <a href="https://github.com/MrdT-BitsNote/agent-site" target="_blank" rel="noopener">本站源码</a>
         <a href="#download">全部下载</a>
@@ -804,6 +780,12 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
 
   // 真实包数据：由 packs/ 实测产出（zip 体积、解压体积、文件数、sha256 前 16 位）
   var PACKS = [
+    {ver:"0.2.276", plat:"WorkBuddy", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.2.276-workbuddy.zip", unzipped:3040737, files:95, sha:"2d6e7dc0c1e67e18", note:"95 文件瘦身版，解压 2.90 MiB 未越 3 MiB"},
+    {ver:"0.2.276", plat:"WorkBuddy", kind:"expert", label:"专家包", file:"worldstip-travel-expert.zip", unzipped:250430, files:8, sha:"3915b126da175f0b", note:"plugin.json + agents + 内嵌技能 + avatar，共 8 文件"},
+    {ver:"0.2.276", plat:"千问 AI", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.2.276-qianwen.zip", unzipped:2918119, files:85, sha:"0e152f6e7e15ca62", note:"零外链净化 + 内容中性化，七字段齐，出境能力文件已剔"},
+    {ver:"0.2.276", plat:"百度搭子", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.2.276-dumate.zip", unzipped:4451789, files:132, sha:"43ce0d02377e75fa", note:"完整包，附 PLATFORM.md 导入说明"},
+    {ver:"0.2.276", plat:"SkillHub", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.2.276-skillhub.zip", unzipped:4451509, files:132, sha:"af944723f77d9d42", note:"SKILL.md 必须在包根，附 _meta.json"},
+
     {ver:"0.2.1", plat:"WorkBuddy", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.2.1-fused.zip", unzipped:3066016, files:115, sha:"02b17d6ba6265da3", note:"扁平结构，SKILL.md 在根，直接可跑"},
     {ver:"0.2.1", plat:"WorkBuddy", kind:"expert", label:"专家包", file:"worldstip-travel-planner-v0.2.1-expert-fused.zip", unzipped:3086595, files:119, sha:"c5ca56dc15693440", note:"plugin.json + agents + 内嵌技能 + avatar"},
     {ver:"0.2.1", plat:"千问 AI", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.2.1-qianwen.zip", unzipped:2996973, files:109, sha:"b0145390eefe739c", note:"零外链净化，frontmatter 7 字段齐"},
@@ -811,11 +793,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
     {ver:"0.2.1", plat:"百度搭子", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.2.1-baidu-dazi.zip", unzipped:3068740, files:116, sha:"a7041b3c73a0232b", note:"dumate 块式 frontmatter + cases.json 14 条"},
     {ver:"0.2.1", plat:"百度搭子", kind:"expert", label:"套件包", file:"worldstip-travel-planner-v0.2.1-baidu-dazi-plugin.zip", unzipped:3077963, files:119, sha:"902322dc4018eab1", note:"入口智能体 + 内嵌技能，走套件管理上传"},
     {ver:"0.2.1", plat:"DataBuilder", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.2.1-baidu_databuilder.zip", unzipped:3066016, files:115, sha:"4f029e3bcb043213", note:"顶层目录包裹，适配其导入规则"},
-    {ver:"0.2.1", plat:"SkillHub", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.2.1-skillhub.zip", unzipped:3065083, files:115, sha:"3112607ad147ea21", note:"SKILL.md 必须在包根，含权限声明段"},
-
-    {ver:"0.1.49", plat:"WorkBuddy", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.1.49-skill-fixed.zip", unzipped:2997179, files:93, sha:"28f774e7d1ce8674", note:"纯行程规划，不含摩旅数据层，已按同口径清出 LICENSE"},
-    {ver:"0.1.49", plat:"WorkBuddy", kind:"expert", label:"专家包", file:"worldstip-travel-planner-v0.1.49-expert-fixed.zip", unzipped:3016197, files:97, sha:"4a7f3c9eca1ae98f", note:"已补内嵌技能目录，保留 avatar 平台资产"},
-    {ver:"0.1.49", plat:"千问 AI", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.1.49-qianwen.zip", unzipped:4368614, files:95, sha:"806db7f1ef11e95e", note:"零外链净化，解压体积偏大，仍在上限内"}
+    {ver:"0.2.1", plat:"SkillHub", kind:"skill", label:"技能包", file:"worldstip-travel-planner-v0.2.1-skillhub.zip", unzipped:3065083, files:115, sha:"3112607ad147ea21", note:"SKILL.md 必须在包根，含权限声明段"}
   ];
 
   var grid = document.getElementById("dlGrid");
@@ -894,7 +872,7 @@ footer{padding:34px 0 42px;border-top:1px solid var(--line);margin-top:20px}
     });
   });
 
-  render("0.2.1");
+  render("0.2.276");
 
   // ── 滚动进场 ──
   var io = new IntersectionObserver(function(entries){
