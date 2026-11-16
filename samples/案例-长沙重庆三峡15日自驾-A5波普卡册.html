@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>長沙 → 重慶・三峽 15 天往返自駕｜WorldsTip A5 速查卡冊</title>
+<meta name="description" content="WorldsTip 標準案例：長沙出發至重慶 15 天往返自駕，總預算 ¥9,000，含三峽三段、重慶玩足 2 整天。12 頁 A5 可列印卡冊，含逐日路線里程車程、沿途住宿與六項預算明細。">
+<style>
+@page{size:A5;margin:0}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+ --red:#FF2D2D;--yellow:#FFD400;--blue:#0057FF;--purple:#8B2BE2;
+ --cyan:#00D5FF;--pink:#FF4FA3;--green:#00C853;--orange:#FF7A00;
+ --ink:#141414;--white:#FFFDF5;
+ --sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Heiti SC",sans-serif;
+ --disp:"Arial Black",Impact,"Microsoft YaHei",sans-serif;
+ --sh:2.5px 2.5px 0 var(--ink);
+}
+html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{background:#222;font-family:var(--sans);color:var(--ink);padding:7mm 0;line-height:1.32}
+.sheet{display:flex;flex-direction:column;align-items:center;gap:5mm}
+/* ---- A5 頁面：固定框 + 滿版底色 + 半調網點 + 斜紋，零留白 ---- */
+.page{width:148mm;height:210mm;position:relative;overflow:hidden;
+ background:var(--pg);border:1.4mm solid var(--ink);
+ display:grid;grid-template-rows:12.5mm 1fr 8.2mm;
+ break-after:page;page-break-after:always;
+ -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+ background-image:radial-gradient(circle,rgba(0,0,0,.17) .85px,transparent 1.25px),
+   repeating-linear-gradient(135deg,rgba(255,255,255,.10) 0 2px,transparent 2px 4px);
+ background-size:4.2mm 4.2mm,auto}
+.page>*{position:relative;z-index:1}
+.deco{position:absolute;inset:0;z-index:0;pointer-events:none}
+.deco i{position:absolute;display:block;border:.35mm solid var(--ink);opacity:.85}
+/* ---- 頁眉：滿版墨底 + 編號圓 + POP 爆炸字 ---- */
+.ph{background:var(--ink);color:#fff;display:grid;grid-template-columns:10.5mm 1fr auto;
+ align-items:center;gap:2mm;padding:0 2.4mm;border-bottom:1.2mm solid var(--accent)}
+.ph .no{width:8.8mm;height:8.8mm;border-radius:50%;background:var(--accent);color:#fff;
+ border:.65mm solid #fff;display:grid;place-items:center;font-family:var(--disp);font-size:11.5pt;
+ box-shadow:1.5px 1.5px 0 rgba(0,0,0,.6)}
+.ph .tt{font-family:var(--disp);font-size:13pt;line-height:1.05;letter-spacing:-.02em}
+.ph .en{font-size:5.5pt;letter-spacing:.09em;color:var(--accent);font-weight:800;text-transform:uppercase}
+.ph .pop{font-family:var(--disp);font-size:12pt;color:var(--yellow);transform:rotate(-9deg);
+ -webkit-text-stroke:.35mm var(--ink);text-shadow:1.5px 1.5px 0 var(--ink);white-space:nowrap}
+/* ---- 頁腳：滿版墨底 + 跑馬關鍵詞 + 頁碼 ---- */
+.pf{background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between;
+ padding:0 2.4mm;border-top:1.2mm solid var(--accent);font-size:5.9pt}
+.pf .kw{font-family:var(--disp);font-size:6.6pt;color:var(--accent);letter-spacing:.06em}
+.pf .pgno{color:#fff;opacity:.85;font-weight:700}
+/* ---- 主體：密排卡片，撐滿剩餘高度 ---- */
+.pb{padding:1.8mm 2.2mm;display:flex;flex-direction:column;gap:1.5mm;min-height:0;overflow:hidden}
+.grow{flex:1;min-height:0}
+.band{background:var(--b,var(--yellow));border:.7mm solid var(--ink);box-shadow:var(--sh);
+ padding:1.3mm 1.8mm;font-size:6.5pt;line-height:1.38;font-weight:600;flex:none}
+.band b{font-family:var(--disp);font-size:7pt}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.5mm;flex:none}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5mm;flex:none}
+.card{background:var(--white);border:.7mm solid var(--ink);border-radius:1.6mm;
+ box-shadow:var(--sh);padding:1.5mm 1.8mm;display:flex;flex-direction:column;gap:.9mm;
+ font-size:6.2pt;line-height:1.38;min-height:0}
+.card .ct{display:flex;align-items:center;gap:1.2mm;font-family:var(--disp);font-size:7.6pt;
+ border-bottom:.45mm solid var(--ink);padding-bottom:.8mm;flex:none}
+.card .ct .cdot{width:2.4mm;height:2.4mm;background:var(--c);border:.35mm solid var(--ink);border-radius:50%;flex:none}
+.card .sub{margin-left:auto;font-family:var(--sans);font-size:5.4pt;font-weight:800;color:#555}
+.card p{font-size:6.2pt;line-height:1.4}
+/* 鍵值行 */
+.row{display:grid;grid-template-columns:7.5mm 1fr;gap:1.1mm;font-size:6.15pt;line-height:1.36}
+.row .k{font-size:5.5pt;font-weight:800;color:#fff;background:var(--ink);border-radius:.9mm;
+ text-align:center;padding:.35mm 0;height:fit-content;letter-spacing:.02em}
+.row .v{color:#1c1c1c}
+/* 路線節點表 */
+.rtlist{display:flex;flex-direction:column;gap:.7mm}
+.rt{display:flex;justify-content:space-between;align-items:center;font-size:6.4pt;
+ border-bottom:.4mm dashed #999;padding:.5mm .8mm}
+.rt b{font-size:6.8pt}.rt span{font-family:var(--disp);font-size:7pt;color:var(--blue)}
+/* 逐日卡（每頁 3 張，撐滿高度 → 零留白） */
+.days3{display:flex;flex-direction:column;gap:1.5mm}
+.day{flex:1;min-height:0;background:var(--white);border:.75mm solid var(--ink);
+ border-radius:1.8mm;box-shadow:var(--sh);display:grid;grid-template-columns:12mm 1fr;overflow:hidden}
+.day .dl{background:var(--dc);border-right:.7mm solid var(--ink);display:flex;flex-direction:column;
+ align-items:center;justify-content:center;gap:.6mm;color:#fff;padding:1mm .3mm}
+.day .dl b{font-family:var(--disp);font-size:17pt;line-height:.9;text-shadow:1.5px 1.5px 0 var(--ink)}
+.day .dl span{font-size:5.4pt;font-weight:800;letter-spacing:.1em}
+.day .dl em{font-style:normal;font-size:5.2pt;font-weight:800;background:var(--ink);
+ border-radius:.9mm;padding:.5mm 1mm;text-align:center;line-height:1.2}
+.day .dr{padding:1.4mm 1.8mm;display:flex;flex-direction:column;gap:.75mm;min-height:0}
+.day .dt{display:flex;justify-content:space-between;align-items:baseline;gap:1mm;
+ border-bottom:.45mm solid var(--ink);padding-bottom:.7mm;flex:none}
+.day .dt .city{font-family:var(--disp);font-size:8.6pt}
+.day .dt .num{font-size:5.9pt;font-weight:800;white-space:nowrap;color:var(--blue)}
+.day .dnote{margin-top:auto;background:var(--yellow);border:.4mm solid var(--ink);
+ border-radius:.9mm;padding:.6mm 1.2mm;font-size:5.7pt;font-weight:700;line-height:1.3}
+/* 表格 */
+.tblwrap{background:var(--white);border:.7mm solid var(--ink);border-radius:1.6mm;
+ box-shadow:var(--sh);overflow:hidden;display:flex;min-height:0}
+.tbl{width:100%;border-collapse:collapse;font-size:6.15pt;line-height:1.35}
+.tbl th{background:var(--ink);color:#fff;font-family:var(--disp);font-size:5.9pt;
+ text-align:left;padding:1.2mm 1.4mm;letter-spacing:.02em}
+.tbl td{padding:1.05mm 1.4mm;border-bottom:.4mm solid #bbb;vertical-align:top}
+.tbl tbody tr:nth-child(even) td{background:rgba(255,212,0,.16)}
+.tbl tfoot td{background:var(--yellow);font-weight:800;border-top:.7mm solid var(--ink)}
+.tbl.idx td:first-child{font-family:var(--disp);font-size:6.6pt;color:var(--red)}
+/* 預算條 */
+.budwrap{display:flex;flex-direction:column;gap:1.2mm;background:var(--white);
+ border:.7mm solid var(--ink);border-radius:1.8mm;box-shadow:var(--sh);padding:2mm}
+.brow{display:grid;grid-template-columns:1fr 34mm 16mm;gap:1.4mm;align-items:center}
+.brow .bn{display:flex;flex-direction:column;gap:.2mm}
+.brow .bn b{font-family:var(--disp);font-size:7.4pt}
+.brow .bn span{font-size:5.5pt;color:#444;line-height:1.28}
+.btrack{height:4.2mm;background:#eee;border:.5mm solid var(--ink);border-radius:.9mm;overflow:hidden}
+.btrack i{display:block;height:100%;background:var(--bc);border-right:.5mm solid var(--ink)}
+.bv{font-family:var(--disp);font-size:8.4pt;text-align:right}
+.btotal{display:flex;justify-content:space-between;align-items:center;background:var(--ink);
+ color:#fff;border-radius:1.2mm;padding:1.6mm 2.4mm;margin-top:.6mm}
+.btotal b{font-family:var(--disp);font-size:15pt;color:var(--yellow)}
+.btotal span{font-size:6pt;font-weight:800}
+.grid3.mini .card{font-size:6pt}
+/* 三峽卡 */
+.gorgewrap{display:flex;flex-direction:column;gap:1.5mm}
+.gc{flex:1;min-height:0;background:var(--white);border:.7mm solid var(--ink);
+ border-left:2.6mm solid var(--gc);border-radius:1.6mm;box-shadow:var(--sh);padding:1.4mm 1.8mm}
+.gh{display:flex;align-items:center;gap:1.4mm;border-bottom:.45mm solid var(--ink);padding-bottom:.7mm}
+.gh .gn{font-family:var(--disp);font-size:8pt;background:var(--gc);color:#fff;
+ border:.4mm solid var(--ink);border-radius:50%;width:5mm;height:5mm;display:grid;place-items:center}
+.gh b{font-family:var(--disp);font-size:8.6pt}
+.gh .gr{margin-left:auto;font-size:5.8pt;font-weight:800;color:#555}
+.gc p{font-size:6.25pt;line-height:1.42;margin-top:.9mm}
+.gspot{font-size:5.9pt;font-weight:800;margin-top:.7mm;color:var(--blue)}
+/* TIP 卡 */
+.tips2{display:grid;grid-template-columns:1fr 1fr;gap:1.5mm}
+.tip{background:var(--white);border:.7mm solid var(--ink);border-left:2.4mm solid var(--orange);
+ border-radius:1.5mm;box-shadow:var(--sh);padding:1.4mm 1.7mm;display:grid;
+ grid-template-columns:5mm 1fr;gap:1.3mm;align-items:start}
+.tip .ti{font-family:var(--disp);font-size:9pt;background:var(--ink);color:#fff;
+ border-radius:50%;width:5mm;height:5mm;display:grid;place-items:center}
+.tip b{font-family:var(--disp);font-size:7pt}
+.tip p{font-size:6.1pt;line-height:1.4;margin-top:.5mm}
+/* 通用小條 */
+.smallbar{background:var(--ink);color:var(--yellow);font-size:5.8pt;font-weight:800;
+ padding:1mm 1.6mm;border-radius:.9mm;text-align:center;flex:none}
+.why{background:var(--white);border:.7mm solid var(--ink);border-radius:1.6mm;
+ box-shadow:var(--sh);padding:1.4mm 1.8mm;font-size:6.15pt;line-height:1.42;flex:none}
+.cover-art{margin:0;line-height:0;border:.6mm solid var(--ink);border-radius:1.2mm;overflow:hidden;flex:none}
+.lastline{background:var(--yellow);border:.7mm solid var(--ink);box-shadow:var(--sh);
+ border-radius:1.5mm;padding:1.5mm 2mm;font-size:6.4pt;font-weight:700;line-height:1.45;flex:none}
+.stampbar{display:flex;align-items:center;justify-content:space-between;gap:1.5mm;
+ font-size:5.5pt;line-height:1.3;flex:none}
+/* ---- 封面：滿版塗鴉構圖 ---- */
+.cover{display:flex;flex-direction:column;padding:0}
+.cover>*{position:relative;z-index:1;flex:none}
+/* 封面中段：12 頁彩色目錄格，填滿原本的空白區（零留白 + 內容豐滿） */
+.cv-index{flex:1!important;min-height:0;margin:1.6mm 3mm;background:var(--white);
+ border:.7mm solid var(--ink);box-shadow:var(--sh);border-radius:1.5mm;padding:1.6mm;
+ display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr);gap:1.2mm}
+.cv-cell{background:var(--cbg,#fff);border:.5mm solid var(--ink);border-radius:1mm;overflow:hidden;
+ display:grid;grid-template-columns:6.5mm 1fr;gap:1.2mm;align-items:center;padding:.7mm 1.2mm}
+.cv-cell .cn{font-family:var(--disp);font-size:7.6pt;color:#fff;background:var(--cc);
+ border:.4mm solid var(--ink);border-radius:.8mm;text-align:center;padding:.6mm 0}
+.cv-cell .cx b{font-size:6.2pt;display:block;line-height:1.15}
+.cv-cell .cx span{font-size:5.1pt;color:#333;line-height:1.2}
+.cv-cell .cx em{display:block;font-style:normal;font-size:5pt;font-weight:800;line-height:1.2;
+ background:var(--yellow);border:.35mm solid var(--ink);border-radius:.7mm;
+ padding:.3mm .7mm;margin-top:.6mm;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cv-top{display:flex;justify-content:space-between;background:var(--ink);color:#fff;
+ font-size:5.9pt;font-weight:800;padding:1.6mm 2.4mm;letter-spacing:.04em}
+.cv-burst{position:absolute;top:14mm;right:6mm;z-index:3;transform:rotate(11deg)}
+.cv-title{display:flex;align-items:center;justify-content:center;gap:4mm;padding:5mm 0 1mm}
+.cv-title .from,.cv-title .to{font-family:var(--disp);font-size:31pt;line-height:.9;
+ letter-spacing:-.04em;color:#fff;-webkit-text-stroke:.32mm var(--ink);
+ text-shadow:2px 2px 0 var(--ink),5px 5px 0 var(--red),8px 8px 0 rgba(0,0,0,.22)}
+.cv-title .arrow{font-size:16pt;color:var(--red);-webkit-text-stroke:.5mm var(--ink)}
+.cv-sub{text-align:center;font-family:var(--disp);font-size:11pt;background:var(--ink);
+ color:var(--yellow);padding:1.6mm;border-top:.7mm solid var(--ink);border-bottom:.7mm solid var(--ink)}
+.cv-badges{display:flex;flex-wrap:wrap;gap:1.4mm;justify-content:center;padding:2.4mm 3mm}
+.bd{font-family:var(--disp);font-size:7.4pt;color:#fff;border:.6mm solid var(--ink);
+ border-radius:999px;padding:1.1mm 2.6mm;box-shadow:var(--sh);text-shadow:1px 1px 0 rgba(0,0,0,.35)}
+.cv-route{margin:0 3mm;background:var(--white);border:.7mm solid var(--ink);
+ box-shadow:var(--sh);border-radius:1.5mm;padding:1.8mm 2.2mm;
+ font-size:6.5pt;line-height:1.6;font-weight:700}
+.cv-route b{font-family:var(--disp);color:var(--red);margin-right:1.5mm}
+.cv-pitch{margin:2mm 3mm;background:var(--ink);color:#fff;border:.7mm solid var(--ink);
+ border-radius:1.5mm;padding:2mm 2.4mm;font-size:6.6pt;line-height:1.5;text-align:center}
+.cv-pitch span{color:var(--yellow);font-weight:800}
+.cv-foot{display:flex;align-items:center;justify-content:space-between;gap:2mm;
+ background:var(--blue);color:#fff;border-top:1mm solid var(--ink);
+ padding:2mm 3mm;font-size:5.9pt;font-weight:800}
+.stamp{display:inline-block;font-family:var(--disp);font-size:6.6pt;color:#fff;
+ background:var(--red);border:.6mm solid var(--ink);border-radius:1mm;
+ padding:.9mm 1.8mm;transform:rotate(-6deg);box-shadow:1.5px 1.5px 0 var(--ink);white-space:nowrap}
+/* ---- 列印：去掉螢幕灰底與間距 ---- */
+@media print{
+ html,body{background:#fff;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .sheet{gap:0}
+ .page{break-after:page;page-break-after:always}
+ .page:last-child{break-after:auto;page-break-after:auto}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="sheet">
+<section class="page cover" style="--pg:#FFD400;--accent:#FF2D2D">
+<div class="deco"><i style="left:36mm;top:147mm;width:3mm;height:3mm;background:#FFD400;border-radius:50%"></i><i style="left:117mm;top:122mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i><i style="left:9mm;top:101mm;width:3.8mm;height:3.8mm;background:#00C853;transform:rotate(10deg)"></i><i style="left:116mm;top:70mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(67deg)"></i><i style="left:83mm;top:9mm;width:2.2mm;height:2.2mm;background:#FF2D2D;transform:rotate(10deg)"></i><i style="left:99mm;top:177mm;width:3mm;height:3mm;background:#8B2BE2;transform:rotate(43deg)"></i><i style="left:58mm;top:197mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(32deg)"></i><i style="left:61mm;top:175mm;width:3mm;height:3mm;background:#8B2BE2;transform:rotate(69deg)"></i><i style="left:7mm;top:108mm;width:2.2mm;height:2.2mm;background:#FFD400;transform:rotate(56deg)"></i><i style="left:77mm;top:32mm;width:3.8mm;height:3.8mm;background:#FF4FA3;transform:rotate(42deg)"></i><i style="left:110mm;top:131mm;width:3mm;height:3mm;background:#8B2BE2;border-radius:50%"></i><i style="left:129mm;top:131mm;width:3.8mm;height:3.8mm;background:#00C853;transform:rotate(40deg)"></i><i style="left:64mm;top:192mm;width:3mm;height:3mm;background:#00C853;transform:rotate(33deg)"></i><i style="left:142mm;top:181mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:132mm;top:29mm;width:3.8mm;height:3.8mm;background:#0057FF;transform:rotate(33deg)"></i><i style="left:127mm;top:189mm;width:3mm;height:3mm;background:#FF2D2D;border-radius:50%"></i><i style="left:102mm;top:167mm;width:2.2mm;height:2.2mm;background:#0057FF;transform:rotate(10deg)"></i><i style="left:53mm;top:140mm;width:3mm;height:3mm;background:#8B2BE2;transform:rotate(70deg)"></i><i style="left:92mm;top:119mm;width:3.8mm;height:3.8mm;background:#00D5FF;transform:rotate(56deg)"></i><i style="left:3mm;top:100mm;width:3.8mm;height:3.8mm;background:#0057FF;transform:rotate(23deg)"></i><i style="left:111mm;top:16mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(22deg)"></i><i style="left:131mm;top:107mm;width:3mm;height:3mm;background:#FF7A00;border-radius:50%"></i><i style="left:2mm;top:139mm;width:3mm;height:3mm;background:#FF4FA3;transform:rotate(61deg)"></i><i style="left:60mm;top:164mm;width:3.8mm;height:3.8mm;background:#0057FF;transform:rotate(65deg)"></i><i style="left:25mm;top:206mm;width:2.2mm;height:2.2mm;background:#00D5FF;transform:rotate(53deg)"></i><i style="left:20mm;top:23mm;width:3mm;height:3mm;background:#FF2D2D;border-radius:50%"></i></div>
+<div class="cover-art"><svg viewBox="0 0 430 60" width="100%" height="60" preserveAspectRatio="none" aria-hidden="true">
+<rect width="430" height="60" fill="#00D5FF"/>
+<path d="M0,52 L38,16 L66,40 L98,8 L134,46 L168,22 L204,50 L238,12 L276,44 L312,18 L350,48 L388,20 L430,50 L430,76 L0,76 Z" fill="#4f7168" stroke="#141414" stroke-width="2.5"/>
+<path d="M0,62 L52,38 L96,58 L150,32 L210,60 L268,36 L330,60 L386,40 L430,60 L430,76 L0,76 Z" fill="#141414" opacity=".82"/>
+<rect x="0" y="66" width="430" height="10" fill="#0057FF"/>
+<path d="M196,70 l24,0 -4,6 -16,0 z" fill="#FFD400" stroke="#141414" stroke-width="1.5"/>
+<path d="M208,70 l0,-12 10,12 z" fill="#FFFDF5" stroke="#141414" stroke-width="1.5"/>
+</svg></div>
+<div class="cv-top"><span>WORLDSTIP · 自駕速查卡冊</span><span>A5 PRINT EDITION · 12 PAGES</span></div>
+<div class="cv-burst"><svg viewBox="0 0 88 64" width="88" height="64" aria-hidden="true">
+<polygon points="52,3 62,22 84,10 82,32 102,34 86,48 101,64 79,63 76,74 60,60 52,76 43,60 25,73 24,61 3,64 18,47 2,33 23,31 21,10 43,22"
+ fill="#FF2D2D" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<text x="52" y="48" text-anchor="middle" font-family="Arial Black,Impact,sans-serif"
+ font-size="20" font-weight="900" fill="#141414">POP!</text></svg></div>
+<div class="cv-title"><span class="from">長沙</span><span class="arrow">▶</span><span class="to">重慶</span></div>
+<div class="cv-sub">三峽 · 15 天往返自駕 · 二人同行</div>
+<div class="cv-badges">
+ <span class="bd" style="background:#FF2D2D">15 天</span><span class="bd" style="background:#0057FF">2 人</span>
+ <span class="bd" style="background:#00C853">¥9,000</span><span class="bd" style="background:#8B2BE2">2,470 km</span>
+ <span class="bd" style="background:#FF7A00">重慶 ≥ 2 整天</span><span class="bd" style="background:#00D5FF">三峽全三段</span>
+</div>
+<div class="cv-route">
+ <div><b>去程</b> 長沙 → 宜昌 → 巴東 → 巫山 → 奉節 → 重慶（沿江入三峽）</div>
+ <div><b>回程</b> 重慶 → 武隆 → 酉陽 → 張家界 → 長沙（渝東南・湘西）</div>
+</div>
+<div class="cv-index"><div class="cv-cell" style="--cc:#FF2D2D;--cbg:#FFD5D5"><span class="cn">01</span><div class="cx"><b>封面</b><span>關鍵數字・路線</span><em>15 天 · ¥9,000</em></div></div><div class="cv-cell" style="--cc:#0057FF;--cbg:#CCDDFF"><span class="cn">02</span><div class="cx"><b>路線總覽</b><span>2,470 km 口徑</span><em>去沿江・回湘西</em></div></div><div class="cv-cell" style="--cc:#00C853;--cbg:#CCF4DC"><span class="cn">03</span><div class="cx"><b>逐日 D1–3</b><span>長沙 → 巫山</span><em>最長日 490 km</em></div></div><div class="cv-cell" style="--cc:#8B2BE2;--cbg:#E7D4F9"><span class="cn">04</span><div class="cx"><b>逐日 D4–6</b><span>巫峽 → 瞿塘</span><em>三峽核心段</em></div></div><div class="cv-cell" style="--cc:#FF4FA3;--cbg:#FFDBEC"><span class="cn">05</span><div class="cx"><b>逐日 D7–9</b><span>進重慶・玩 2 整天</span><em>連住 3 晚</em></div></div><div class="cv-cell" style="--cc:#00D5FF;--cbg:#CCF6FF"><span class="cn">06</span><div class="cx"><b>逐日 D10–12</b><span>渝東南 → 湘西</span><em>盤山 720 km</em></div></div><div class="cv-cell" style="--cc:#FF7A00;--cbg:#FFE4CC"><span class="cn">07</span><div class="cx"><b>逐日 D13–15</b><span>天門山 → 返程</span><em>留 1 天緩衝</em></div></div><div class="cv-cell" style="--cc:#00C853;--cbg:#CCF4DC"><span class="cn">08</span><div class="cx"><b>沿途住宿</b><span>9 站・14 晚</span><em>均 ¥171／晚</em></div></div><div class="cv-cell" style="--cc:#FF2D2D;--cbg:#FFD5D5"><span class="cn">09</span><div class="cx"><b>預算明細</b><span>六項加總齊平</span><em>¥9,000 二人</em></div></div><div class="cv-cell" style="--cc:#0057FF;--cbg:#CCDDFF"><span class="cn">10</span><div class="cx"><b>三峽專題</b><span>三段・機位・光線</span><em>奇—秀—險</em></div></div><div class="cv-cell" style="--cc:#8B2BE2;--cbg:#E7D4F9"><span class="cn">11</span><div class="cx"><b>行前與駕駛</b><span>6 條鐵律・應急</span><em>110/120/122</em></div></div><div class="cv-cell" style="--cc:#FF7A00;--cbg:#FFE4CC"><span class="cn">12</span><div class="cx"><b>速查索引</b><span>撕下放車上</span><em>Ctrl/Cmd + P</em></div></div></div>
+<div class="cv-pitch">不告訴你有什麼，只替你砍掉一半、排對順序：<br>
+<span>去程順江看完西陵・巫峽・瞿塘，重慶歇足兩整天，回程不走回頭路。</span></div>
+<div class="cv-foot"><span>逐日路線 + 里程車程 + 沿途住宿 + 六項預算明細</span>
+ <span class="stamp">以官方當日為準</span></div>
+</section>
+<section class="page" style="--pg:#00D5FF;--accent:#0057FF">
+<div class="deco"><i style="left:16mm;top:25mm;width:3mm;height:3mm;background:#FFD400;transform:rotate(57deg)"></i><i style="left:80mm;top:66mm;width:3.8mm;height:3.8mm;background:#8B2BE2;border-radius:50%"></i><i style="left:42mm;top:112mm;width:3.8mm;height:3.8mm;background:#00C853;transform:rotate(42deg)"></i><i style="left:97mm;top:141mm;width:3.8mm;height:3.8mm;background:#FF7A00;border-radius:50%"></i><i style="left:11mm;top:9mm;width:3mm;height:3mm;background:#FF4FA3;transform:rotate(68deg)"></i><i style="left:99mm;top:110mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i><i style="left:61mm;top:8mm;width:3mm;height:3mm;background:#0057FF;border-radius:50%"></i><i style="left:132mm;top:132mm;width:3.8mm;height:3.8mm;background:#FF4FA3;transform:rotate(21deg)"></i><i style="left:116mm;top:205mm;width:3.8mm;height:3.8mm;background:#00C853;transform:rotate(68deg)"></i><i style="left:95mm;top:204mm;width:3mm;height:3mm;background:#FF4FA3;transform:rotate(38deg)"></i><i style="left:43mm;top:195mm;width:3.8mm;height:3.8mm;background:#00C853;transform:rotate(51deg)"></i><i style="left:137mm;top:65mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(42deg)"></i><i style="left:133mm;top:205mm;width:3.8mm;height:3.8mm;background:#FF4FA3;transform:rotate(67deg)"></i><i style="left:120mm;top:91mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(70deg)"></i><i style="left:85mm;top:181mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i><i style="left:124mm;top:81mm;width:3.8mm;height:3.8mm;background:#00D5FF;transform:rotate(45deg)"></i><i style="left:134mm;top:131mm;width:3mm;height:3mm;background:#00C853;transform:rotate(41deg)"></i><i style="left:133mm;top:95mm;width:3mm;height:3mm;background:#FFD400;transform:rotate(68deg)"></i><i style="left:50mm;top:192mm;width:2.2mm;height:2.2mm;background:#FFD400;transform:rotate(13deg)"></i><i style="left:71mm;top:153mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(16deg)"></i><i style="left:135mm;top:36mm;width:2.2mm;height:2.2mm;background:#00D5FF;transform:rotate(70deg)"></i><i style="left:17mm;top:110mm;width:2.2mm;height:2.2mm;background:#FF2D2D;border-radius:50%"></i><i style="left:46mm;top:65mm;width:2.2mm;height:2.2mm;background:#FF2D2D;border-radius:50%"></i><i style="left:19mm;top:8mm;width:3.8mm;height:3.8mm;background:#FF2D2D;transform:rotate(33deg)"></i><i style="left:67mm;top:34mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i><i style="left:2mm;top:100mm;width:2.2mm;height:2.2mm;background:#FF2D2D;border-radius:50%"></i></div>
+<header class="ph">
+  <div class="no">02</div>
+  <div><div class="tt">路線總覽</div><div class="en">ROUTE OVERVIEW · 2,470 KM</div></div>
+  <span class="pop">GO!</span>
+</header>
+<div class="pb"><div class="band" style="--b:#FFD400">去程沿長江逆流而上，從宜昌入三峽；回程走渝東南、湘西一線，不走回頭路。重慶主城連住 3 晚、玩足 2 整天。里程為路網估算，實際以導航當日為準。</div>
+<div class="grid2 grow">
+ <div class="card" style="--c:#00C853">
+<div class="ct"><span class="cdot"></span>去程 · 沿江入三峽<span class="sub">城際累計 km</span></div><div class="rtlist"><div class="rt"><b>長沙</b><span>0</span></div><div class="rt"><b>宜昌</b><span>490</span></div><div class="rt"><b>巴東</b><span>670</span></div><div class="rt"><b>巫山</b><span>780</span></div><div class="rt"><b>奉節</b><span>870</span></div><div class="rt"><b>重慶</b><span>1250</span></div></div></div>
+ <div class="card" style="--c:#8B2BE2">
+<div class="ct"><span class="cdot"></span>回程 · 渝東南湘西<span class="sub">城際累計 km</span></div><div class="rtlist"><div class="rt"><b>重慶</b><span>1250</span></div><div class="rt"><b>武隆</b><span>1440</span></div><div class="rt"><b>酉陽</b><span>1670</span></div><div class="rt"><b>張家界</b><span>1970</span></div><div class="rt"><b>長沙</b><span>2370</span></div></div></div>
+</div>
+<div class="grid3">
+ <div class="card" style="--c:#0057FF">
+<div class="ct"><span class="cdot"></span>主路線</div><div class="row"><span class="k">城際</span><span class="v">2,370 km</span></div><div class="row"><span class="k">最長日</span><span class="v">D1 · 490 km</span></div><div class="row"><span class="k">山地日</span><span class="v">D3 / D11</span></div></div>
+ <div class="card" style="--c:#00D5FF">
+<div class="ct"><span class="cdot"></span>市內往返</div><div class="row"><span class="k">D2 大壩</span><span class="v">60 km</span></div><div class="row"><span class="k">D5 小三峽</span><span class="v">20 km</span></div><div class="row"><span class="k">D13 天門山</span><span class="v">20 km</span></div></div>
+ <div class="card" style="--c:#FF2D2D">
+<div class="ct"><span class="cdot"></span>全程合計</div><div class="row"><span class="k">總里程</span><span class="v">2,470 km</span></div><div class="row"><span class="k">日均</span><span class="v">165 km</span></div><div class="row"><span class="k">口徑</span><span class="v">含市內往返</span></div></div>
+</div>
+<div class="cover-art" style="margin:0"><svg viewBox="0 0 430 34" width="100%" height="34" preserveAspectRatio="none" aria-hidden="true">
+<rect width="430" height="34" fill="#00D5FF"/>
+<path d="M0,52 L38,16 L66,40 L98,8 L134,46 L168,22 L204,50 L238,12 L276,44 L312,18 L350,48 L388,20 L430,50 L430,76 L0,76 Z" fill="#4f7168" stroke="#141414" stroke-width="2.5"/>
+<path d="M0,62 L52,38 L96,58 L150,32 L210,60 L268,36 L330,60 L386,40 L430,60 L430,76 L0,76 Z" fill="#141414" opacity=".82"/>
+<rect x="0" y="66" width="430" height="10" fill="#0057FF"/>
+<path d="M196,70 l24,0 -4,6 -16,0 z" fill="#FFD400" stroke="#141414" stroke-width="1.5"/>
+<path d="M208,70 l0,-12 10,12 z" fill="#FFFDF5" stroke="#141414" stroke-width="1.5"/>
+</svg></div>
+<div class="why"><b>為什麼這樣排？</b> 三峽必須沿江走才能逐段看峽，所以去程選宜昌—奉節沿江線；
+回程若原路返回會重複約 1,200 km，改走武隆—酉陽—張家界，把喀斯特與湘西順路收進來。
+<b>節奏</b>：全程無單日超 500 km，最長駕駛 D1（5.5h）；D8–D9 主城不開車，省停車費與堵車。<br>
+<b>三段路型</b>：D1 長張／滬渝高速約 490 km 平順；D3–D6 沿江 G348 國道約 400 km，彎多坡陡、
+臨崖與隧道密集；D10–D12 渝東南與湘西盤山約 720 km，長下坡多用低擋。
+<b>補給</b>：宜昌、奉節、重慶、張家界補滿油，沿江縣城加油站間距大，半箱即加。<br>
+<b>里程口徑</b>：上方節點圖是「城際累計 2,370 km」，逐日卡的累計含市內遊覽往返，
+兩者相差 100 km（D2 大壩 60／D5 小三峽 20／D13 天門山 20），車輛實際行駛合計 <b>2,470 km</b>。</div></div>
+<footer class="pf"><span class="kw">WORLDSTIP · 長沙→重慶 三峽自駕</span><span class="pgno">P.02 / 12 · A5</span></footer>
+</section>
+<section class="page" style="--pg:#FFD400;--accent:#FF2D2D">
+<div class="deco"><i style="left:62mm;top:153mm;width:3mm;height:3mm;background:#0057FF;transform:rotate(40deg)"></i><i style="left:18mm;top:157mm;width:3mm;height:3mm;background:#FF2D2D;border-radius:50%"></i><i style="left:61mm;top:51mm;width:3.8mm;height:3.8mm;background:#FF7A00;transform:rotate(40deg)"></i><i style="left:103mm;top:165mm;width:2.2mm;height:2.2mm;background:#0057FF;transform:rotate(65deg)"></i><i style="left:135mm;top:101mm;width:3.8mm;height:3.8mm;background:#FF2D2D;transform:rotate(20deg)"></i><i style="left:12mm;top:79mm;width:3mm;height:3mm;background:#FF2D2D;border-radius:50%"></i><i style="left:101mm;top:184mm;width:3mm;height:3mm;background:#00C853;transform:rotate(46deg)"></i><i style="left:115mm;top:36mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:128mm;top:57mm;width:3.8mm;height:3.8mm;background:#00D5FF;border-radius:50%"></i><i style="left:79mm;top:109mm;width:3.8mm;height:3.8mm;background:#00C853;border-radius:50%"></i><i style="left:106mm;top:151mm;width:3mm;height:3mm;background:#8B2BE2;transform:rotate(69deg)"></i><i style="left:9mm;top:73mm;width:3.8mm;height:3.8mm;background:#0057FF;transform:rotate(44deg)"></i><i style="left:28mm;top:184mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(46deg)"></i><i style="left:70mm;top:74mm;width:2.2mm;height:2.2mm;background:#FFD400;border-radius:50%"></i><i style="left:125mm;top:24mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:40mm;top:7mm;width:3mm;height:3mm;background:#00D5FF;transform:rotate(65deg)"></i><i style="left:32mm;top:13mm;width:3mm;height:3mm;background:#FF2D2D;transform:rotate(31deg)"></i><i style="left:143mm;top:73mm;width:2.2mm;height:2.2mm;background:#8B2BE2;border-radius:50%"></i><i style="left:21mm;top:29mm;width:2.2mm;height:2.2mm;background:#FF2D2D;transform:rotate(28deg)"></i><i style="left:69mm;top:41mm;width:3mm;height:3mm;background:#FF2D2D;border-radius:50%"></i><i style="left:37mm;top:98mm;width:3mm;height:3mm;background:#00C853;transform:rotate(34deg)"></i><i style="left:145mm;top:28mm;width:3mm;height:3mm;background:#00D5FF;transform:rotate(55deg)"></i><i style="left:62mm;top:79mm;width:3mm;height:3mm;background:#00C853;transform:rotate(45deg)"></i><i style="left:88mm;top:4mm;width:3.8mm;height:3.8mm;background:#00C853;border-radius:50%"></i><i style="left:98mm;top:159mm;width:2.2mm;height:2.2mm;background:#0057FF;transform:rotate(31deg)"></i><i style="left:121mm;top:92mm;width:3.8mm;height:3.8mm;background:#FF4FA3;transform:rotate(57deg)"></i></div>
+<header class="ph">
+  <div class="no">03</div>
+  <div><div class="tt">逐日行程　DAY 1–3</div><div class="en">DAY 1–5 · 長沙 → 巫山</div></div>
+  <span class="pop">WOW!</span>
+</header>
+<div class="pb"><div class="band" style="--b:#FFD400"><b>DAY 1–5 · 長沙 → 巫山</b>　每天給出動線、里程車程、累計里程、餐食、住宿落點與駕駛提示；門票 / 班次 / 路況一律以官方當日為準。</div><div class="days3 grow"><div class="day" style="--dc:#FF2D2D">
+ <div class="dl"><b>1</b><span>DAY</span><em>长途日</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">長沙 → 宜昌</span>
+    <span class="num">490 km · 5.5h · 累計 0–490</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">長張高速 → 二廣高速 → 滬渝高速；經常德、荊州過江。荊州古城短停約 1h，看城牆與荊州博物館。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">全程高速、無山路，把最長一段放在首日一次拉到位，後面才能沿江慢行看峽。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">常德米粉 / 荊州早堂麵，人均 ¥15–25</span></div>
+  <div class="row"><span class="k">住</span><span class="v">宜昌 夷陵廣場 · CBD｜¥180–220（連住 2 晚）</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">出城前加滿油；每 2h 進服務區；荊州長江大橋易堵，避開 17:00–19:00。</span></div>
+  <div class="dnote">◈ 高速費為估算，實際以收費站為準 · 本冊未做實時公開核驗</div>
+ </div>
+</div><div class="day" style="--dc:#0057FF">
+ <div class="dl"><b>2</b><span>DAY</span><em>工程奇觀</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">宜昌 · 三峽大壩</span>
+    <span class="num">60 km · 往返 1.5h · 累計 490–550</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">壇子嶺俯瞰五級船閘（約 1h）→ 185 觀景臺平視壩頂看船過閘（約 1h）→ 截流紀念園收尾（約 40min）。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">大壩是西陵峽的人文核心，半天集中看完，下午留給城區補給與休整。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">宜昌涼蝦、蘿蔔餃子，人均 ¥20–35</span></div>
+  <div class="row"><span class="k">住</span><span class="v">宜昌（連住，省搬行李）｜¥180–220</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">三峽專用公路需按指引通行，景區內換乘觀光車，自駕車停指定停車場。</span></div>
+  <div class="dnote">◈ 景區免門票但需實名預約，現場不保證放行 · 本冊未做實時公開核驗</div>
+ </div>
+</div><div class="day" style="--dc:#00C853">
+ <div class="dl"><b>3</b><span>DAY</span><em>西陵峽</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">宜昌 → 秭歸 → 巴東</span>
+    <span class="num">180 km · 3.5h · 累計 550–730</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">沿江國道 G348 進西陵峽東段，多處觀景臺可停車；屈原故里（秭歸）看屈原祠與移民文化（約 1.5h）。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">三峽必須沿江走才能逐段看峽，這天起從高速切到沿江公路，正式進入峽區。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">秭歸臍橙、江邊魚館，人均 ¥40–60</span></div>
+  <div class="row"><span class="k">住</span><span class="v">巴東縣城沿江｜¥150–190</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">山高路窄、彎多坡陡，控速 40–60km/h；雨季注意落石警示牌。</span></div>
+  <div class="dnote">◈ 部分沿江路段可能輪渡或臨時限行，出發前一日確認 · 本冊未做實時公開核驗</div>
+ </div>
+</div></div></div>
+<footer class="pf"><span class="kw">去程 · 高速轉沿江</span><span class="pgno">P.03 / 12 · A5</span></footer>
+</section>
+<section class="page" style="--pg:#FF7A00;--accent:#8B2BE2">
+<div class="deco"><i style="left:62mm;top:79mm;width:3.8mm;height:3.8mm;background:#FFD400;border-radius:50%"></i><i style="left:41mm;top:25mm;width:2.2mm;height:2.2mm;background:#FFD400;border-radius:50%"></i><i style="left:76mm;top:206mm;width:2.2mm;height:2.2mm;background:#FF2D2D;transform:rotate(33deg)"></i><i style="left:72mm;top:201mm;width:2.2mm;height:2.2mm;background:#0057FF;border-radius:50%"></i><i style="left:8mm;top:166mm;width:3mm;height:3mm;background:#00D5FF;border-radius:50%"></i><i style="left:81mm;top:76mm;width:2.2mm;height:2.2mm;background:#FF4FA3;transform:rotate(31deg)"></i><i style="left:101mm;top:131mm;width:2.2mm;height:2.2mm;background:#8B2BE2;border-radius:50%"></i><i style="left:73mm;top:24mm;width:2.2mm;height:2.2mm;background:#00D5FF;transform:rotate(46deg)"></i><i style="left:81mm;top:197mm;width:3mm;height:3mm;background:#8B2BE2;border-radius:50%"></i><i style="left:75mm;top:112mm;width:2.2mm;height:2.2mm;background:#FF7A00;border-radius:50%"></i><i style="left:68mm;top:206mm;width:2.2mm;height:2.2mm;background:#FF2D2D;border-radius:50%"></i><i style="left:73mm;top:134mm;width:3.8mm;height:3.8mm;background:#FF7A00;border-radius:50%"></i><i style="left:52mm;top:19mm;width:2.2mm;height:2.2mm;background:#00C853;transform:rotate(38deg)"></i><i style="left:72mm;top:49mm;width:3mm;height:3mm;background:#FF4FA3;transform:rotate(30deg)"></i><i style="left:144mm;top:52mm;width:2.2mm;height:2.2mm;background:#FF4FA3;transform:rotate(55deg)"></i><i style="left:60mm;top:73mm;width:2.2mm;height:2.2mm;background:#8B2BE2;border-radius:50%"></i><i style="left:47mm;top:76mm;width:2.2mm;height:2.2mm;background:#FF7A00;border-radius:50%"></i><i style="left:23mm;top:75mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:84mm;top:41mm;width:3.8mm;height:3.8mm;background:#00C853;transform:rotate(14deg)"></i><i style="left:77mm;top:160mm;width:3mm;height:3mm;background:#8B2BE2;border-radius:50%"></i><i style="left:66mm;top:99mm;width:3mm;height:3mm;background:#0057FF;transform:rotate(33deg)"></i><i style="left:13mm;top:118mm;width:3mm;height:3mm;background:#0057FF;transform:rotate(33deg)"></i><i style="left:76mm;top:148mm;width:3mm;height:3mm;background:#FFD400;transform:rotate(37deg)"></i><i style="left:55mm;top:31mm;width:2.2mm;height:2.2mm;background:#FF2D2D;border-radius:50%"></i><i style="left:45mm;top:154mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i><i style="left:127mm;top:151mm;width:3mm;height:3mm;background:#8B2BE2;transform:rotate(17deg)"></i></div>
+<header class="ph">
+  <div class="no">04</div>
+  <div><div class="tt">逐日行程　DAY 4–6</div><div class="en">DAY 4–6 · 巫峽 → 瞿塘峽</div></div>
+  <span class="pop">BOOM!</span>
+</header>
+<div class="pb"><div class="band" style="--b:#FFD400"><b>DAY 4–6 · 巫峽 → 瞿塘峽</b>　每天給出動線、里程車程、累計里程、餐食、住宿落點與駕駛提示；門票 / 班次 / 路況一律以官方當日為準。</div><div class="days3 grow"><div class="day" style="--dc:#8B2BE2">
+ <div class="dl"><b>4</b><span>DAY</span><em>巫峽</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">巴東 → 巫山 · 巫峽</span>
+    <span class="num">110 km · 2.5h · 累計 730–840</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">進巫峽，神女峰獨立江北（觀景臺約 40min）；傍晚巫山縣城臨江看夜景與碼頭。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">巫峽是本行最秀的一段，雲雨天最像水墨長卷，安排在下午光線轉柔時抵達。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">巫山烤魚、翡翠涼粉，人均 ¥45–65</span></div>
+  <div class="row"><span class="k">住</span><span class="v">巫山縣城臨江｜¥160–200（連住 2 晚）</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">沿江路段彎多，避免夜趕；縣城坡道停車選有車位的小區型酒店。</span></div>
+  <div class="dnote">◈ 神女峰可見度受天氣影響，雲霧過大時改看江景 · 本冊未做實時公開核驗</div>
+ </div>
+</div><div class="day" style="--dc:#00D5FF">
+ <div class="dl"><b>5</b><span>DAY</span><em>本行最美</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">巫山 · 小三峽</span>
+    <span class="num">20 km · 碼頭往返 · 累計 840–860</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">大寧河小三峽（龍門峽 / 巴霧峽 / 滴翠峽）乘船約 3–4h；體力足可續小小三峽烏篷船段。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">水色最青碧的一段，也是整趟三峽的拍照重點，留整日不塞其他景點。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">船上簡餐或回城小館，人均 ¥35–55</span></div>
+  <div class="row"><span class="k">住</span><span class="v">巫山（連住）｜¥160–200</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">車停縣城酒店，碼頭步行或短駁，當日基本不開車。</span></div>
+  <div class="dnote">◈ 遊船班次與票價以碼頭當日公示為準；旺季建議上午班 · 本冊未做實時公開核驗</div>
+ </div>
+</div><div class="day" style="--dc:#FF7A00">
+ <div class="dl"><b>6</b><span>DAY</span><em>夔門</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">巫山 → 奉節 · 瞿塘峽</span>
+    <span class="num">90 km · 2h · 累計 860–950</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">瞿塘峽最短最險；白帝城觀夔門最佳（約 2h，十元人民幣背面取景地）；傍晚看夔門落日。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">三峽三段按西陵→巫峽→瞿塘順江收尾，白帝城是觀峽唯一成熟機位。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">奉節臍橙、盬子雞，人均 ¥40–60</span></div>
+  <div class="row"><span class="k">住</span><span class="v">奉節縣城（近白帝城）｜¥150–190</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">沿江 G348 續行，注意隧道與臨崖路段；傍晚光線好但別貪拍摸黑開車。</span></div>
+  <div class="dnote">◈ 白帝城門票與開放時間以景區官方當日為準 · 本冊未做實時公開核驗</div>
+ </div>
+</div></div></div>
+<footer class="pf"><span class="kw">三峽核心 · 順江而下</span><span class="pgno">P.04 / 12 · A5</span></footer>
+</section>
+<section class="page" style="--pg:#FF4FA3;--accent:#0057FF">
+<div class="deco"><i style="left:67mm;top:191mm;width:3.8mm;height:3.8mm;background:#FF4FA3;transform:rotate(57deg)"></i><i style="left:137mm;top:9mm;width:2.2mm;height:2.2mm;background:#FF7A00;transform:rotate(67deg)"></i><i style="left:42mm;top:30mm;width:3mm;height:3mm;background:#FF4FA3;transform:rotate(34deg)"></i><i style="left:141mm;top:28mm;width:2.2mm;height:2.2mm;background:#8B2BE2;transform:rotate(36deg)"></i><i style="left:73mm;top:48mm;width:2.2mm;height:2.2mm;background:#00C853;transform:rotate(14deg)"></i><i style="left:37mm;top:160mm;width:2.2mm;height:2.2mm;background:#FF7A00;border-radius:50%"></i><i style="left:3mm;top:55mm;width:2.2mm;height:2.2mm;background:#8B2BE2;transform:rotate(28deg)"></i><i style="left:82mm;top:52mm;width:2.2mm;height:2.2mm;background:#8B2BE2;transform:rotate(54deg)"></i><i style="left:52mm;top:100mm;width:2.2mm;height:2.2mm;background:#00D5FF;border-radius:50%"></i><i style="left:44mm;top:39mm;width:2.2mm;height:2.2mm;background:#00D5FF;border-radius:50%"></i><i style="left:2mm;top:154mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:80mm;top:125mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:47mm;top:16mm;width:2.2mm;height:2.2mm;background:#00D5FF;transform:rotate(32deg)"></i><i style="left:105mm;top:6mm;width:3mm;height:3mm;background:#00C853;border-radius:50%"></i><i style="left:4mm;top:117mm;width:3.8mm;height:3.8mm;background:#FF2D2D;border-radius:50%"></i><i style="left:52mm;top:32mm;width:3mm;height:3mm;background:#8B2BE2;border-radius:50%"></i><i style="left:92mm;top:136mm;width:3mm;height:3mm;background:#00D5FF;border-radius:50%"></i><i style="left:96mm;top:77mm;width:3mm;height:3mm;background:#FF2D2D;transform:rotate(15deg)"></i><i style="left:55mm;top:89mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:141mm;top:25mm;width:3.8mm;height:3.8mm;background:#00D5FF;border-radius:50%"></i><i style="left:47mm;top:206mm;width:3.8mm;height:3.8mm;background:#FFD400;border-radius:50%"></i><i style="left:81mm;top:125mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i><i style="left:138mm;top:105mm;width:2.2mm;height:2.2mm;background:#FF2D2D;transform:rotate(32deg)"></i><i style="left:66mm;top:118mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i><i style="left:10mm;top:207mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(18deg)"></i><i style="left:146mm;top:35mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i></div>
+<header class="ph">
+  <div class="no">05</div>
+  <div><div class="tt">逐日行程　DAY 7–9</div><div class="en">DAY 7–9 · 進重慶 · 玩足 2 整天</div></div>
+  <span class="pop">POP!</span>
+</header>
+<div class="pb"><div class="band" style="--b:#FFD400"><b>DAY 7–9 · 進重慶 · 玩足 2 整天</b>　每天給出動線、里程車程、累計里程、餐食、住宿落點與駕駛提示；門票 / 班次 / 路況一律以官方當日為準。</div><div class="days3 grow"><div class="day" style="--dc:#FF4FA3">
+ <div class="dl"><b>7</b><span>DAY</span><em>進城</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">奉節 → 萬州 → 重慶</span>
+    <span class="num">380 km · 4.5h · 累計 950–1330</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">滬蓉高速西行，經萬州、梁平入主城；萬州可短停看長江城區；抵渝後洪崖洞看夜景。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">峽區結束轉高速直達重慶，把連續 3 晚主城住宿放在後半程，節奏由慢轉快。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">萬州烤魚（發源地）、重慶小麵，人均 ¥40–70</span></div>
+  <div class="row"><span class="k">住</span><span class="v">重慶 解放碑 / 洪崖洞一帶｜¥220–280（連住 3 晚）</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">進城前查當日尾號限行與橋隧錯峰；主城停車貴，入住後儘量不開車。</span></div>
+  <div class="dnote">◈ 重慶橋隧限行規則以交管當日發布為準 · 本冊未做實時公開核驗</div>
+ </div>
+</div><div class="day" style="--dc:#FF2D2D">
+ <div class="dl"><b>8</b><span>DAY</span><em>整天①</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">重慶 · 山城經典</span>
+    <span class="num">0 km · 地鐵 · 累計 1330（市內）</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">解放碑 → 洪崖洞 → 千廝門大橋一條線走完（夜景 19:00 後最佳）；磁器口古鎮看老碼頭（約 2h）。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">第一個重慶整天走經典動線，步行為主，避免坡城裡反覆找車位。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">重慶火鍋、酸辣粉，人均 ¥70–110</span></div>
+  <div class="row"><span class="k">住</span><span class="v">重慶（連住）｜¥220–280</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">車停酒店；景點間優先地鐵 1/2/6 號線，單程 ¥2–5。</span></div>
+  <div class="dnote">◈ 洪崖洞夜間人流大，注意隨身財物與臺階 · 本冊未做實時公開核驗</div>
+ </div>
+</div><div class="day" style="--dc:#0057FF">
+ <div class="dl"><b>9</b><span>DAY</span><em>整天②</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">重慶 · 文藝與市井</span>
+    <span class="num">0 km · 地鐵 · 累計 1330（市內）</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">李子壩輕軌穿樓觀景臺（約 30min）→ 鵝嶺二廠文創園老廠房（約 1.5h）→ 長江索道橫渡江面。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">第二個整天補文藝與市井面，與 D8 的經典動線不重複，湊足「重慶 ≥2 整天」。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">山城小湯圓、江湖菜，人均 ¥50–80</span></div>
+  <div class="row"><span class="k">住</span><span class="v">重慶（連住第 3 晚）｜¥220–280</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">仍不開車；長江索道排隊久，建議錯峰或改坐輪渡。</span></div>
+  <div class="dnote">◈ 索道票價、排隊與營運時間以官方當日為準 · 本冊未做實時公開核驗</div>
+ </div>
+</div></div></div>
+<footer class="pf"><span class="kw">重慶連住 3 晚</span><span class="pgno">P.05 / 12 · A5</span></footer>
+</section>
+<section class="page" style="--pg:#00C853;--accent:#FF2D2D">
+<div class="deco"><i style="left:22mm;top:126mm;width:2.2mm;height:2.2mm;background:#00D5FF;border-radius:50%"></i><i style="left:122mm;top:196mm;width:3mm;height:3mm;background:#FF4FA3;transform:rotate(27deg)"></i><i style="left:127mm;top:207mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(68deg)"></i><i style="left:139mm;top:140mm;width:2.2mm;height:2.2mm;background:#FFD400;transform:rotate(54deg)"></i><i style="left:69mm;top:171mm;width:3mm;height:3mm;background:#FFD400;border-radius:50%"></i><i style="left:25mm;top:94mm;width:3mm;height:3mm;background:#00C853;border-radius:50%"></i><i style="left:26mm;top:195mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(28deg)"></i><i style="left:26mm;top:13mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(41deg)"></i><i style="left:51mm;top:133mm;width:3.8mm;height:3.8mm;background:#FF2D2D;border-radius:50%"></i><i style="left:112mm;top:79mm;width:3.8mm;height:3.8mm;background:#FF4FA3;border-radius:50%"></i><i style="left:130mm;top:175mm;width:2.2mm;height:2.2mm;background:#8B2BE2;transform:rotate(27deg)"></i><i style="left:81mm;top:186mm;width:3mm;height:3mm;background:#8B2BE2;border-radius:50%"></i><i style="left:37mm;top:154mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(22deg)"></i><i style="left:45mm;top:6mm;width:3.8mm;height:3.8mm;background:#FF4FA3;transform:rotate(49deg)"></i><i style="left:80mm;top:97mm;width:3.8mm;height:3.8mm;background:#00C853;border-radius:50%"></i><i style="left:34mm;top:175mm;width:2.2mm;height:2.2mm;background:#FF7A00;border-radius:50%"></i><i style="left:103mm;top:26mm;width:2.2mm;height:2.2mm;background:#FF7A00;transform:rotate(15deg)"></i><i style="left:116mm;top:116mm;width:2.2mm;height:2.2mm;background:#00C853;transform:rotate(40deg)"></i><i style="left:79mm;top:182mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i><i style="left:70mm;top:117mm;width:3.8mm;height:3.8mm;background:#FF7A00;transform:rotate(21deg)"></i><i style="left:6mm;top:7mm;width:3mm;height:3mm;background:#FFD400;transform:rotate(33deg)"></i><i style="left:50mm;top:67mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(26deg)"></i><i style="left:107mm;top:109mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(52deg)"></i><i style="left:124mm;top:127mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i><i style="left:80mm;top:164mm;width:3mm;height:3mm;background:#FF7A00;border-radius:50%"></i><i style="left:43mm;top:160mm;width:3.8mm;height:3.8mm;background:#00C853;transform:rotate(30deg)"></i></div>
+<header class="ph">
+  <div class="no">06</div>
+  <div><div class="tt">逐日行程　DAY 10–12</div><div class="en">DAY 10–12 · 武隆 → 張家界</div></div>
+  <span class="pop">GO!</span>
+</header>
+<div class="pb"><div class="band" style="--b:#FFD400"><b>DAY 10–12 · 武隆 → 張家界</b>　每天給出動線、里程車程、累計里程、餐食、住宿落點與駕駛提示；門票 / 班次 / 路況一律以官方當日為準。</div><div class="days3 grow"><div class="day" style="--dc:#00C853">
+ <div class="dl"><b>10</b><span>DAY</span><em>喀斯特</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">重慶 → 武隆</span>
+    <span class="num">190 km · 2.5h · 累計 1330–1520</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">天生三橋喀斯特天生石橋群（電影取景地，約 3h）；時間足可續仙女山高山草原。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">回程第一站選武隆，把喀斯特地貌順路收進來，不走回頭路。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">武隆碗碗羊肉、洋芋飯，人均 ¥40–60</span></div>
+  <div class="row"><span class="k">住</span><span class="v">武隆城區 / 仙女山鎮｜¥160–200</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">渝東南開始多盤山彎道，雨後石階濕滑，景區內步行多穿防滑鞋。</span></div>
+  <div class="dnote">◈ 天生三橋門票與景區交通以官方當日為準 · 本冊未做實時公開核驗</div>
+ </div>
+</div><div class="day" style="--dc:#8B2BE2">
+ <div class="dl"><b>11</b><span>DAY</span><em>古鎮</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">武隆 → 酉陽</span>
+    <span class="num">230 km · 3h · 累計 1520–1750</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">途經黔江可看濯水古鎮風雨廊橋；抵酉陽看龔灘古鎮烏江邊吊腳樓，夜景安靜。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">沿烏江串古鎮，是渝東南最不趕路的一段，也補上人文與夜宿體驗。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">龔灘綠豆粉、油茶湯，人均 ¥30–50</span></div>
+  <div class="row"><span class="k">住</span><span class="v">酉陽 / 龔灘古鎮江景客棧｜¥150–200</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">山路多彎，天亮出發、天黑前到，避免夜間趕路。</span></div>
+  <div class="dnote">◈ 古鎮客棧車位有限，訂房時先問停車 · 本冊未做實時公開核驗</div>
+ </div>
+</div><div class="day" style="--dc:#00D5FF">
+ <div class="dl"><b>12</b><span>DAY</span><em>跨渝入湘</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">酉陽 → 張家界</span>
+    <span class="num">300 km · 4h · 累計 1750–2050</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">跨渝入湘，途經龍山、桑植進武陵山腹地；下午抵張家界休整，可逛溪布街。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">回程最長山地段，只安排趕路與休整，為次日天門山留體力。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">土家三下鍋、臘肉，人均 ¥50–75</span></div>
+  <div class="row"><span class="k">住</span><span class="v">張家界市區 / 武陵源｜¥170–220（連住 2 晚）</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">山區隧道與長下坡多，用低擋控速；進城前補油。</span></div>
+  <div class="dnote">◈ 山區天氣多變，遇大霧暴雨就近住宿，寧可少玩一站 · 本冊未做實時公開核驗</div>
+ </div>
+</div></div></div>
+<footer class="pf"><span class="kw">回程 · 渝東南湘西</span><span class="pgno">P.06 / 12 · A5</span></footer>
+</section>
+<section class="page" style="--pg:#8B2BE2;--accent:#00D5FF">
+<div class="deco"><i style="left:84mm;top:40mm;width:3.8mm;height:3.8mm;background:#00C853;border-radius:50%"></i><i style="left:139mm;top:26mm;width:3.8mm;height:3.8mm;background:#FF4FA3;border-radius:50%"></i><i style="left:131mm;top:56mm;width:2.2mm;height:2.2mm;background:#FF2D2D;border-radius:50%"></i><i style="left:19mm;top:63mm;width:3.8mm;height:3.8mm;background:#FFD400;border-radius:50%"></i><i style="left:146mm;top:33mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(70deg)"></i><i style="left:17mm;top:149mm;width:2.2mm;height:2.2mm;background:#00C853;transform:rotate(12deg)"></i><i style="left:144mm;top:36mm;width:3mm;height:3mm;background:#00D5FF;border-radius:50%"></i><i style="left:32mm;top:148mm;width:3.8mm;height:3.8mm;background:#00D5FF;transform:rotate(21deg)"></i><i style="left:28mm;top:150mm;width:3mm;height:3mm;background:#8B2BE2;border-radius:50%"></i><i style="left:18mm;top:146mm;width:3.8mm;height:3.8mm;background:#FF2D2D;border-radius:50%"></i><i style="left:138mm;top:111mm;width:3mm;height:3mm;background:#FF4FA3;transform:rotate(39deg)"></i><i style="left:94mm;top:78mm;width:2.2mm;height:2.2mm;background:#8B2BE2;transform:rotate(25deg)"></i><i style="left:22mm;top:149mm;width:3.8mm;height:3.8mm;background:#00D5FF;border-radius:50%"></i><i style="left:89mm;top:188mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(14deg)"></i><i style="left:32mm;top:133mm;width:2.2mm;height:2.2mm;background:#00C853;transform:rotate(19deg)"></i><i style="left:127mm;top:109mm;width:3.8mm;height:3.8mm;background:#FF2D2D;border-radius:50%"></i><i style="left:144mm;top:148mm;width:3mm;height:3mm;background:#FF4FA3;transform:rotate(48deg)"></i><i style="left:129mm;top:150mm;width:2.2mm;height:2.2mm;background:#FF7A00;transform:rotate(70deg)"></i><i style="left:71mm;top:123mm;width:2.2mm;height:2.2mm;background:#FFD400;transform:rotate(29deg)"></i><i style="left:116mm;top:74mm;width:3.8mm;height:3.8mm;background:#00C853;border-radius:50%"></i><i style="left:120mm;top:92mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i><i style="left:17mm;top:57mm;width:2.2mm;height:2.2mm;background:#00D5FF;transform:rotate(35deg)"></i><i style="left:102mm;top:129mm;width:2.2mm;height:2.2mm;background:#FFD400;border-radius:50%"></i><i style="left:142mm;top:73mm;width:3mm;height:3mm;background:#0057FF;transform:rotate(27deg)"></i><i style="left:108mm;top:93mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i><i style="left:47mm;top:40mm;width:3.8mm;height:3.8mm;background:#8B2BE2;border-radius:50%"></i></div>
+<header class="ph">
+  <div class="no">07</div>
+  <div><div class="tt">逐日行程　DAY 13–15</div><div class="en">DAY 13–15 · 天門山 → 返程</div></div>
+  <span class="pop">YEAH!</span>
+</header>
+<div class="pb"><div class="band" style="--b:#FFD400"><b>DAY 13–15 · 天門山 → 返程</b>　每天給出動線、里程車程、累計里程、餐食、住宿落點與駕駛提示；門票 / 班次 / 路況一律以官方當日為準。</div><div class="days3 grow"><div class="day" style="--dc:#FF7A00">
+ <div class="dl"><b>13</b><span>DAY</span><em>雲端</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">張家界 · 天門山</span>
+    <span class="num">20 km · 市內往返 · 累計 2050–2070</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">天門山長索道 + 天門洞 + 玻璃棧道（約 5h），雲霧天最仙；體力有限可只走西線。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">湘西收尾給一個高峰體驗，與三峽的水、重慶的城形成三種不同質感。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">景區簡餐或回城土家菜，人均 ¥45–70</span></div>
+  <div class="row"><span class="k">住</span><span class="v">張家界（連住）｜¥170–220</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">索道站周邊車位緊張，早到；山頂溫差大備外套。</span></div>
+  <div class="dnote">◈ 索道票價、開園時間與 A/B 線票以官方當日為準 · 本冊未做實時公開核驗</div>
+ </div>
+</div><div class="day" style="--dc:#FF4FA3">
+ <div class="dl"><b>14</b><span>DAY</span><em>返程</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">張家界 → 常德 → 長沙</span>
+    <span class="num">400 km · 4.5h · 累計 2070–2470</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">走長張高速返程；經常德可停留吃碗常德米粉（約 40min）。傍晚抵長沙。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">最後一個長途日走直達高速，中間只留一個吃飯停留，不硬塞景點。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">常德米粉、醬板鴨，人均 ¥20–40</span></div>
+  <div class="row"><span class="k">住</span><span class="v">長沙（自家可省此晚住宿）｜¥0–200</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">長途每 2h 進服務區；疲勞就進城休息，不要硬趕。</span></div>
+  <div class="dnote">◈ 返程高速費為估算，以收費站為準 · 本冊未做實時公開核驗</div>
+ </div>
+</div><div class="day" style="--dc:#FFD400">
+ <div class="dl"><b>15</b><span>DAY</span><em>緩衝日</em></div>
+ <div class="dr">
+  <div class="dt"><span class="city">長沙 · 機動緩衝</span>
+    <span class="num">0 km · — · 累計 2470（市內）</span></div>
+  <div class="row"><span class="k">動線</span><span class="v">機動緩衝日：應對途中天氣、堵車、體力透支的延期；也可整理照片、寫遊記、保養車輛。</span></div>
+  <div class="row"><span class="k">為何</span><span class="v">15 天跨省自駕一定要留一天冗餘，否則任一環節延誤就會連鎖擠壓後面所有住宿。</span></div>
+  <div class="row"><span class="k">吃</span><span class="v">長沙米粉、小龍蝦，人均 ¥30–60</span></div>
+  <div class="row"><span class="k">住</span><span class="v">長沙（行程結束）｜—</span></div>
+  <div class="row"><span class="k">開車</span><span class="v">檢查胎壓與機油、清理車內；把票據與里程記下來做覆盤。</span></div>
+  <div class="dnote">◈ 出發前統一核對門票與開放時間；本冊未做實時公開核驗 · 本冊未做實時公開核驗</div>
+ </div>
+</div></div></div>
+<footer class="pf"><span class="kw">收尾 · 留一天緩衝</span><span class="pgno">P.07 / 12 · A5</span></footer>
+</section>
+<section class="page" style="--pg:#00C853;--accent:#FF7A00">
+<div class="deco"><i style="left:60mm;top:96mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i><i style="left:13mm;top:23mm;width:2.2mm;height:2.2mm;background:#0057FF;transform:rotate(42deg)"></i><i style="left:55mm;top:104mm;width:3mm;height:3mm;background:#FF2D2D;border-radius:50%"></i><i style="left:101mm;top:128mm;width:3mm;height:3mm;background:#8B2BE2;border-radius:50%"></i><i style="left:61mm;top:196mm;width:3.8mm;height:3.8mm;background:#FF2D2D;border-radius:50%"></i><i style="left:106mm;top:123mm;width:3.8mm;height:3.8mm;background:#00C853;border-radius:50%"></i><i style="left:68mm;top:26mm;width:3mm;height:3mm;background:#FFD400;transform:rotate(34deg)"></i><i style="left:29mm;top:171mm;width:3mm;height:3mm;background:#FF2D2D;border-radius:50%"></i><i style="left:24mm;top:129mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(48deg)"></i><i style="left:18mm;top:140mm;width:3mm;height:3mm;background:#FF2D2D;transform:rotate(19deg)"></i><i style="left:118mm;top:188mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(64deg)"></i><i style="left:111mm;top:36mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i><i style="left:82mm;top:181mm;width:3.8mm;height:3.8mm;background:#FF4FA3;transform:rotate(42deg)"></i><i style="left:52mm;top:81mm;width:3mm;height:3mm;background:#0057FF;transform:rotate(42deg)"></i><i style="left:20mm;top:208mm;width:3mm;height:3mm;background:#8B2BE2;border-radius:50%"></i><i style="left:5mm;top:77mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:110mm;top:67mm;width:3mm;height:3mm;background:#00C853;transform:rotate(67deg)"></i><i style="left:108mm;top:46mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i><i style="left:8mm;top:53mm;width:3mm;height:3mm;background:#0057FF;border-radius:50%"></i><i style="left:99mm;top:89mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i><i style="left:61mm;top:37mm;width:3.8mm;height:3.8mm;background:#00C853;border-radius:50%"></i><i style="left:108mm;top:22mm;width:3mm;height:3mm;background:#FFD400;transform:rotate(12deg)"></i><i style="left:23mm;top:171mm;width:3.8mm;height:3.8mm;background:#FFD400;transform:rotate(19deg)"></i><i style="left:131mm;top:126mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i><i style="left:6mm;top:37mm;width:3mm;height:3mm;background:#FF4FA3;transform:rotate(17deg)"></i><i style="left:78mm;top:91mm;width:3mm;height:3mm;background:#FF4FA3;border-radius:50%"></i></div>
+<header class="ph">
+  <div class="no">08</div>
+  <div><div class="tt">沿途住宿</div><div class="en">LODGING · 14 NIGHTS</div></div>
+  <span class="pop">Zzz</span>
+</header>
+<div class="pb"><div class="band" style="--b:#FFD400">二人同行按一間大床房計，共 <b>14 晚</b>。選縣城城區 / 景區鎮，兼顧停車與次日出發；自駕優先選帶免費停車場的酒店。價格為參考區間（旺淡季浮動），以預訂平台實時價為準。</div>
+<div class="tblwrap grow"><table class="tbl">
+<thead><tr><th>停留地</th><th>晚數</th><th>建議區域</th><th>參考價/晚</th><th>為什麼住這</th></tr></thead>
+<tbody><tr><td><b>宜昌</b></td><td>2 晚</td><td>夷陵廣場 / CBD</td><td>¥180–220</td><td>近三峽專用公路入口，連住省搬行李</td></tr><tr><td><b>巴東</b></td><td>1 晚</td><td>縣城沿江</td><td>¥150–190</td><td>次日進巫峽近，沿江房源看江景</td></tr><tr><td><b>巫山</b></td><td>2 晚</td><td>縣城臨江</td><td>¥160–200</td><td>近遊船碼頭與夜景，連住兩晚</td></tr><tr><td><b>奉節</b></td><td>1 晚</td><td>縣城（近白帝城）</td><td>¥150–190</td><td>看夔門落日後回城方便</td></tr><tr><td><b>重慶</b></td><td>3 晚</td><td>解放碑 / 洪崖洞</td><td>¥220–280</td><td>步行到核心景點，期間不開車</td></tr><tr><td><b>武隆</b></td><td>1 晚</td><td>城區 / 仙女山鎮</td><td>¥160–200</td><td>近天生三橋，次日往酉陽順路</td></tr><tr><td><b>酉陽</b></td><td>1 晚</td><td>龔灘古鎮客棧</td><td>¥150–200</td><td>烏江吊腳樓江景，需先問車位</td></tr><tr><td><b>張家界</b></td><td>2 晚</td><td>市區 / 武陵源</td><td>¥170–220</td><td>近天門山索道站，連住兩晚</td></tr><tr><td><b>長沙</b></td><td>1 晚</td><td>返程當晚</td><td>¥0–200</td><td>自家可省此筆，預算已按保守計</td></tr></tbody>
+<tfoot><tr><td colspan="2"><b>合計 14 晚</b></td><td colspan="3">預算內計 ¥2,400（均 ¥171／晚）</td></tr></tfoot>
+</table></div>
+<div class="grid3">
+ <div class="card" style="--c:#00C853">
+<div class="ct"><span class="cdot"></span>省錢關鍵</div>住縣城非景區可省約 ¥400；連住同一酒店避免頻繁搬行李，也更容易談到價。<br>長沙自家可省最後一晚（¥0–200）。</div>
+ <div class="card" style="--c:#00D5FF">
+<div class="ct"><span class="cdot"></span>停車與分房</div>古鎮客棧車位有限，訂房先問；二人一間大床房。<br>四人拼車需兩間房，住宿總額會上升但油費過路費可分攤。</div>
+ <div class="card" style="--c:#FF7A00">
+<div class="ct"><span class="cdot"></span>旺季提醒</div>國慶、暑期重慶與張家界房價翻倍，建議提前 2–3 週訂；<br>古鎮客棧週末略漲，週中入住更划算。</div>
+</div>
+<div class="smallbar">◈ 價格一律為參考區間 · 出行前請再次核實 · 本冊不提供代訂服務</div></div>
+<footer class="pf"><span class="kw">9 個停留點 · 14 晚</span><span class="pgno">P.08 / 12 · A5</span></footer>
+</section>
+<section class="page" style="--pg:#FF2D2D;--accent:#FFD400">
+<div class="deco"><i style="left:120mm;top:158mm;width:3mm;height:3mm;background:#FF4FA3;border-radius:50%"></i><i style="left:3mm;top:88mm;width:3.8mm;height:3.8mm;background:#FF7A00;border-radius:50%"></i><i style="left:143mm;top:159mm;width:3.8mm;height:3.8mm;background:#FF2D2D;border-radius:50%"></i><i style="left:117mm;top:187mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i><i style="left:15mm;top:30mm;width:3.8mm;height:3.8mm;background:#0057FF;transform:rotate(47deg)"></i><i style="left:18mm;top:200mm;width:3.8mm;height:3.8mm;background:#00C853;transform:rotate(68deg)"></i><i style="left:76mm;top:54mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(66deg)"></i><i style="left:24mm;top:199mm;width:2.2mm;height:2.2mm;background:#00D5FF;border-radius:50%"></i><i style="left:89mm;top:13mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(66deg)"></i><i style="left:107mm;top:16mm;width:3mm;height:3mm;background:#00C853;border-radius:50%"></i><i style="left:62mm;top:110mm;width:3.8mm;height:3.8mm;background:#FFD400;border-radius:50%"></i><i style="left:52mm;top:53mm;width:2.2mm;height:2.2mm;background:#FF4FA3;transform:rotate(18deg)"></i><i style="left:140mm;top:6mm;width:3.8mm;height:3.8mm;background:#FFD400;border-radius:50%"></i><i style="left:52mm;top:109mm;width:3mm;height:3mm;background:#FFD400;border-radius:50%"></i><i style="left:25mm;top:181mm;width:2.2mm;height:2.2mm;background:#0057FF;transform:rotate(56deg)"></i><i style="left:12mm;top:15mm;width:3.8mm;height:3.8mm;background:#00D5FF;transform:rotate(64deg)"></i><i style="left:40mm;top:192mm;width:3.8mm;height:3.8mm;background:#00D5FF;transform:rotate(12deg)"></i><i style="left:33mm;top:182mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i><i style="left:131mm;top:13mm;width:3.8mm;height:3.8mm;background:#FF4FA3;transform:rotate(46deg)"></i><i style="left:24mm;top:90mm;width:3.8mm;height:3.8mm;background:#FFD400;border-radius:50%"></i><i style="left:55mm;top:104mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(34deg)"></i><i style="left:86mm;top:2mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i><i style="left:115mm;top:71mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:74mm;top:28mm;width:2.2mm;height:2.2mm;background:#FF2D2D;border-radius:50%"></i><i style="left:145mm;top:208mm;width:3mm;height:3mm;background:#00C853;border-radius:50%"></i><i style="left:65mm;top:146mm;width:3mm;height:3mm;background:#FFD400;transform:rotate(16deg)"></i></div>
+<header class="ph">
+  <div class="no">09</div>
+  <div><div class="tt">預算明細</div><div class="en">BUDGET · ¥9,000 / 2 PAX</div></div>
+  <span class="pop">¥</span>
+</header>
+<div class="pb"><div class="band" style="--b:#FFD400"><b>二人合計 ¥9,000</b>　六項明細加總齊平；單價為參考區間（旺淡季浮動），出行前請再次核實。油費與過路費按車計，不隨人數變動。</div>
+<div class="budwrap grow"><div class="brow" style="--bc:#FF2D2D">
+ <div class="bn"><b>油費</b><span>2,470km × 約 8L/100km × 約 ¥8.1/L ≈ 198L</span></div>
+ <div class="btrack"><i style="width:17.8%"></i></div>
+ <div class="bv">¥1,600</div></div><div class="brow" style="--bc:#0057FF">
+ <div class="bn"><b>過路費</b><span>高速約 2,000km × 約 ¥0.55/km（沿江國道免通行費）</span></div>
+ <div class="btrack"><i style="width:12.2%"></i></div>
+ <div class="bv">¥1,100</div></div><div class="brow" style="--bc:#00C853">
+ <div class="bn"><b>住宿</b><span>14 晚 × 均 ¥171（區間 ¥150–280／晚，二人一間）</span></div>
+ <div class="btrack"><i style="width:26.7%"></i></div>
+ <div class="bv">¥2,400</div></div><div class="brow" style="--bc:#FF7A00">
+ <div class="bn"><b>餐飲</b><span>15 天 × 2 人 × 約 ¥67／人／天（含地方小吃）</span></div>
+ <div class="btrack"><i style="width:22.2%"></i></div>
+ <div class="bv">¥2,000</div></div><div class="brow" style="--bc:#8B2BE2">
+ <div class="bn"><b>門票</b><span>白帝城・小三峽遊船・天生三橋・天門山等（大壩免費）</span></div>
+ <div class="btrack"><i style="width:17.8%"></i></div>
+ <div class="bv">¥1,600</div></div><div class="brow" style="--bc:#FF4FA3">
+ <div class="bn"><b>停車雜費</b><span>停車 / 短駁 / 保險 / 應急備用</span></div>
+ <div class="btrack"><i style="width:3.3%"></i></div>
+ <div class="bv">¥300</div></div>
+ <div class="btotal"><span>合　計　TOTAL</span><b>¥9,000</b><span>二人 · 15 天</span></div>
+</div>
+<div class="grid2">
+ <div class="card" style="--c:#FF2D2D">
+<div class="ct"><span class="cdot"></span>壓到最低的三招</div>① 住宿選縣城非景區，再省約 ¥400；<br>② 門票留「三峽大壩(免費)＋白帝城＋天生三橋」三項核心，天門山視預算取捨；<br>③ 餐飲以本地小館、米粉麵食為主，日均控制在 ¥130 內。</div>
+ <div class="card" style="--c:#0057FF">
+<div class="ct"><span class="cdot"></span>人數與備用金</div>四人拼車：油費過路費按車分攤，人均可降到約 ¥3,000（住宿需兩間房）。<br>建議另帶 ¥1,000 車輛與醫療備用金，不計入 ¥9,000 主預算。<br>山區拋錨、暴雨改住、輪渡等候都可能產生額外支出。</div>
+</div>
+<div class="grid3 mini">
+ <div class="card" style="--c:#00C853">
+<div class="ct"><span class="cdot"></span>最大項</div>住宿 ¥2,400 · 27%</div>
+ <div class="card" style="--c:#FF7A00">
+<div class="ct"><span class="cdot"></span>次大項</div>餐飲 ¥2,000 · 22%</div>
+ <div class="card" style="--c:#8B2BE2">
+<div class="ct"><span class="cdot"></span>固定項</div>油＋路 ¥2,700 · 30%</div>
+</div>
+<div class="smallbar">◈ 三峽大壩免門票但需實名預約 · 其餘門票以景區官方當日為準 · 未做實時公開核驗</div></div>
+<footer class="pf"><span class="kw">六項細目 · 合計齊平</span><span class="pgno">P.09 / 12 · A5</span></footer>
+</section>
+<section class="page" style="--pg:#0057FF;--accent:#FFD400">
+<div class="deco"><i style="left:10mm;top:111mm;width:3.8mm;height:3.8mm;background:#FF7A00;border-radius:50%"></i><i style="left:120mm;top:127mm;width:3.8mm;height:3.8mm;background:#00D5FF;transform:rotate(12deg)"></i><i style="left:135mm;top:127mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:94mm;top:13mm;width:2.2mm;height:2.2mm;background:#00C853;transform:rotate(34deg)"></i><i style="left:109mm;top:74mm;width:3mm;height:3mm;background:#00D5FF;border-radius:50%"></i><i style="left:79mm;top:171mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:63mm;top:114mm;width:2.2mm;height:2.2mm;background:#00C853;transform:rotate(25deg)"></i><i style="left:36mm;top:51mm;width:3.8mm;height:3.8mm;background:#00D5FF;border-radius:50%"></i><i style="left:63mm;top:82mm;width:3mm;height:3mm;background:#FF7A00;border-radius:50%"></i><i style="left:85mm;top:130mm;width:2.2mm;height:2.2mm;background:#0057FF;transform:rotate(25deg)"></i><i style="left:11mm;top:10mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(52deg)"></i><i style="left:20mm;top:138mm;width:2.2mm;height:2.2mm;background:#FFD400;border-radius:50%"></i><i style="left:97mm;top:155mm;width:2.2mm;height:2.2mm;background:#0057FF;transform:rotate(59deg)"></i><i style="left:26mm;top:115mm;width:2.2mm;height:2.2mm;background:#0057FF;transform:rotate(37deg)"></i><i style="left:108mm;top:116mm;width:3.8mm;height:3.8mm;background:#8B2BE2;border-radius:50%"></i><i style="left:135mm;top:47mm;width:3mm;height:3mm;background:#FFD400;border-radius:50%"></i><i style="left:44mm;top:171mm;width:2.2mm;height:2.2mm;background:#0057FF;border-radius:50%"></i><i style="left:90mm;top:85mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i><i style="left:13mm;top:86mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:116mm;top:105mm;width:3mm;height:3mm;background:#0057FF;transform:rotate(41deg)"></i><i style="left:63mm;top:190mm;width:3.8mm;height:3.8mm;background:#00D5FF;border-radius:50%"></i><i style="left:129mm;top:18mm;width:3mm;height:3mm;background:#0057FF;transform:rotate(67deg)"></i><i style="left:104mm;top:36mm;width:3.8mm;height:3.8mm;background:#00C853;transform:rotate(44deg)"></i><i style="left:101mm;top:127mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i><i style="left:108mm;top:11mm;width:3mm;height:3mm;background:#FF2D2D;transform:rotate(13deg)"></i><i style="left:91mm;top:25mm;width:2.2mm;height:2.2mm;background:#0057FF;transform:rotate(63deg)"></i></div>
+<header class="ph">
+  <div class="no">10</div>
+  <div><div class="tt">三峽 · 此行核心</div><div class="en">THREE GORGES · 3 SECTIONS</div></div>
+  <span class="pop">WOW!</span>
+</header>
+<div class="pb"><div class="band" style="--b:#FFD400">三峽是本行核心，按<b>西陵 → 巫峽 → 瞿塘</b>順江一次走完（D3–D6）。三段氣質完全不同：工程之奇、山水之秀、峽門之險。</div>
+<div class="cover-art" style="margin:0"><svg viewBox="0 0 430 42" width="100%" height="42" preserveAspectRatio="none" aria-hidden="true">
+<rect width="430" height="42" fill="#00D5FF"/>
+<path d="M0,52 L38,16 L66,40 L98,8 L134,46 L168,22 L204,50 L238,12 L276,44 L312,18 L350,48 L388,20 L430,50 L430,76 L0,76 Z" fill="#4f7168" stroke="#141414" stroke-width="2.5"/>
+<path d="M0,62 L52,38 L96,58 L150,32 L210,60 L268,36 L330,60 L386,40 L430,60 L430,76 L0,76 Z" fill="#141414" opacity=".82"/>
+<rect x="0" y="66" width="430" height="10" fill="#0057FF"/>
+<path d="M196,70 l24,0 -4,6 -16,0 z" fill="#FFD400" stroke="#141414" stroke-width="1.5"/>
+<path d="M208,70 l0,-12 10,12 z" fill="#FFFDF5" stroke="#141414" stroke-width="1.5"/>
+</svg></div>
+<div class="gorgewrap grow"><div class="gc" style="--gc:#00C853">
+ <div class="gh"><span class="gn">1</span><b>西陵峽</b><span class="gr">宜昌 — 秭歸 · D2–D3</span></div>
+ <p>最開闊也最長，以三峽大壩與葛洲壩的人文工程為主，適合看五級船閘過船；看點是工程而非峽谷本身。上午壇子嶺順光、下午 185 觀景臺看船過閘，建議留半天。</p><div class="gspot">◎ 機位：壇子嶺 · 185 觀景臺</div></div><div class="gc" style="--gc:#00D5FF">
+ <div class="gh"><span class="gn">2</span><b>巫峽</b><span class="gr">巴東 — 巫山 · D4–D5</span></div>
+ <p>最秀，神女峰獨立江北，雲雨天氣如水墨長卷；大寧河小三峽（龍門／巴霧／滴翠峽）水色最青，是本行最美一段，值得留整整一天乘船。雲霧過大時改看江景與縣城夜色。</p><div class="gspot">◎ 機位：神女峰觀景臺 · 小三峽船上</div></div><div class="gc" style="--gc:#FF7A00">
+ <div class="gh"><span class="gn">3</span><b>瞿塘峽</b><span class="gr">奉節 · D6</span></div>
+ <p>最短最險，夔門兩岸夾江如門，白帝城是觀峽最佳位置（十元人民幣背面取景地）；傍晚光線打在崖壁上最出片，別貪拍摸黑開沿江山路。與前兩段形成「奇—秀—險」的完整節奏。</p><div class="gspot">◎ 機位：白帝城 · 夔門</div></div></div>
+<div class="grid2">
+ <div class="card" style="--c:#0057FF">
+<div class="ct"><span class="cdot"></span>大壩預約與遊船</div>三峽大壩免費但需實名預約，提前在官方管道辦理，現場不保證放行，攜帶證件備查。<br>本行坐的是<b>巫山小三峽短線遊船</b>（半日到一日），不是宜昌—重慶的長線三峽郵輪，兩者碼頭、票價與班次完全不同，別買錯。<br>班次與票價以碼頭當日公示為準；旺季建議上午班，光線好、人少。</div>
+ <div class="card" style="--c:#FF7A00">
+<div class="ct"><span class="cdot"></span>沿江路況與光線</div>沿江多為國道／省道，彎多坡陡，部分路段可能輪渡或限行，出發前一日確認當日通行；雨季注意落石塌方預警，遇管制就改走高速並順延 D15 緩衝日。<br><b>最佳時段</b>：清晨與黃昏側光最立體，正午逆光發灰；雲雨天巫峽反而最出片。機位優先順序：壇子嶺（工程）→ 神女峰（秀）→ 白帝城夔門（險）。</div>
+</div>
+<div class="smallbar">◈ 門票 / 班次 / 開放 / 通行均以官方當日為準 · 本冊未做實時公開核驗</div></div>
+<footer class="pf"><span class="kw">西陵・巫峽・瞿塘</span><span class="pgno">P.10 / 12 · A5</span></footer>
+</section>
+<section class="page" style="--pg:#FF7A00;--accent:#0057FF">
+<div class="deco"><i style="left:117mm;top:145mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(47deg)"></i><i style="left:50mm;top:49mm;width:3.8mm;height:3.8mm;background:#FF7A00;transform:rotate(21deg)"></i><i style="left:26mm;top:116mm;width:2.2mm;height:2.2mm;background:#00D5FF;border-radius:50%"></i><i style="left:12mm;top:154mm;width:3mm;height:3mm;background:#00C853;transform:rotate(49deg)"></i><i style="left:42mm;top:161mm;width:3.8mm;height:3.8mm;background:#FF2D2D;border-radius:50%"></i><i style="left:11mm;top:50mm;width:3.8mm;height:3.8mm;background:#8B2BE2;border-radius:50%"></i><i style="left:120mm;top:85mm;width:3.8mm;height:3.8mm;background:#FF7A00;transform:rotate(43deg)"></i><i style="left:61mm;top:165mm;width:3mm;height:3mm;background:#00D5FF;border-radius:50%"></i><i style="left:23mm;top:119mm;width:3mm;height:3mm;background:#00D5FF;transform:rotate(69deg)"></i><i style="left:23mm;top:183mm;width:3mm;height:3mm;background:#00D5FF;transform:rotate(42deg)"></i><i style="left:75mm;top:9mm;width:3.8mm;height:3.8mm;background:#FFD400;transform:rotate(35deg)"></i><i style="left:29mm;top:76mm;width:2.2mm;height:2.2mm;background:#00C853;transform:rotate(64deg)"></i><i style="left:2mm;top:56mm;width:2.2mm;height:2.2mm;background:#8B2BE2;border-radius:50%"></i><i style="left:103mm;top:109mm;width:3.8mm;height:3.8mm;background:#FFD400;transform:rotate(59deg)"></i><i style="left:71mm;top:88mm;width:3mm;height:3mm;background:#FFD400;border-radius:50%"></i><i style="left:106mm;top:196mm;width:2.2mm;height:2.2mm;background:#FFD400;border-radius:50%"></i><i style="left:27mm;top:4mm;width:3mm;height:3mm;background:#FF2D2D;transform:rotate(21deg)"></i><i style="left:145mm;top:50mm;width:3.8mm;height:3.8mm;background:#FF7A00;border-radius:50%"></i><i style="left:35mm;top:109mm;width:2.2mm;height:2.2mm;background:#00C853;border-radius:50%"></i><i style="left:56mm;top:2mm;width:3.8mm;height:3.8mm;background:#00D5FF;border-radius:50%"></i><i style="left:7mm;top:55mm;width:3mm;height:3mm;background:#0057FF;transform:rotate(48deg)"></i><i style="left:27mm;top:12mm;width:2.2mm;height:2.2mm;background:#0057FF;border-radius:50%"></i><i style="left:4mm;top:199mm;width:3mm;height:3mm;background:#FF4FA3;border-radius:50%"></i><i style="left:21mm;top:25mm;width:3.8mm;height:3.8mm;background:#8B2BE2;transform:rotate(10deg)"></i><i style="left:96mm;top:97mm;width:2.2mm;height:2.2mm;background:#FF7A00;transform:rotate(40deg)"></i><i style="left:36mm;top:100mm;width:3.8mm;height:3.8mm;background:#0057FF;border-radius:50%"></i></div>
+<header class="ph">
+  <div class="no">11</div>
+  <div><div class="tt">行前與駕駛</div><div class="en">BEFORE YOU GO · DRIVE SAFE</div></div>
+  <span class="pop">OK!</span>
+</header>
+<div class="pb"><div class="band" style="--b:#FFD400">自駕 15 天跨三省，風險集中在<b>山區行車、沿江通行、門票預約</b>三處。以下每條都能直接執行；查不到的資訊一律標灰燈，不編造。</div>
+<div class="tips2 grow"><div class="tip"><span class="ti">1</span><div><b>車輛檢查</b><p>出發前查胎壓、煞車、機油、雨刮、備胎與三角牌；山區長下坡多用低擋，避免煞車過熱失靈。</p></div></div><div class="tip"><span class="ti">2</span><div><b>大壩預約</b><p>三峽大壩景區免費但需實名預約，提前在官方管道辦理，現場不保證放行；攜帶證件備查。</p></div></div><div class="tip"><span class="ti">3</span><div><b>門票與開放</b><p>白帝城、天生三橋、天門山、小三峽遊船的票價與開放時間以官方當日為準，出發前統一核對一遍。</p></div></div><div class="tip"><span class="ti">4</span><div><b>山區行車</b><p>渝東南、湘西多盤山路，不夜間趕路；遇大霧、暴雨減速或就近住宿，寧可少玩一站。</p></div></div><div class="tip"><span class="ti">5</span><div><b>重慶主城</b><p>坡陡車多、停車貴，景點間優先地鐵；洪崖洞夜景人流大，注意隨身財物與腳下臺階。</p></div></div><div class="tip"><span class="ti">6</span><div><b>應急電話</b><p>報警 110 / 火警 119 / 急救 120 / 交通事故 122 / 旅遊投訴 12301。具體救援以當地官方當日發布為準。</p></div></div></div>
+<div class="grid2">
+ <div class="card" style="--c:#00C853">
+<div class="ct"><span class="cdot"></span>行前打包清單</div>證件（身份證・駕照・行駛證）／保單／胎壓計與充氣泵／三角牌與反光背心／雨具與防滑鞋／山頂外套／常用藥／車載充電與離線地圖／適量現金（山區訊號弱）。</div>
+ <div class="card" style="--c:#8B2BE2">
+<div class="ct"><span class="cdot"></span>天氣與體力</div>未提供出行日期，本冊為<b>通用參考</b>；季節結論需綁定實際日期再核。山區晝夜溫差大、雨霧多變。<br>每日最長駕駛 5.5h，兩人可輪換；疲勞、暴雨、大霧時就近住宿，D15 就是為此留的緩衝日。</div>
+</div>
+<div class="smallbar">◈ 天氣為預報值可能與實際有偏差 · 出行前請再次核實 · 本冊僅供行程規劃參考</div></div>
+<footer class="pf"><span class="kw">6 條鐵律 · 應急速撥</span><span class="pgno">P.11 / 12 · A5</span></footer>
+</section>
+<section class="page" style="--pg:#8B2BE2;--accent:#FFD400">
+<div class="deco"><i style="left:123mm;top:70mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:97mm;top:125mm;width:3.8mm;height:3.8mm;background:#00D5FF;transform:rotate(54deg)"></i><i style="left:60mm;top:144mm;width:3.8mm;height:3.8mm;background:#FF2D2D;transform:rotate(38deg)"></i><i style="left:96mm;top:43mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:53mm;top:21mm;width:3.8mm;height:3.8mm;background:#FF4FA3;border-radius:50%"></i><i style="left:24mm;top:6mm;width:3.8mm;height:3.8mm;background:#FF2D2D;transform:rotate(15deg)"></i><i style="left:110mm;top:115mm;width:3.8mm;height:3.8mm;background:#FFD400;border-radius:50%"></i><i style="left:36mm;top:140mm;width:3.8mm;height:3.8mm;background:#FF4FA3;transform:rotate(54deg)"></i><i style="left:15mm;top:144mm;width:3.8mm;height:3.8mm;background:#0057FF;transform:rotate(35deg)"></i><i style="left:109mm;top:173mm;width:3mm;height:3mm;background:#FF7A00;transform:rotate(44deg)"></i><i style="left:9mm;top:166mm;width:2.2mm;height:2.2mm;background:#FFD400;transform:rotate(52deg)"></i><i style="left:68mm;top:93mm;width:3.8mm;height:3.8mm;background:#FF4FA3;border-radius:50%"></i><i style="left:81mm;top:31mm;width:2.2mm;height:2.2mm;background:#00D5FF;border-radius:50%"></i><i style="left:97mm;top:132mm;width:2.2mm;height:2.2mm;background:#0057FF;border-radius:50%"></i><i style="left:112mm;top:10mm;width:2.2mm;height:2.2mm;background:#FF2D2D;transform:rotate(12deg)"></i><i style="left:101mm;top:54mm;width:3.8mm;height:3.8mm;background:#FFD400;border-radius:50%"></i><i style="left:21mm;top:180mm;width:2.2mm;height:2.2mm;background:#00D5FF;border-radius:50%"></i><i style="left:129mm;top:90mm;width:3.8mm;height:3.8mm;background:#FF2D2D;border-radius:50%"></i><i style="left:55mm;top:88mm;width:3mm;height:3mm;background:#00D5FF;border-radius:50%"></i><i style="left:125mm;top:63mm;width:3mm;height:3mm;background:#0057FF;transform:rotate(33deg)"></i><i style="left:48mm;top:50mm;width:3.8mm;height:3.8mm;background:#8B2BE2;border-radius:50%"></i><i style="left:70mm;top:199mm;width:2.2mm;height:2.2mm;background:#FF4FA3;border-radius:50%"></i><i style="left:4mm;top:130mm;width:2.2mm;height:2.2mm;background:#FF2D2D;transform:rotate(33deg)"></i><i style="left:141mm;top:130mm;width:2.2mm;height:2.2mm;background:#0057FF;transform:rotate(66deg)"></i><i style="left:73mm;top:165mm;width:2.2mm;height:2.2mm;background:#FFD400;transform:rotate(42deg)"></i><i style="left:124mm;top:127mm;width:3mm;height:3mm;background:#FF4FA3;transform:rotate(38deg)"></i></div>
+<header class="ph">
+  <div class="no">12</div>
+  <div><div class="tt">15 天速查索引</div><div class="en">QUICK INDEX · TEAR-OFF CARD</div></div>
+  <span class="pop">END</span>
+</header>
+<div class="pb"><div class="band" style="--b:#FFD400">一頁速查：15 天路線、里程、車程與住宿落點。<b>撕下或單獨列印這頁放車上</b>，其餘各頁查細節。</div>
+<div class="tblwrap grow"><table class="tbl idx">
+<thead><tr><th>天</th><th>城市 / 路段</th><th>里程</th><th>車程</th><th>住宿落點</th></tr></thead>
+<tbody><tr><td>D1</td><td>長沙 → 宜昌</td><td>490 km</td>
+<td>5.5h</td><td>宜昌 夷陵廣場 · CBD</td></tr><tr><td>D2</td><td>宜昌 · 三峽大壩</td><td>60 km</td>
+<td>往返 1.5h</td><td>宜昌（連住，省搬行李）</td></tr><tr><td>D3</td><td>宜昌 → 秭歸 → 巴東</td><td>180 km</td>
+<td>3.5h</td><td>巴東縣城沿江</td></tr><tr><td>D4</td><td>巴東 → 巫山 · 巫峽</td><td>110 km</td>
+<td>2.5h</td><td>巫山縣城臨江</td></tr><tr><td>D5</td><td>巫山 · 小三峽</td><td>20 km</td>
+<td>碼頭往返</td><td>巫山（連住）</td></tr><tr><td>D6</td><td>巫山 → 奉節 · 瞿塘峽</td><td>90 km</td>
+<td>2h</td><td>奉節縣城（近白帝城）</td></tr><tr><td>D7</td><td>奉節 → 萬州 → 重慶</td><td>380 km</td>
+<td>4.5h</td><td>重慶 解放碑 / 洪崖洞一帶</td></tr><tr><td>D8</td><td>重慶 · 山城經典</td><td>0 km</td>
+<td>地鐵</td><td>重慶（連住）</td></tr><tr><td>D9</td><td>重慶 · 文藝與市井</td><td>0 km</td>
+<td>地鐵</td><td>重慶（連住第 3 晚）</td></tr><tr><td>D10</td><td>重慶 → 武隆</td><td>190 km</td>
+<td>2.5h</td><td>武隆城區 / 仙女山鎮</td></tr><tr><td>D11</td><td>武隆 → 酉陽</td><td>230 km</td>
+<td>3h</td><td>酉陽 / 龔灘古鎮江景客棧</td></tr><tr><td>D12</td><td>酉陽 → 張家界</td><td>300 km</td>
+<td>4h</td><td>張家界市區 / 武陵源</td></tr><tr><td>D13</td><td>張家界 · 天門山</td><td>20 km</td>
+<td>市內往返</td><td>張家界（連住）</td></tr><tr><td>D14</td><td>張家界 → 常德 → 長沙</td><td>400 km</td>
+<td>4.5h</td><td>長沙（自家可省此晚住宿）</td></tr><tr><td>D15</td><td>長沙 · 機動緩衝</td><td>0 km</td>
+<td>—</td><td>長沙（行程結束）</td></tr></tbody>
+<tfoot><tr><td colspan="2"><b>15 天合計</b></td><td><b>2,470 km</b></td><td colspan="2">日均 165 km</td></tr></tfoot>
+</table></div>
+<div class="grid3 mini">
+ <div class="card" style="--c:#FF2D2D">
+<div class="ct"><span class="cdot"></span>關鍵數字</div>15 天 · 2 人 · ¥9,000<br>2,470 km · 14 晚 · 9 停留點</div>
+ <div class="card" style="--c:#00C853">
+<div class="ct"><span class="cdot"></span>硬要求</div>三峽三段 ✓<br>重慶 2 整天 ✓<br>往返不走回頭路 ✓</div>
+ <div class="card" style="--c:#0057FF">
+<div class="ct"><span class="cdot"></span>誠實口徑</div>門票 / 班次 / 開放 / 路況<br>一律以官方當日為準<br>未做實時公開核驗</div>
+</div>
+<div class="lastline">一句話記住這趟：去程把三峽三段順江看下來，在重慶歇足兩整天再走，
+回程順路收武隆天坑與張家界 —— 15 天不趕不閒，¥9,000 剛好夠。</div>
+<div class="stampbar"><span class="stamp">僅供參考</span>
+ <span>WorldsTip by MrdT · 本冊僅提供行程規劃參考，不構成商業導流或交易服務</span>
+ <span class="stamp">以官方為準</span></div></div>
+<footer class="pf"><span class="kw">撕下放車上 · Ctrl/Cmd + P 列印</span><span class="pgno">P.12 / 12 · A5</span></footer>
+</section>
+</div>
+</body>
+</html>
